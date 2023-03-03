@@ -1,0 +1,551 @@
+Windows PowerShell
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Попробуйте новую кроссплатформенную оболочку PowerShell (https://aka.ms/pscore6)
+
+PS C:\Users\USER> ssh leo_amv@192.168.0.105
+leo_amv@192.168.0.105's password:
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+1 device has a firmware upgrade available.
+Run `fwupdmgr get-upgrades` for more information.
+
+
+5 обновлений может быть применено немедленно.
+1 из этих обновлений, является стандартным обновлением безопасности.
+Чтобы просмотреть дополнительные обновления выполните: apt list --upgradable
+
+
+1 device has a firmware upgrade available.
+Run `fwupdmgr get-upgrades` for more information.
+
+Last login: Thu Jan 26 20:26:58 2023 from 192.168.0.106
+leo_amv@leo:~$ tail /etc/passwd
+saned:x:121:128::/var/lib/saned:/usr/sbin/nologin
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+leo_amv:x:1000:1000:Leo_Amv,,,:/home/leo_amv:/bin/bash
+sshd:x:128:65534::/run/sshd:/usr/sbin/nologin
+fwupd-refresh:x:129:136:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
+leo_amv@leo:~$ sudo adduser user1
+[sudo] пароль для leo_amv:
+Добавляется пользователь «user1» ...
+Добавляется новая группа «user1» (1001) ...
+Добавляется новый пользователь «user1» (1001) в группу «user1» ...
+Создаётся домашний каталог «/home/user1» ...
+Копирование файлов из «/etc/skel» ...
+Новый пароль:
+НЕУДАЧНЫЙ ПАРОЛЬ: Пароль является палиндромом
+Повторите ввод нового пароля:
+Извините, но пароли не совпадают.
+Новый пароль:
+НЕУДАЧНЫЙ ПАРОЛЬ: Пароль должен содержать не менее 8 символов
+Повторите ввод нового пароля:
+Извините, но пароли не совпадают.
+Новый пароль:
+НЕУДАЧНЫЙ ПАРОЛЬ: Пароль не прошел проверку орфографии - слишком простой
+Повторите ввод нового пароля:
+Извините, но пароли не совпадают.
+passwd: Использовано максимальное число попыток, заданное для службы
+passwd: пароль не изменён
+Попробовать ещё раз? [y/N] y
+Новый пароль:
+НЕУДАЧНЫЙ ПАРОЛЬ: Пароль не прошел проверку орфографии - не содержит достаточное число РАЗЛИЧНЫХ символов
+Повторите ввод нового пароля:
+Извините, но пароли не совпадают.
+Новый пароль:
+Повторите ввод нового пароля:
+passwd: пароль успешно обновлён
+Изменение информации о пользователе user1
+Введите новое значение или нажмите ENTER для выбора значения по умолчанию
+        Полное имя []:
+        Номер комнаты []:
+        Рабочий телефон []:
+        Домашний телефон []:
+        Другое []:
+Данная информация корректна? [Y/n] y
+leo_amv@leo:~$ tail /etc/passwd
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+leo_amv:x:1000:1000:Leo_Amv,,,:/home/leo_amv:/bin/bash
+sshd:x:128:65534::/run/sshd:/usr/sbin/nologin
+fwupd-refresh:x:129:136:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
+user1:x:1001:1001:,,,:/home/user1:/bin/bash
+leo_amv@leo:~$ tail /etc/groups
+tail: невозможно открыть '/etc/groups' для чтения: Нет такого файла или каталога
+leo_amv@leo:~$ tail /etc/group
+colord:x:129:
+geoclue:x:130:
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:leo_amv
+leo_amv:x:1000:
+sambashare:x:135:leo_amv
+fwupd-refresh:x:136:
+user1:x:1001:
+leo_amv@leo:~$ user1 group
+Команда «user1» не найдена. Возможно, вы имели в виду:
+  command 'users' from deb coreutils (8.32-4.1ubuntu1)
+  command 'userv' from deb userv (1.2.1~beta4)
+Try: sudo apt install <deb name>
+leo_amv@leo:~$ user1 groups
+Команда «user1» не найдена. Возможно, вы имели в виду:
+  command 'users' from deb coreutils (8.32-4.1ubuntu1)
+  command 'userv' from deb userv (1.2.1~beta4)
+Try: sudo apt install <deb name>
+leo_amv@leo:~$ groups user1
+user1 : user1
+leo_amv@leo:~$ userdel user1 -r
+userdel: Permission denied.
+userdel: не удалось заблокировать /etc/passwd; попробуйте ещё раз позже.
+leo_amv@leo:~$ sudo userdel user1 -r
+userdel: почтовый ящик user1 (/var/mail/user1) не найден
+leo_amv@leo:~$ tail /etc/group
+saned:x:128:
+colord:x:129:
+geoclue:x:130:
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:leo_amv
+leo_amv:x:1000:
+sambashare:x:135:leo_amv
+fwupd-refresh:x:136:
+leo_amv@leo:~$ tail /etc/passwd
+saned:x:121:128::/var/lib/saned:/usr/sbin/nologin
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+leo_amv:x:1000:1000:Leo_Amv,,,:/home/leo_amv:/bin/bash
+sshd:x:128:65534::/run/sshd:/usr/sbin/nologin
+fwupd-refresh:x:129:136:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
+leo_amv@leo:~$ groupadd group1
+groupadd: Permission denied.
+groupadd: не удалось заблокировать /etc/group; попробуйте ещё раз позже.
+leo_amv@leo:~$ sudo groupadd group1
+leo_amv@leo:~$ tail /etc/group
+colord:x:129:
+geoclue:x:130:
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:leo_amv
+leo_amv:x:1000:
+sambashare:x:135:leo_amv
+fwupd-refresh:x:136:
+group1:x:1001:
+leo_amv@leo:~$ useradd user1
+useradd: Permission denied.
+useradd: не удалось заблокировать /etc/passwd; попробуйте ещё раз позже.
+leo_amv@leo:~$ sudo useradd user1
+leo_amv@leo:~$ tail /etc/passwd
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+leo_amv:x:1000:1000:Leo_Amv,,,:/home/leo_amv:/bin/bash
+sshd:x:128:65534::/run/sshd:/usr/sbin/nologin
+fwupd-refresh:x:129:136:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
+user1:x:1001:1002::/home/user1:/bin/sh
+leo_amv@leo:~$ tail /etc/group
+geoclue:x:130:
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:leo_amv
+leo_amv:x:1000:
+sambashare:x:135:leo_amv
+fwupd-refresh:x:136:
+group1:x:1001:
+user1:x:1002:
+leo_amv@leo:~$ groups user1
+user1 : user1
+leo_amv@leo:~$ sudo usermod -g user1 group1
+usermod: пользователь «group1» не существует
+leo_amv@leo:~$ sudo usermod -g group1 user1
+leo_amv@leo:~$ groups user1
+user1 : group1
+leo_amv@leo:~$ sudo usermod -aG user1 user1
+leo_amv@leo:~$ groups user1
+user1 : group1 user1
+leo_amv@leo:~$ sudo deluser user1 group1
+/usr/sbin/deluser: Вы не можете удалить учётную запись из её первичной группы.
+leo_amv@leo:~$ sudo usermod -g user1 user1
+leo_amv@leo:~$ groups user1
+user1 : user1
+leo_amv@leo:~$ sudo deluser user1 user1
+/usr/sbin/deluser: Вы не можете удалить учётную запись из её первичной группы.
+leo_amv@leo:~$ sudo usermod -aG user1 group1
+usermod: пользователь «group1» не существует
+leo_amv@leo:~$ sudo usermod -aG group1 user1
+leo_amv@leo:~$ groups user1
+user1 : user1 group1
+leo_amv@leo:~$ sudo deluser user1 group1
+Удаляется пользователь «user1» из группы «group1» ...
+Готово.
+leo_amv@leo:~$ groups user1
+user1 : user1
+leo_amv@leo:~$ sudo userdel user1 -r
+userdel: почтовый ящик user1 (/var/mail/user1) не найден
+userdel: домашний каталог пользователя user1 (/home/user1) не найден
+leo_amv@leo:~$ tail /etc/passwd
+saned:x:121:128::/var/lib/saned:/usr/sbin/nologin
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+leo_amv:x:1000:1000:Leo_Amv,,,:/home/leo_amv:/bin/bash
+sshd:x:128:65534::/run/sshd:/usr/sbin/nologin
+fwupd-refresh:x:129:136:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
+leo_amv@leo:~$ tail /etc/group
+colord:x:129:
+geoclue:x:130:
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:leo_amv
+leo_amv:x:1000:
+sambashare:x:135:leo_amv
+fwupd-refresh:x:136:
+group1:x:1001:
+leo_amv@leo:~$ sudo groupdel group1
+leo_amv@leo:~$ tail /etc/group
+saned:x:128:
+colord:x:129:
+geoclue:x:130:
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:leo_amv
+leo_amv:x:1000:
+sambashare:x:135:leo_amv
+fwupd-refresh:x:136:
+leo_amv@leo:~$ sudo useradd -s /bin/bash -md /home/superuser -aG sudo superuser
+useradd: неверный ключ — «a»
+Использование: useradd [параметры] ПОЛЬЗОВАТЕЛЬ
+               useradd -D
+               useradd -D [параметры]
+
+Параметры:
+      --badnames                do not check for bad names
+  -b, --base-dir БАЗ_КАТ        базовый каталог для домашнего каталога новой
+                                учётной записи
+      --btrfs-subvolume-home    use BTRFS subvolume for home directory
+  -c, --comment КОММЕНТАРИЙ     поле GECOS новой учётной записи
+  -d, --home-dir ДОМ_КАТ        домашний каталог новой учётной записи
+  -D, --defaults                показать или изменить настройки
+                                по умолчанию для useradd
+  -e, --expiredate ДАТА_УСТ     дата устаревания новой учётной записи
+  -f, --inactive НЕАКТИВНОСТЬ   период неактивности пароля новой учётной записи
+  -g, --gid ГРУППА              имя или ID первичной группы новой
+                                учётной записи
+  -G, --groups ГРУППЫ           список дополнительных групп новой
+                                учётной записи
+  -h, --help                    показать данное сообщение и закончить работу
+  -k, --skel КАБ_ШАБ            использовать альтернативный каталог с шаблонами
+  -K, --key КЛЮЧ=ЗНАЧЕНИЕ       заменить значение по умолчанию
+                                из /etc/login.defs
+  -l, --no-log-init             не добавлять пользователя в базы данных lastlog и
+                                faillog
+  -m, --create-home             создать домашний каталог пользователя
+  -M, --no-create-home          не создавать домашний каталог пользователя
+  -N, --no-user-group           не создавать группу с тем же именем что и у
+                                пользователя
+  -o, --non-unique              разрешить создание пользователей с
+                                повторяющимися (не уникальными) UID
+  -p, --password ПАРОЛЬ         зашифрованный пароль новой учётной записи
+  -r, --system                  создавать системную группу
+  -R, --root КАТ_CHROOT         каталог, в который выполняется chroot
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell ОБОЛОЧКА          регистрационная оболочка новой
+                                учётной записи
+  -u, --uid UID                 пользовательский ID новой учётной записи
+  -U, --user-group              создать группу с тем же именем что и у
+                                пользователя
+  -Z, --selinux-user SEUSER     использовать указанного SEUSER для
+                                пользовательского сопоставления SELinux
+      --extrausers              Use the extra users database
+
+leo_amv@leo:~$ sudo useradd -s /bin/bash -md /home/superuser superuser
+leo_amv@leo:~$ tail /etc/passwd
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+leo_amv:x:1000:1000:Leo_Amv,,,:/home/leo_amv:/bin/bash
+sshd:x:128:65534::/run/sshd:/usr/sbin/nologin
+fwupd-refresh:x:129:136:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
+superuser:x:1001:1001::/home/superuser:/bin/bash
+leo_amv@leo:~$ tail /etc/group
+colord:x:129:
+geoclue:x:130:
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:leo_amv
+leo_amv:x:1000:
+sambashare:x:135:leo_amv
+fwupd-refresh:x:136:
+superuser:x:1001:
+leo_amv@leo:~$ sudo usermod -aG sudo superuser
+leo_amv@leo:~$ groups superuser
+superuser : superuser sudo
+leo_amv@leo:~$ su suoeruser
+su: user suoeruser does not exist or the user entry does not contain all the required fields
+leo_amv@leo:~$ su superuser
+Пароль:
+
+12
+su: Сбой при проверке подлинности
+leo_amv@leo:~$
+leo_amv@leo:~$ 12
+12: команда не найдена
+leo_amv@leo:~$ sudo usermod -p superuser
+Использование: usermod [параметры] ПОЛЬЗОВАТЕЛЬ
+
+Параметры:
+  -b, --badnames                allow bad names
+  -c, --comment КОММЕНТАРИЙ     новое значение поля GECOS
+  -d, --home ДОМ_КАТ            новый домашний каталог учётной записи
+  -e, --expiredate ДАТА_УСТ     установить дату окончания действия
+                                учётной записи в ДАТА_УСТ
+  -f, --inactive НЕАКТИВНОСТЬ   установить период неактивности пароля после
+                                устаревания учётной записи равным НЕАКТИВНОСТЬ
+  -g, --gid ГРУППА              принудительно назначить первичную ГРУППУ
+  -G, --groups ГРУППЫ           список дополнительных ГРУПП
+  -a, --append                  добавить пользователя в дополнительные
+                                ГРУППЫ, указанные в параметре -G не удаляя
+                                пользователя из других групп
+  -h, --help                    показать данное сообщение и закончить работу
+  -l, --login НОВОЕ_ИМЯ         новое значение имени учётной записи
+  -L, --lock                    заблокировать учётную запись
+  -m, --move-home               переместить содержимое домашнего каталога в
+                                новое место (использовать только вместе с -d)
+  -o, --non-unique              разрешить создание учётной записи с уже
+                                имеющимся (не уникальным) UID
+  -p, --password ПАРОЛЬ         задать новый шифрованный пароль для
+                                учётной записи
+  -R, --root КАТ_CHROOT         каталог, в который выполняется chroot
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell ОБОЛОЧКА          новая регистрационная оболочка для учётной
+                                записи
+  -u, --uid UID                 новый UID для учётной записи
+  -U, --unlock                  разблокировать учётную запись
+  -v, --add-subuids ПЕРВ-ПОСЛ   добавить диапазон подчинённых uid
+  -V, --del-subuids ПЕРВ-ПОСЛ   удалить диапазон подчинённых uid
+  -w, --add-subgids ПЕРВ-ПОСЛ   добавить диапазон подчинённых gid
+  -W, --del-subgids ПЕРВ-ПОСЛ   удалить диапазон подчинённых gid
+  -Z, --selinux-user SEUSER     новое пользовательское сопоставление
+                                SELinux для учётной записи
+
+leo_amv@leo:~$ sudo usermod -p client_loop: send disconnect: Connection reset
+PS C:\Users\XaKeR> ssh leo_amv@192.168.0.105
+leo_amv@192.168.0.105's password:
+Permission denied, please try again.
+leo_amv@192.168.0.105's password:
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+1 device has a firmware upgrade available.
+Run `fwupdmgr get-upgrades` for more information.
+
+
+5 обновлений может быть применено немедленно.
+1 из этих обновлений, является стандартным обновлением безопасности.
+Чтобы просмотреть дополнительные обновления выполните: apt list --upgradable
+
+
+1 device has a firmware upgrade available.
+Run `fwupdmgr get-upgrades` for more information.
+
+Last login: Thu Feb  2 13:40:00 2023 from 192.168.0.106
+leo_amv@leo:~$ sudo passwd superuser
+[sudo] пароль для leo_amv:
+Новый пароль:
+НЕУДАЧНЫЙ ПАРОЛЬ: Пароль должен содержать не менее 8 символов
+Повторите ввод нового пароля:
+Извините, но пароли не совпадают.
+Новый пароль:
+Повторите ввод нового пароля:
+passwd: пароль успешно обновлён
+leo_amv@leo:~$ su superuser
+Пароль:
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+superuser@leo:/home/leo_amv$ whoami
+superuser
+superuser@leo:/home/leo_amv$ exit
+exit
+leo_amv@leo:~$ groups superuser
+superuser : superuser sudo
+leo_amv@leo:~$ sudo groupadd developer
+[sudo] пароль для leo_amv:
+leo_amv@leo:~$ sudo usermod -aG developer superuser
+leo_amv@leo:~$ sudo usermod -aG developer leo_amv
+leo_amv@leo:~$ groups
+leo_amv adm cdrom sudo dip plugdev lpadmin lxd sambashare
+leo_amv@leo:~$ groups superuser
+superuser : superuser sudo developer
+leo_amv@leo:~$ tail /etc/passwd
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+leo_amv:x:1000:1000:Leo_Amv,,,:/home/leo_amv:/bin/bash
+sshd:x:128:65534::/run/sshd:/usr/sbin/nologin
+fwupd-refresh:x:129:136:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
+superuser:x:1001:1001::/home/superuser:/bin/bash
+leo_amv@leo:~$ tail /etc/group
+geoclue:x:130:
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:leo_amv
+leo_amv:x:1000:
+sambashare:x:135:leo_amv
+fwupd-refresh:x:136:
+superuser:x:1001:
+developer:x:1002:superuser,leo_amv
+leo_amv@leo:~$ mkdir test
+leo_amv@leo:~$ ls
+ file2   shared   test    Видео       Загрузки      Музыка         'Рабочий стол'
+ links   snap     test3   Документы   Изображения   Общедоступные   Шаблоны
+leo_amv@leo:~$ ls -l
+итого 52
+-rw-rw-r-- 1 leo_amv leo_amv    0 янв 26 20:28  file2
+drwxrwxr-x 2 leo_amv leo_amv 4096 янв 25 21:49  links
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 2 leo_amv leo_amv 4096 фев  3 21:58  test
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 26 20:22 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ chmode --help
+Команда «chmode» не найдена. Возможно, вы имели в виду:
+  command 'chmod' from deb coreutils (8.32-4.1ubuntu1)
+Try: sudo apt install <deb name>
+leo_amv@leo:~$ chmod --help
+Использование: chmod [ПАРАМЕТР]... РЕЖИМ[,РЕЖИМ]… ФАЙЛ
+       или:    chmod [ПАРАМЕТР]… ВОСЬМЕРИЧНЫЙ-РЕЖИМ ФАЙЛ…
+       или:    chmod [ПАРАМЕТР]… --reference=ОФАЙЛ ФАЙЛ…
+Смена РЕЖИМА доступа к указанным ФАЙЛАМ.
+При задании --reference, установить режим
+указанных ФАЙЛОВ как у ЭФАЙЛА.
+
+  -c, --changes          как verbose, но выводить только при выполнении
+                         изменений
+  -f, --silent, --quiet  не выводить большинство сообщений об ошибках
+  -v, --verbose          выводить диагностические сообщения по каждому файлу
+      --no-preserve-root не обрабатывать «/» особым образом (по умолчанию)
+      --preserve-root    отказываться рекурсивно обрабатывать «/»
+      --reference=ЭФАЙЛ  использовать режим доступа ЭФАЙЛА
+                         вместо значений РЕЖИМ
+  -R, --recursive        рекурсивно изменять файлы и каталоги
+      --help     показать эту справку и выйти
+      --version  показать информацию о версии и выйти
+
+Каждый РЕЖИМ задаётся в форме «[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+».
+
+Страница справки по GNU coreutils: <https://www.gnu.org/software/coreutils/>
+Об ошибках в переводе сообщений сообщайте по адресу <https://translationproject.org/team/ru.html>
+Полная документация: <https://www.gnu.org/software/coreutils/chmod>
+или доступная локально: info '(coreutils) chmod invocation'
+leo_amv@leo:~$ chgrp -R developer test/
+chgrp: изменение группы для 'test/': Операция не позволена
+leo_amv@leo:~$ sudo chgrp -R developer test/
+leo_amv@leo:~$ ls -l
+итого 52
+-rw-rw-r-- 1 leo_amv leo_amv      0 янв 26 20:28  file2
+drwxrwxr-x 2 leo_amv leo_amv   4096 янв 25 21:49  links
+drwxrwxrwx 2 leo_amv leo_amv   4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv   4096 янв 18 21:28  snap
+drwxrwxr-x 2 leo_amv developer 4096 фев  3 21:58  test
+drwxrwxr-x 3 leo_amv leo_amv   4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 26 20:22 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ mkdir test/files
+leo_amv@leo:~$ ls -l
+итого 52
+-rw-rw-r-- 1 leo_amv leo_amv      0 янв 26 20:28  file2
+drwxrwxr-x 2 leo_amv leo_amv   4096 янв 25 21:49  links
+drwxrwxrwx 2 leo_amv leo_amv   4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv   4096 янв 18 21:28  snap
+drwxrwxr-x 3 leo_amv developer 4096 фев  3 22:07  test
+drwxrwxr-x 3 leo_amv leo_amv   4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 26 20:22 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv   4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ cd test
+leo_amv@leo:~/test$ ls -l
+итого 4
+drwxrwxr-x 2 leo_amv leo_amv 4096 фев  3 22:07 files
+leo_amv@leo:~/test$ sudo chgrp -R developer files/
+leo_amv@leo:~/test$ ls -l
+итого 4
+drwxrwxr-x 2 leo_amv developer 4096 фев  3 22:07 files
+leo_amv@leo:~/test$ sudo chmod -R 641 files/
+leo_amv@leo:~/test$ ls -l
+итого 4
+drw-r----x 2 leo_amv developer 4096 фев  3 22:07 files
+leo_amv@leo:~/test$ cd files
+-bash: cd: files: Отказано в доступе
+leo_amv@leo:~/test$ sudo cd files
+sudo: cd: команда не найдена
+sudo: "cd" is a shell built-in command, it cannot be run directly.
+sudo: the -s option may be used to run a privileged shell.
+sudo: the -D option may be used to run a command in a specific directory.
+leo_amv@leo:~/test$ sudo chmod -R 741 files/
+leo_amv@leo:~/test$ cd files
+leo_amv@leo:~/test/files$ touch file
+leo_amv@leo:~/test/files$ ls -l
+итого 0
+-rw-rw-r-- 1 leo_amv leo_amv 0 фев  3 22:16 file
+leo_amv@leo:~/test/files$ cd ..
+leo_amv@leo:~/test$ ls -l
+итого 4
+drwxr----x 2 leo_amv developer 4096 фев  3 22:16 files

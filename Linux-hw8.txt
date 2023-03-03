@@ -1,0 +1,486 @@
+leo_amv@leo:~$ for n in {1..3}; do echo $n $USER; done
+1 leo_amv
+2 leo_amv
+3 leo_amv
+leo_amv@leo:~$ nano while.sh
+leo_amv@leo:~$ chmod u+x
+.bash_history              .gphoto/                   .pki/                      .sudo_as_admin_successful  Загрузки/
+.bash_logout               hw/                        .profile                   .thunderbird/              Изображения/
+.bashrc                    hw.txt                     .selected_editor           .viminfo                   Музыка/
+.cache/                    .lesshst                   shared/                    while.sh                   Общедоступные/
+.config/                   .local/                    snap/                      Видео/                     Рабочий стол/
+.gnupg/                    .mozilla/                  .ssh/                      Документы/                 Шаблоны/
+leo_amv@leo:~$ chmod u+x while.sh
+leo_amv@leo:~$ ll
+итого 236
+drwxr-x--- 22 leo_amv leo_amv     4096 фев 27 22:16  ./
+drwxr-xr-x  3 root    root        4096 фев  6 16:28  ../
+-rw-------  1 leo_amv leo_amv    12734 фев 23 22:37  .bash_history
+-rw-r--r--  1 leo_amv leo_amv      220 янв 18 03:05  .bash_logout
+-rw-r--r--  1 leo_amv leo_amv     3771 янв 18 03:05  .bashrc
+drwx------ 19 leo_amv leo_amv     4096 янв 21 21:29  .cache/
+drwx------ 19 leo_amv leo_amv     4096 фев 17 21:20  .config/
+drwx------  2 leo_amv leo_amv     4096 фев 17 20:18  .gnupg/
+drwxrwxr-x  2 leo_amv leo_amv     4096 янв 28 21:09  .gphoto/
+drwxrwxr-x  2 leo_amv leo_amv     4096 фев 23 22:00  hw/
+-rw-rw-r--  1 leo_amv docker     96768 фев 23 22:30  hw.txt
+-rw-------  1 leo_amv leo_amv       20 фев 21 22:44  .lesshst
+drwx------  3 leo_amv leo_amv     4096 янв 18 03:25  .local/
+drwx------  3 leo_amv leo_amv     4096 янв 20 15:33  .mozilla/
+drwx------  3 leo_amv leo_amv     4096 янв 18 05:51  .pki/
+-rw-r--r--  1 leo_amv leo_amv      807 янв 18 03:05  .profile
+-rw-rw-r--  1 leo_amv leo_amv       66 фев 12 14:18  .selected_editor
+drwxrwxrwx  3 leo_amv sambashare  4096 фев 21 21:57  shared/
+drwx------  7 leo_amv leo_amv     4096 фев 17 21:45  snap/
+drwx------  2 leo_amv leo_amv     4096 янв 18 05:36  .ssh/
+-rw-r--r--  1 leo_amv leo_amv        0 янв 18 03:48  .sudo_as_admin_successful
+drwx------  6 leo_amv leo_amv     4096 янв 20 15:33  .thunderbird/
+-rw-------  1 leo_amv leo_amv    10386 янв 26 20:28  .viminfo
+-rwxrw-r--  1 leo_amv leo_amv       73 фев 27 22:16  while.sh*
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Видео/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Документы/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 05:00  Загрузки/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Изображения/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Музыка/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 20 16:05  Общедоступные/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 26 20:22 'Рабочий стол'/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Шаблоны/
+leo_amv@leo:~$ cat while.sh
+#!/bin/bash
+i=0
+while [ $i -le 100 ]
+do
+  echo $i
+  let "i = i + 1"
+done
+leo_amv@leo:~$ ./while.sh
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+leo_amv@leo:~$ ll
+итого 236
+drwxr-x--- 22 leo_amv leo_amv     4096 фев 27 22:16  ./
+drwxr-xr-x  3 root    root        4096 фев  6 16:28  ../
+-rw-------  1 leo_amv leo_amv    12734 фев 23 22:37  .bash_history
+-rw-r--r--  1 leo_amv leo_amv      220 янв 18 03:05  .bash_logout
+-rw-r--r--  1 leo_amv leo_amv     3771 янв 18 03:05  .bashrc
+drwx------ 19 leo_amv leo_amv     4096 янв 21 21:29  .cache/
+drwx------ 19 leo_amv leo_amv     4096 фев 17 21:20  .config/
+drwx------  2 leo_amv leo_amv     4096 фев 17 20:18  .gnupg/
+drwxrwxr-x  2 leo_amv leo_amv     4096 янв 28 21:09  .gphoto/
+drwxrwxr-x  2 leo_amv leo_amv     4096 фев 23 22:00  hw/
+-rw-rw-r--  1 leo_amv docker     96768 фев 23 22:30  hw.txt
+-rw-------  1 leo_amv leo_amv       20 фев 21 22:44  .lesshst
+drwx------  3 leo_amv leo_amv     4096 янв 18 03:25  .local/
+drwx------  3 leo_amv leo_amv     4096 янв 20 15:33  .mozilla/
+drwx------  3 leo_amv leo_amv     4096 янв 18 05:51  .pki/
+-rw-r--r--  1 leo_amv leo_amv      807 янв 18 03:05  .profile
+-rw-rw-r--  1 leo_amv leo_amv       66 фев 12 14:18  .selected_editor
+drwxrwxrwx  3 leo_amv sambashare  4096 фев 21 21:57  shared/
+drwx------  7 leo_amv leo_amv     4096 фев 17 21:45  snap/
+drwx------  2 leo_amv leo_amv     4096 янв 18 05:36  .ssh/
+-rw-r--r--  1 leo_amv leo_amv        0 янв 18 03:48  .sudo_as_admin_successful
+drwx------  6 leo_amv leo_amv     4096 янв 20 15:33  .thunderbird/
+-rw-------  1 leo_amv leo_amv    10386 янв 26 20:28  .viminfo
+-rwxrw-r--  1 leo_amv leo_amv       73 фев 27 22:16  while.sh*
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Видео/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Документы/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 05:00  Загрузки/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Изображения/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Музыка/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 20 16:05  Общедоступные/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 26 20:22 'Рабочий стол'/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Шаблоны/
+leo_amv@leo:~$ cut --help
+Использование: cut ПАРАМЕТР… [ФАЙЛ]…
+Печатает выбранные части строк из каждого ФАЙЛА на стандартный вывод.
+
+Если ФАЙЛ не задан или задан как -, читает стандартный ввод.
+
+Аргументы, обязательные для длинных параметров, обязательны и для коротких.
+  -b, --bytes=СПИСОК             выбрать только заданные байты
+  -c, --characters=СПИСОК        выбрать только заданные символы
+  -d, --delimiter=РАЗДЕЛИТЕЛЬ    использовать для разделения полей РАЗДЕЛИТЕЛЬ
+                                 вместо табуляции
+  -f, --fields=СПИСОК            выбрать только заданные поля; также печатать
+                                 все строки, не содержащие разделителей, если
+                                 только не задан параметр -s
+  -n                             (игнорируется)
+      --complement               дополнить множество выбранных байт, символов
+                                 или полей
+  -s, --only-delimited           не печатать строки, не содержащие
+                                 разделителей
+      --output-delimiter=СТРОКА  использовать СТРОКУ для разделения полей при
+                                 выводе, по умолчанию используется разделитель
+                                 для ввода
+  -z, --zero-terminated    разделитель строк NUL, а не символ
+                           новой строки
+      --help     показать эту справку и выйти
+      --version  показать информацию о версии и выйти
+
+Используйте один и только один из параметров: -b, -c или -f.  СПИСКИ
+состоят из диапазона или нескольких диапазонов, разделенных запятыми.
+Выбранные части входного файла печатаются в том порядке, в котором они
+появляются на входе, и печатаются ровно один раз.
+Диапазоны задаются следующим образом:
+
+  Н     Н-ный байт, символ или поле; отсчитывается от 1
+  Н-    от Н-ного байта, символа или поля до конца строки
+  Н-М   от Н-ного до М-ного (включительно) байта, символа или поля
+  -М    от первого до М-ного (включительно) байта, символа или поля
+
+Страница справки по GNU coreutils: <https://www.gnu.org/software/coreutils/>
+Об ошибках в переводе сообщений сообщайте по адресу <https://translationproject.org/team/ru.html>
+Полная документация: <https://www.gnu.org/software/coreutils/cut>
+или доступная локально: info '(coreutils) cut invocation'
+leo_amv@leo:~$ ll | cut -f 1
+итого 236
+drwxr-x--- 22 leo_amv leo_amv     4096 фев 27 22:16 ./
+drwxr-xr-x  3 root    root        4096 фев  6 16:28 ../
+-rw-------  1 leo_amv leo_amv    12734 фев 23 22:37 .bash_history
+-rw-r--r--  1 leo_amv leo_amv      220 янв 18 03:05 .bash_logout
+-rw-r--r--  1 leo_amv leo_amv     3771 янв 18 03:05 .bashrc
+drwx------ 19 leo_amv leo_amv     4096 янв 21 21:29 .cache/
+drwx------ 19 leo_amv leo_amv     4096 фев 17 21:20 .config/
+drwx------  2 leo_amv leo_amv     4096 фев 17 20:18 .gnupg/
+drwxrwxr-x  2 leo_amv leo_amv     4096 янв 28 21:09 .gphoto/
+drwxrwxr-x  2 leo_amv leo_amv     4096 фев 23 22:00 hw/
+-rw-rw-r--  1 leo_amv docker     96768 фев 23 22:30 hw.txt
+-rw-------  1 leo_amv leo_amv       20 фев 21 22:44 .lesshst
+drwx------  3 leo_amv leo_amv     4096 янв 18 03:25 .local/
+drwx------  3 leo_amv leo_amv     4096 янв 20 15:33 .mozilla/
+drwx------  3 leo_amv leo_amv     4096 янв 18 05:51 .pki/
+-rw-r--r--  1 leo_amv leo_amv      807 янв 18 03:05 .profile
+-rw-rw-r--  1 leo_amv leo_amv       66 фев 12 14:18 .selected_editor
+drwxrwxrwx  3 leo_amv sambashare  4096 фев 21 21:57 shared/
+drwx------  7 leo_amv leo_amv     4096 фев 17 21:45 snap/
+drwx------  2 leo_amv leo_amv     4096 янв 18 05:36 .ssh/
+-rw-r--r--  1 leo_amv leo_amv        0 янв 18 03:48 .sudo_as_admin_successful
+drwx------  6 leo_amv leo_amv     4096 янв 20 15:33 .thunderbird/
+-rw-------  1 leo_amv leo_amv    10386 янв 26 20:28 .viminfo
+-rwxrw-r--  1 leo_amv leo_amv       73 фев 27 22:16 while.sh*
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25 Видео/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25 Документы/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 05:00 Загрузки/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25 Изображения/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25 Музыка/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 20 16:05 Общедоступные/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 26 20:22 Рабочий стол/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25 Шаблоны/
+leo_amv@leo:~$ ll | cut -f 1 -d ' '
+итого
+drwxr-x---
+drwxr-xr-x
+-rw-------
+-rw-r--r--
+-rw-r--r--
+drwx------
+drwx------
+drwx------
+drwxrwxr-x
+drwxrwxr-x
+-rw-rw-r--
+-rw-------
+drwx------
+drwx------
+drwx------
+-rw-r--r--
+-rw-rw-r--
+drwxrwxrwx
+drwx------
+drwx------
+-rw-r--r--
+drwx------
+-rw-------
+-rwxrw-r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+leo_amv@leo:~$ ll | cut -f 1 -d ' ' | sort | uniq
+drwx------
+drwxrwxrwx
+drwxrwxr-x
+drwxr-x---
+drwxr-xr-x
+-rw-------
+-rw-r--r--
+-rw-rw-r--
+-rwxrw-r--
+итого
+leo_amv@leo:~$ ll | cut -f 1 -d ' ' | sort | uniq | grev -v итого
+Команда «grev» не найдена. Возможно, вы имели в виду:
+  command 'grv' from snap grv (0.3.2-5-gcffa246)
+  command 'grex' from snap grex (v1.4.0)
+  command 'rev' from deb util-linux (2.37.2-4ubuntu3)
+  command 'trev' from deb staden (2.0.0+b11-4build2)
+  command 'grep' from deb grep (3.7-1build1)
+  command 'prev' from deb mailutils-mh (1:3.14-1)
+  command 'prev' from deb mmh (0.4-4)
+  command 'prev' from deb nmh (1.7.1-11)
+See 'snap info <snapname>' for additional versions.
+leo_amv@leo:~$ ll | cut -f 1 -d ' ' | sort | uniq | grep -v итого
+drwx------
+drwxrwxrwx
+drwxrwxr-x
+drwxr-x---
+drwxr-xr-x
+-rw-------
+-rw-r--r--
+-rw-rw-r--
+-rwxrw-r--
+leo_amv@leo:~$ echo $1
+
+leo_amv@leo:~$ mkdir test/
+leo_amv@leo:~$ cd test/
+leo_amv@leo:~/test$ touch 1.bak
+leo_amv@leo:~/test$ touch 2.tmp
+leo_amv@leo:~/test$ touch 3.backup
+leo_amv@leo:~/test$ ll
+итого 8
+drwxrwxr-x  2 leo_amv leo_amv 4096 фев 27 23:24 ./
+drwxr-x--- 23 leo_amv leo_amv 4096 фев 27 23:24 ../
+-rw-rw-r--  1 leo_amv leo_amv    0 фев 27 23:24 1.bak
+-rw-rw-r--  1 leo_amv leo_amv    0 фев 27 23:24 2.tmp
+-rw-rw-r--  1 leo_amv leo_amv    0 фев 27 23:24 3.backup
+leo_amv@leo:~/test$ cd ..
+leo_amv@leo:~$ nano myscript.sh
+leo_amv@leo:~$ ./myscript.sh /home/leo_amv/test
+rm: невозможно удалить '*.bak': Нет такого файла или каталога
+rm: невозможно удалить '/home/leo_amv/test': Нет такого файла или каталога
+rm: невозможно удалить '*.tmp': Нет такого файла или каталога
+rm: невозможно удалить '/home/leo_amv/test': Нет такого файла или каталога
+rm: невозможно удалить '*.backup': Нет такого файла или каталога
+leo_amv@leo:~$ cd test
+bash: cd: test: Нет такого файла или каталога
+leo_amv@leo:~$ cd test/
+bash: cd: test/: Нет такого файла или каталога
+leo_amv@leo:~$ mkdir test/
+leo_amv@leo:~$ cd test/
+leo_amv@leo:~/test$ ll
+итого 8
+drwxrwxr-x  2 leo_amv leo_amv 4096 фев 27 23:27 ./
+drwxr-x--- 23 leo_amv leo_amv 4096 фев 27 23:27 ../
+leo_amv@leo:~/test$ touch 1.bak
+leo_amv@leo:~/test$ touch 2.tmp
+leo_amv@leo:~/test$ touch 3.backup
+leo_amv@leo:~/test$ nano myscript.sh
+leo_amv@leo:~/test$ cd ..
+leo_amv@leo:~$ nano myscript.sh
+leo_amv@leo:~$ ./myscript.sh /home/leo_amv/test/
+rm: невозможно удалить '*.bak': Нет такого файла или каталога
+rm: невозможно удалить '*.tmp': Нет такого файла или каталога
+rm: невозможно удалить '*.backup': Нет такого файла или каталога
+leo_amv@leo:~$ ./myscript.sh /home/leo_amv/test
+Directory not found!
+leo_amv@leo:~$ ll
+итого 240
+drwxr-x--- 22 leo_amv leo_amv     4096 фев 27 23:31  ./
+drwxr-xr-x  3 root    root        4096 фев  6 16:28  ../
+-rw-------  1 leo_amv leo_amv    12734 фев 23 22:37  .bash_history
+-rw-r--r--  1 leo_amv leo_amv      220 янв 18 03:05  .bash_logout
+-rw-r--r--  1 leo_amv leo_amv     3771 янв 18 03:05  .bashrc
+drwx------ 19 leo_amv leo_amv     4096 янв 21 21:29  .cache/
+drwx------ 19 leo_amv leo_amv     4096 фев 17 21:20  .config/
+drwx------  2 leo_amv leo_amv     4096 фев 17 20:18  .gnupg/
+drwxrwxr-x  2 leo_amv leo_amv     4096 янв 28 21:09  .gphoto/
+drwxrwxr-x  2 leo_amv leo_amv     4096 фев 23 22:00  hw/
+-rw-rw-r--  1 leo_amv docker     96768 фев 23 22:30  hw.txt
+-rw-------  1 leo_amv leo_amv       20 фев 21 22:44  .lesshst
+drwx------  3 leo_amv leo_amv     4096 янв 18 03:25  .local/
+drwx------  3 leo_amv leo_amv     4096 янв 20 15:33  .mozilla/
+-rwxrw-r--  1 leo_amv leo_amv      112 фев 27 23:31  myscript.sh*
+drwx------  3 leo_amv leo_amv     4096 янв 18 05:51  .pki/
+-rw-r--r--  1 leo_amv leo_amv      807 янв 18 03:05  .profile
+-rw-rw-r--  1 leo_amv leo_amv       66 фев 12 14:18  .selected_editor
+drwxrwxrwx  3 leo_amv sambashare  4096 фев 21 21:57  shared/
+drwx------  7 leo_amv leo_amv     4096 фев 17 21:45  snap/
+drwx------  2 leo_amv leo_amv     4096 янв 18 05:36  .ssh/
+-rw-r--r--  1 leo_amv leo_amv        0 янв 18 03:48  .sudo_as_admin_successful
+drwx------  6 leo_amv leo_amv     4096 янв 20 15:33  .thunderbird/
+-rw-------  1 leo_amv leo_amv    10386 янв 26 20:28  .viminfo
+-rwxrw-r--  1 leo_amv leo_amv       73 фев 27 22:16  while.sh*
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Видео/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Документы/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 05:00  Загрузки/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Изображения/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Музыка/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 20 16:05  Общедоступные/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 26 20:22 'Рабочий стол'/
+drwxr-xr-x  2 leo_amv leo_amv     4096 янв 18 03:25  Шаблоны/
+leo_amv@leo:~$ mkdir test/
+leo_amv@leo:~$ cd test/
+leo_amv@leo:~/test$ touch 1.bak
+leo_amv@leo:~/test$ touch 2.tmp
+leo_amv@leo:~/test$ touch 3.backup
+leo_amv@leo:~/test$ cd ..
+leo_amv@leo:~$ ./myscript.sh /home/leo_amv/test
+rm: невозможно удалить '*.bak': Нет такого файла или каталога
+rm: невозможно удалить '*.tmp': Нет такого файла или каталога
+rm: невозможно удалить '*.backup': Нет такого файла или каталога
+leo_amv@leo:~$ cd test/
+bash: cd: test/: Нет такого файла или каталога
+leo_amv@leo:~$ nano myscript.sh
+leo_amv@leo:~$ mkdir test/
+leo_amv@leo:~$ cd test/
+leo_amv@leo:~/test$ touch 1.bak
+leo_amv@leo:~/test$ ll
+итого 8
+drwxrwxr-x  2 leo_amv leo_amv 4096 фев 27 23:34 ./
+drwxr-x--- 23 leo_amv leo_amv 4096 фев 27 23:34 ../
+-rw-rw-r--  1 leo_amv leo_amv    0 фев 27 23:34 1.bak
+leo_amv@leo:~/test$ cd ..
+leo_amv@leo:~$ ./myscript.sh /home/leo_amv/test
+leo_amv@leo:~$ cd test/
+leo_amv@leo:~/test$ ll
+итого 8
+drwxrwxr-x  2 leo_amv leo_amv 4096 фев 27 23:35 ./
+drwxr-x--- 23 leo_amv leo_amv 4096 фев 27 23:34 ../
+leo_amv@leo:~/test$ cd ..
+leo_amv@leo:~$ nano myscript.sh
+leo_amv@leo:~$ cat myscript.sh
+#!/bin/bash
+dir=$1
+if [ -d $dir ]
+ then
+  rm -r $dir/*.bak
+  rm -r $dir/*.tmp
+  rm -r $dir/*.backup
+ else
+  echo "Directory not found!"
+fi
+leo_amv@leo:~$ cd test/
+leo_amv@leo:~/test$ touch 1.bak
+leo_amv@leo:~/test$ touch 2.tmp
+leo_amv@leo:~/test$ touch 3.backup
+leo_amv@leo:~/test$ ll
+итого 8
+drwxrwxr-x  2 leo_amv leo_amv 4096 фев 27 23:38 ./
+drwxr-x--- 23 leo_amv leo_amv 4096 фев 27 23:37 ../
+-rw-rw-r--  1 leo_amv leo_amv    0 фев 27 23:37 1.bak
+-rw-rw-r--  1 leo_amv leo_amv    0 фев 27 23:37 2.tmp
+-rw-rw-r--  1 leo_amv leo_amv    0 фев 27 23:38 3.backup
+leo_amv@leo:~/test$ cd ..
+leo_amv@leo:~$ nano myscript.sh
+leo_amv@leo:~$ cat myscript.sh
+#!/bin/bash
+dir=$1
+if [ -d $dir ]
+ then
+  rm -r $dir/*.bak
+  rm -r $dir/*.tmp
+  rm -r $dir/*.backup
+  echo "DONE!"
+ else
+  echo "Directory not found!"
+fi
+leo_amv@leo:~$ ./myscript.sh /home/leo_amv/test
+DONE!
+leo_amv@leo:~$ cd test/
+leo_amv@leo:~/test$ ll
+итого 8
+drwxrwxr-x  2 leo_amv leo_amv 4096 фев 27 23:39 ./
+drwxr-x--- 23 leo_amv leo_amv 4096 фев 27 23:38 ../
+leo_amv@leo:~/test$

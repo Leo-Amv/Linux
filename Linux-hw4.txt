@@ -1,0 +1,398 @@
+PS C:\Users\USER> ssh leo_amv@192.168.0.105
+leo_amv@192.168.0.105's password:
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+1 device has a firmware upgrade available.
+Run `fwupdmgr get-upgrades` for more information.
+
+
+19 обновлений может быть применено немедленно.
+17 из этих обновлений, являются стандартными обновлениями безопасности.
+Чтобы просмотреть дополнительные обновления выполните: apt list --upgradable
+
+
+1 device has a firmware upgrade available.
+Run `fwupdmgr get-upgrades` for more information.
+
+Last login: Fri Feb 10 21:20:12 2023 from 192.168.0.106
+leo_amv@leo:~$ sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring
+[sudo] пароль для leo_amv:
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Уже установлен пакет lsb-release самой новой версии (11.1.0ubuntu4).
+lsb-release помечен как установленный вручную.
+Уже установлен пакет ubuntu-keyring самой новой версии (2021.03.26).
+ubuntu-keyring помечен как установленный вручную.
+Уже установлен пакет ca-certificates самой новой версии (20211016ubuntu0.22.04.1).
+ca-certificates помечен как установленный вручную.
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  dkms libflashrom1 libftdi1-2 libllvm13
+Для их удаления используйте «sudo apt autoremove».
+Следующие НОВЫЕ пакеты будут установлены:
+  curl gnupg2
+Обновлено 0 пакетов, установлено 2 новых пакетов, для удаления отмечено 0 пакетов, и 24 пакетов не обновлено.
+Необходимо скачать 199 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 505 kB.
+Хотите продолжить? [Д/н] y
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 curl amd64 7.81.0-1ubuntu1.7 [193 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 gnupg2 all 2.2.27-3ubuntu2.1 [5 548 B]
+Получено 199 kB за 30с (6 548 B/s)
+Выбор ранее не выбранного пакета curl.
+(Чтение базы данных … на данный момент установлено 212568 файлов и каталогов.)
+Подготовка к распаковке …/curl_7.81.0-1ubuntu1.7_amd64.deb …
+Распаковывается curl (7.81.0-1ubuntu1.7) …
+Выбор ранее не выбранного пакета gnupg2.
+Подготовка к распаковке …/gnupg2_2.2.27-3ubuntu2.1_all.deb …
+Распаковывается gnupg2 (2.2.27-3ubuntu2.1) …
+Настраивается пакет gnupg2 (2.2.27-3ubuntu2.1) …
+Настраивается пакет curl (7.81.0-1ubuntu1.7) …
+Обрабатываются триггеры для man-db (2.10.2-1) …
+leo_amv@leo:~$ curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
+>     | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1561  100  1561    0     0   2393      0 --:--:-- --:--:-- --:--:--  2394
+leo_amv@leo:~$ curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor     | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1561  100  1561    0     0   3481      0 --:--:-- --:--:-- --:--:--  3476
+leo_amv@leo:~$ gpg --dry-run --quiet --no-keyring --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
+pub   rsa2048 2011-08-19 [SC] [годен до: 2024-06-14]
+      573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
+uid                      nginx signing key <signing-key@nginx.com>
+
+leo_amv@leo:~$ echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
+ginx.org> http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \
+>     | sudo tee /etc/apt/sources.list.d/nginx.list
+deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/ubuntu jammy nginx
+leo_amv@leo:~$ sudo apt update
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+Пол:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease [107 kB]
+Сущ:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Пол:5 http://nginx.org/packages/ubuntu jammy InRelease [3 584 B]
+Сущ:6 https://dl.google.com/linux/chrome/deb stable InRelease
+Пол:7 http://nginx.org/packages/ubuntu jammy/nginx amd64 Packages [10,3 kB]
+Получено 239 kB за 1с (247 kB/s)
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Может быть обновлено 24 пакета. Запустите «apt list --upgradable» для их показа.
+N: Пропускается получение настроенного файла «nginx/binary-i386/Packages», так как репозиторий «http://nginx.org/packages/ubuntu jammy InRelease» не поддерживает архитектуру «i386»
+leo_amv@leo:~$ sudo apt install nginx
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  dkms libflashrom1 libftdi1-2 libllvm13
+Для их удаления используйте «sudo apt autoremove».
+Следующие НОВЫЕ пакеты будут установлены:
+  nginx
+Обновлено 0 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 24 пакетов не обновлено.
+Необходимо скачать 1 004 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 3 259 kB.
+Пол:1 http://nginx.org/packages/ubuntu jammy/nginx amd64 nginx amd64 1.22.1-1~jammy [1 004 kB]
+Получено 1 004 kB за 1с (875 kB/s)
+Выбор ранее не выбранного пакета nginx.
+(Чтение базы данных … на данный момент установлен 212581 файл и каталог.)
+Подготовка к распаковке …/nginx_1.22.1-1~jammy_amd64.deb …
+----------------------------------------------------------------------
+
+Thanks for using nginx!
+
+Please find the official documentation for nginx here:
+* https://nginx.org/en/docs/
+
+Please subscribe to nginx-announce mailing list to get
+the most important news about nginx:
+* https://nginx.org/en/support.html
+
+Commercial subscriptions for nginx are available on:
+* https://nginx.com/products/
+
+----------------------------------------------------------------------
+Распаковывается nginx (1.22.1-1~jammy) …
+Настраивается пакет nginx (1.22.1-1~jammy) …
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib/systemd/system/nginx.service.
+Обрабатываются триггеры для man-db (2.10.2-1) …
+leo_amv@leo:~$ sudo apt update
+Сущ:1 http://nginx.org/packages/ubuntu jammy InRelease
+Сущ:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Сущ:3 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+Пол:4 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Сущ:5 https://dl.google.com/linux/chrome/deb stable InRelease
+Пол:6 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease [107 kB]
+Получено 226 kB за 2с (121 kB/s)
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Может быть обновлено 24 пакета. Запустите «apt list --upgradable» для их показа.
+N: Пропускается получение настроенного файла «nginx/binary-i386/Packages», так как репозиторий «http://nginx.org/packages/ubuntu jammy InRelease» не поддерживает архитектуру «i386»
+leo_amv@leo:~$ echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" \
+>     | sudo tee /etc/apt/preferences.d/99nginx
+Package: *
+Pin: origin nginx.org
+Pin: release o=nginx
+Pin-Priority: 900
+
+leo_amv@leo:~$ sudo apt update
+Сущ:1 http://nginx.org/packages/ubuntu jammy InRelease
+Сущ:2 https://dl.google.com/linux/chrome/deb stable InRelease
+Сущ:3 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Сущ:4 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+Пол:5 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease [107 kB]
+Получено 226 kB за 1с (191 kB/s)
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Может быть обновлено 24 пакета. Запустите «apt list --upgradable» для их показа.
+N: Пропускается получение настроенного файла «nginx/binary-i386/Packages», так как репозиторий «http://nginx.org/packages/ubuntu jammy InRelease» не поддерживает архитектуру «i386»
+leo_amv@leo:~$ dpkg show nginx
+dpkg: ошибка: укажите требуемое действие
+
+Справка по установке и удалению пакетов доступна по команде dpkg --help [*];
+Программа «apt» или «aptitude» предоставляет дружественный интерфейс
+управления пакетами;
+Чтобы получить список значений флагов отладки dpkg, введите dpkg -Dhelp;
+Чтобы получить информацию об игнорировании проблем, введите dpkg --force-help;
+Чтобы получить справку по работе с файлами *.deb, введите dpkg-deb --help;
+
+Команды, отмеченные [*], выводят большое количество информации.
+Объедините их в конвейер с программами «less» или «more»!
+leo_amv@leo:~$ dpkg --help
+Usage: dpkg [<option>...] <command>
+
+Commands:
+  -i|--install       <.deb file name>... | -R|--recursive <directory>...
+  --unpack           <.deb file name>... | -R|--recursive <directory>...
+  -A|--record-avail  <.deb file name>... | -R|--recursive <directory>...
+  --configure        <package>... | -a|--pending
+  --triggers-only    <package>... | -a|--pending
+  -r|--remove        <package>... | -a|--pending
+  -P|--purge         <package>... | -a|--pending
+  -V|--verify [<package>...]       Verify the integrity of package(s).
+  --get-selections [<pattern>...]  Get list of selections to stdout.
+  --set-selections                 Set package selections from stdin.
+  --clear-selections               Deselect every non-essential package.
+  --update-avail [<Packages-file>] Replace available packages info.
+  --merge-avail [<Packages-file>]  Merge with info from file.
+  --clear-avail                    Erase existing available info.
+  --forget-old-unavail             Forget uninstalled unavailable pkgs.
+  -s|--status [<package>...]       Display package status details.
+  -p|--print-avail [<package>...]  Display available version details.
+  -L|--listfiles <package>...      List files 'owned' by package(s).
+  -l|--list [<pattern>...]         List packages concisely.
+  -S|--search <pattern>...         Find package(s) owning file(s).
+  -C|--audit [<package>...]        Check for broken package(s).
+  --yet-to-unpack                  Print packages selected for installation.
+  --predep-package                 Print pre-dependencies to unpack.
+  --add-architecture <arch>        Add <arch> to the list of architectures.
+  --remove-architecture <arch>     Remove <arch> from the list of architectures.
+  --print-architecture             Print dpkg architecture.
+  --print-foreign-architectures    Print allowed foreign architectures.
+  --assert-help                    Show help on assertions.
+  --assert-<feature>               Assert support for the specified feature.
+  --validate-<thing> <string>      Validate a <thing>'s <string>.
+  --compare-versions <a> <op> <b>  Compare version numbers - see below.
+  --force-help                     Show help on forcing.
+  -Dh|--debug=help                 Show help on debugging.
+
+  -?, --help                          Вывести это сообщение
+  --version                           Вывести номер версии
+
+Validatable things: pkgname, archname, trigname, version.
+
+Use dpkg with -b, --build, -c, --contents, -e, --control, -I, --info,
+  -f, --field, -x, --extract, -X, --vextract, --ctrl-tarfile, --fsys-tarfile
+on archives (type dpkg-deb --help).
+
+Options:
+  --admindir=<directory>     Use <directory> instead of /var/lib/dpkg.
+  --root=<directory>         Install on a different root directory.
+  --instdir=<directory>      Change installation dir without changing admin dir.
+  --pre-invoke=<command>     Set a pre-invoke hook.
+  --post-invoke=<command>    Set a post-invoke hook.
+  --path-exclude=<pattern>   Do not install paths which match a shell pattern.
+  --path-include=<pattern>   Re-include a pattern after a previous exclusion.
+  -O|--selected-only         Skip packages not selected for install/upgrade.
+  -E|--skip-same-version     Skip packages whose same version is installed.
+  -G|--refuse-downgrade      Skip packages with earlier version than installed.
+  -B|--auto-deconfigure      Install even if it would break some other package.
+  --[no-]triggers            Skip or force consequential trigger processing.
+  --verify-format=<format>   Verify output format (supported: 'rpm').
+  --no-pager                 Disables the use of any pager.
+  --no-debsig                Do not try to verify package signatures.
+  --no-act|--dry-run|--simulate
+                             Just say what we would do - don't do it.
+  -D|--debug=<octal>         Enable debugging (see -Dhelp or --debug=help).
+  --status-fd <n>            Send status change updates to file descriptor <n>.
+  --status-logger=<command>  Send status change updates to <command>'s stdin.
+  --log=<filename>           Log status changes and actions to <filename>.
+  --ignore-depends=<package>[,...]
+                             Ignore dependencies involving <package>.
+  --force-<thing>[,...]      Override problems (see --force-help).
+  --no-force-<thing>[,...]   Stop when problems encountered.
+  --refuse-<thing>[,...]     Ditto.
+  --abort-after <n>          Abort after encountering <n> errors.
+  --robot                    Use machine-readable output on some commands.
+
+Операторы сравнения, возможные в --compare-versions:
+  lt le eq ne ge gt       (пустое значение версии считать самой ранней);
+  lt-nl le-nl ge-nl gt-nl (пустое значение версии считать самой поздней);
+  < << <= = >= >> >       (для совместимости с синтаксисом файла control).
+
+Программы «apt» или «aptitude» предоставляют дружественный интерфейс
+управления пакетами.
+leo_amv@leo:~$ dpkg -S nginx
+nginx: /usr/share/nginx/html
+nginx: /usr/share/man/man8/nginx.8.gz
+nginx: /etc/logrotate.d/nginx
+nginx: /var/cache/nginx
+nginx: /usr/share/doc/nginx/README
+nginx: /usr/sbin/nginx-debug
+nginx: /etc/default/nginx-debug
+nginx: /etc/nginx/mime.types
+nginx: /usr/share/doc/nginx
+nginx: /var/log/nginx
+vim-runtime: /usr/share/vim/vim82/ftplugin/nginx.vim
+nginx: /etc/nginx/scgi_params
+nginx: /usr/lib/nginx/modules
+nginx: /usr/share/nginx/html/50x.html
+nginx: /etc/nginx/uwsgi_params
+nginx: /lib/systemd/system/nginx.service
+nginx: /etc/nginx/conf.d
+nginx: /lib/systemd/system/nginx-debug.service
+nginx: /etc/init.d/nginx
+nginx: /etc/nginx/fastcgi_params
+nginx: /etc/nginx/modules
+nginx: /etc/default/nginx
+nginx: /usr/share/doc/nginx/changelog.gz
+nginx: /etc/init.d/nginx-debug
+nginx: /usr/share/nginx
+nginx: /usr/share/doc/nginx/copyright
+nginx: /usr/sbin/nginx
+nginx: /etc/nginx/conf.d/default.conf
+vim-runtime: /usr/share/vim/vim82/syntax/nginx.vim
+nginx: /usr/share/lintian/overrides/nginx
+vim-runtime: /usr/share/vim/vim82/indent/nginx.vim
+nginx: /usr/share/doc/nginx/changelog.Debian.gz
+nginx: /etc/nginx/nginx.conf
+nginx: /usr/lib/nginx
+nginx: /usr/share/nginx/html/index.html
+nginx: /etc/nginx
+nginx: /usr/share/doc/nginx/CHANGES.ru.gz
+leo_amv@leo:~$ dpkg -l nginx
+Желаемый=неизвестно[u]/установить[i]/удалить[r]/вычистить[p]/зафиксировать[h]
+| Состояние=не[n]/установлен[i]/настроен[c]/распакован[U]/частично настроен[F]/
+            частично установлен[H]/trig-aWait/Trig-pend
+|/ Ошибка?=(нет)/требуется переустановка[R] (верхний регистр
+в полях состояния и ошибки указывает на ненормальную ситуацию)
+||/ Имя            Версия         Архитектура  Описание
++++-==============-==============-============-=================================
+ii  nginx          1.22.1-1~jammy amd64        high performance web server
+leo_amv@leo:~$ dpkg -P nginx
+dpkg: ошибка: запрошенная операция требует привилегий суперпользователя
+leo_amv@leo:~$ sudo!!
+sudodpkg -P nginx
+sudodpkg: команда не найдена
+leo_amv@leo:~$ sudo dpkg -P nginx
+(Чтение базы данных … на данный момент установлено 212615 файлов и каталогов.)
+Удаляется nginx (1.22.1-1~jammy) …
+Вычищаются файлы настройки пакета nginx (1.22.1-1~jammy) …
+Обрабатываются триггеры для man-db (2.10.2-1) …
+leo_amv@leo:~$ snap --help
+The snap command lets you install, configure, refresh and remove snaps.
+Snaps are packages that work across many different Linux distributions,
+enabling secure delivery and operation of the latest apps and utilities.
+
+Использование: snap <команда> [<параметры>...]
+
+Commonly used commands can be classified as follows:
+
+        Основное: find, info, install, remove, list
+    ...подробнее: refresh, revert, switch, disable, enable, create-cohort
+         История: changes, tasks, abort, watch
+          Службы: services, start, stop, restart, logs
+      Разрешения: connections, interface, connect, disconnect
+    Конфигурация: get, set, unset, wait
+     App Aliases: alias, aliases, unalias, prefer
+  Учётная запись: login, logout, whoami
+       Snapshots: saved, save, check-snapshot, restore, forget
+      Устройство: model, reboot, recovery
+      Разработка: download, pack, run, try
+       ... Other: warnings, okay, known, ack, version
+
+Для получения дополнительных сведений о команде, выполните 'snap help <команда>'.
+Для показа краткой сводки по всем командам, выполните 'snap help --all'.
+leo_amv@leo:~$ snap list
+Название                   Версия            Правка  Канал            Издатель          Примечание
+bare                       1.0               5       latest/stable    canonical✓        base
+core18                     20230118          2679    latest/stable    canonical✓        base
+core20                     20230126          1822    latest/stable    canonical✓        base
+core22                     20230126          504     latest/stable    canonical✓        base
+gnome-3-38-2004            0+git.6f39565     119     latest/stable/…  canonical✓        -
+gtk-common-themes          0.1-81-g442e511   1535    latest/stable/…  canonical✓        -
+snap-store                 41.3-66-gfe1e325  638     latest/stable/…  canonical✓        -
+snapd                      2.58              17950   latest/stable    canonical✓        snapd
+snapd-desktop-integration  0.1               49      latest/stable/…  canonical✓        -
+telegram-desktop           4.6.2             4593    latest/stable    telegram.desktop  -
+vlc                        3.0.18            3078    latest/stable    videolan✓         -
+leo_amv@leo:~$ sudo snap install --classic code
+[sudo] пароль для leo_amv:
+code 441438ab от Visual Studio Code (vscode✓) установлен
+leo_amv@leo:~$ sudo snap list
+Название                   Версия            Правка  Канал            Издатель          Примечание
+bare                       1.0               5       latest/stable    canonical✓        base
+code                       441438ab          119     latest/stable    vscode✓           classic
+core                       16-2.58           14447   latest/stable    canonical✓        core
+core18                     20230118          2679    latest/stable    canonical✓        base
+core20                     20230126          1822    latest/stable    canonical✓        base
+core22                     20230126          504     latest/stable    canonical✓        base
+gnome-3-38-2004            0+git.6f39565     119     latest/stable/…  canonical✓        -
+gtk-common-themes          0.1-81-g442e511   1535    latest/stable/…  canonical✓        -
+snap-store                 41.3-66-gfe1e325  638     latest/stable/…  canonical✓        -
+snapd                      2.58              17950   latest/stable    canonical✓        snapd
+snapd-desktop-integration  0.1               49      latest/stable/…  canonical✓        -
+telegram-desktop           4.6.2             4593    latest/stable    telegram.desktop  -
+vlc                        3.0.18            3078    latest/stable    videolan✓         -
+leo_amv@leo:~$ crontab --help
+crontab: неверный ключ — «-»
+crontab: usage error: unrecognized option
+usage:  crontab [-u user] file
+        crontab [ -u user ] [ -i ] { -e | -l | -r }
+                (default operation is replace, per 1003.2)
+        -e      (edit user's crontab)
+        -l      (list user's crontab)
+        -r      (delete user's crontab)
+        -i      (prompt before deleting user's crontab)
+leo_amv@leo:~$ nano test.txt
+leo_amv@leo:~$ leo_amv@leo:~$ ls
+ shared   test.txt   Документы   Изображения   Общедоступные   Шаблоны
+ snap     Видео      Загрузки    Музыка       'Рабочий стол'
+leo_amv@leo:~$ crontab -l
+no crontab for leo_amv
+leo_amv@leo:~$ crontab -e
+no crontab for leo_amv - using an empty one
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.basic
+  3. /usr/bin/mcedit
+  4. /usr/bin/vim.tiny
+  5. /bin/ed
+
+Choose 1-5 [1]: 1
+crontab: installing new crontab
+crontab: installing new crontab
+leo_amv@leo:~$ crontab -l
+*/10 * * * * cat /home/leo_amv/test.txt > /home/leo_amv/test.txt.bak
+leo_amv@leo:~$ ls
+ shared   test.txt       Видео       Загрузки      Музыка         'Рабочий стол'
+ snap     test.txt.bak   Документы   Изображения   Общедоступные   Шаблоны
+leo_amv@leo:~$

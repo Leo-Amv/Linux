@@ -1,0 +1,85 @@
+Windows PowerShell
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Попробуйте новую кроссплатформенную оболочку PowerShell (https://aka.ms/pscore6)
+
+PS C:\Users\USER> ssh leo_amv@192.168.0.105
+leo_amv@192.168.0.105's password:
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+1 device has a firmware upgrade available.
+Run `fwupdmgr get-upgrades` for more information.
+
+
+4 обновления может быть применено немедленно.
+Чтобы просмотреть дополнительные обновления выполните: apt list --upgradable
+
+
+1 device has a firmware upgrade available.
+Run `fwupdmgr get-upgrades` for more information.
+
+Last login: Fri Jan 20 15:25:13 2023 from 192.168.0.106
+leo_amv@leo:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: enp2s0f0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether b8:88:e3:bc:5d:d0 brd ff:ff:ff:ff:ff:ff
+3: wlp3s0b1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether b8:76:3f:29:dc:95 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.105/24 brd 192.168.0.255 scope global dynamic noprefixroute wlp3s0b1
+       valid_lft 6623sec preferred_lft 6623sec
+    inet6 fe80::aaf2:d693:80ae:4386/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+leo_amv@leo:~$ sudo apt install mc
+[sudo] пароль для leo_amv:
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Уже установлен пакет mc самой новой версии (3:4.8.27-1).
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  dkms libflashrom1 libftdi1-2
+Для их удаления используйте «sudo apt autoremove».
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 7 пакетов не обновлено.
+leo_amv@leo:~$ hostnamectl
+ Static hostname: leo
+       Icon name: computer-laptop
+         Chassis: laptop
+      Machine ID: 8d9e2715bd9a4431accee231dbcd7546
+         Boot ID: 221ba2519c444f6c95121c47322a93ed
+Operating System: Ubuntu 22.04.1 LTS
+          Kernel: Linux 5.15.0-58-generic
+    Architecture: x86-64
+ Hardware Vendor: Packard Bell
+  Hardware Model: EasyNote TE11HC
+leo_amv@leo:~$ mc
+
+
+leo_amv@leo:~$ systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sat 2023-01-21 18:03:38 +05; 4min 44s ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 3304 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 3305 (sshd)
+      Tasks: 1 (limit: 4404)
+     Memory: 4.2M
+        CPU: 178ms
+     CGroup: /system.slice/ssh.service
+             └─3305 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+янв 21 18:03:38 leo systemd[1]: Starting OpenBSD Secure Shell server...
+янв 21 18:03:38 leo sshd[3305]: Server listening on 0.0.0.0 port 22.
+янв 21 18:03:38 leo sshd[3305]: Server listening on :: port 22.
+янв 21 18:03:38 leo systemd[1]: Started OpenBSD Secure Shell server.
+янв 21 18:03:56 leo sshd[3307]: Accepted password for leo_amv from 192.168.0.106 port 2407 ssh2
+янв 21 18:03:56 leo sshd[3307]: pam_unix(sshd:session): session opened for user leo_amv(uid=1000) by (uid=0)
+leo_amv@leo:~$

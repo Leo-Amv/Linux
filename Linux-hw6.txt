@@ -1,0 +1,423 @@
+leo_amv@leo:~$ sudo apt install apache
+[sudo] пароль для leo_amv: 
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Пакет apache недоступен, но упомянут в списке зависимостей другого
+пакета. Это может означать, что пакет отсутствует, устарел или
+доступен из источников, не упомянутых в sources.list
+
+E: Для пакета «apache» не найден кандидат на установку
+leo_amv@leo:~$ sudo apt install apache2
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Предлагаемые пакеты:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+Следующие НОВЫЕ пакеты будут установлены:
+  apache2
+Обновлено 0 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 8 пакетов не обновлено.
+Необходимо скачать 97,9 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 546 kB.
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2 amd64 2.4.52-1ubuntu4.3 [97,9 kB]
+Получено 97,9 kB за 10с (9 564 B/s)
+Выбор ранее не выбранного пакета apache2.
+(Чтение базы данных … на данный момент установлено 214229 файлов и каталогов.)
+Подготовка к распаковке …/apache2_2.4.52-1ubuntu4.3_amd64.deb …
+Распаковывается apache2 (2.4.52-1ubuntu4.3) …
+Настраивается пакет apache2 (2.4.52-1ubuntu4.3) …
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+
+Enabling conf charset. [###########################################################################...................................................
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 142.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+Обрабатываются триггеры для man-db (2.10.2-1) …
+Обрабатываются триггеры для ufw (0.36.1-4build1) …
+leo_amv@leo:~$ sudo systemctl status apache2
+× apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Tue 2023-02-21 20:23:03 +05; 43s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+        CPU: 42ms
+
+фев 21 20:23:03 leo apachectl[3646]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set th>
+фев 21 20:23:03 leo apachectl[3646]: (98)Address already in use: AH00072: make_sock: could not bind to address [::]:80
+фев 21 20:23:03 leo apachectl[3646]: (98)Address already in use: AH00072: make_sock: could not bind to address 0.0.0.0:80
+фев 21 20:23:03 leo apachectl[3646]: no listening sockets available, shutting down
+фев 21 20:23:03 leo apachectl[3646]: AH00015: Unable to open logs
+фев 21 20:23:03 leo apachectl[3632]: Action 'start' failed.
+фев 21 20:23:03 leo apachectl[3632]: The Apache error log may have more information.
+фев 21 20:23:03 leo systemd[1]: apache2.service: Control process exited, code=exited, status=1/FAILURE
+фев 21 20:23:03 leo systemd[1]: apache2.service: Failed with result 'exit-code'.
+фев 21 20:23:03 leo systemd[1]: Failed to start The Apache HTTP Server.
+...skipping...
+× apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Tue 2023-02-21 20:23:03 +05; 43s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+        CPU: 42ms
+
+фев 21 20:23:03 leo apachectl[3646]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set th>
+фев 21 20:23:03 leo apachectl[3646]: (98)Address already in use: AH00072: make_sock: could not bind to address [::]:80
+фев 21 20:23:03 leo apachectl[3646]: (98)Address already in use: AH00072: make_sock: could not bind to address 0.0.0.0:80
+фев 21 20:23:03 leo apachectl[3646]: no listening sockets available, shutting down
+фев 21 20:23:03 leo apachectl[3646]: AH00015: Unable to open logs
+фев 21 20:23:03 leo apachectl[3632]: Action 'start' failed.
+фев 21 20:23:03 leo apachectl[3632]: The Apache error log may have more information.
+фев 21 20:23:03 leo systemd[1]: apache2.service: Control process exited, code=exited, status=1/FAILURE
+фев 21 20:23:03 leo systemd[1]: apache2.service: Failed with result 'exit-code'.
+фев 21 20:23:03 leo systemd[1]: Failed to start The Apache HTTP Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+leo_amv@leo:~$ sudo ss -ntlp
+State    Recv-Q   Send-Q     Local Address:Port     Peer Address:Port  Process                                                                        
+LISTEN   0        50               0.0.0.0:139           0.0.0.0:*      users:(("smbd",pid=1060,fd=47))                                               
+LISTEN   0        128              0.0.0.0:22            0.0.0.0:*      users:(("sshd",pid=846,fd=3))                                                 
+LISTEN   0        128            127.0.0.1:631           0.0.0.0:*      users:(("cupsd",pid=790,fd=7))                                                
+LISTEN   0        511              0.0.0.0:80            0.0.0.0:*      users:(("nginx",pid=901,fd=6),("nginx",pid=900,fd=6),("nginx",pid=899,fd=6))  
+LISTEN   0        50               0.0.0.0:445           0.0.0.0:*      users:(("smbd",pid=1060,fd=46))                                               
+LISTEN   0        4096       127.0.0.53%lo:53            0.0.0.0:*      users:(("systemd-resolve",pid=601,fd=14))                                     
+LISTEN   0        128                [::1]:631              [::]:*      users:(("cupsd",pid=790,fd=6))                                                
+LISTEN   0        50                  [::]:139              [::]:*      users:(("smbd",pid=1060,fd=45))                                               
+LISTEN   0        128                 [::]:22               [::]:*      users:(("sshd",pid=846,fd=4))                                                 
+LISTEN   0        511                 [::]:80               [::]:*      users:(("nginx",pid=901,fd=7),("nginx",pid=900,fd=7),("nginx",pid=899,fd=7))  
+LISTEN   0        50                  [::]:445              [::]:*      users:(("smbd",pid=1060,fd=44))                                               
+leo_amv@leo:~$ sudo apachectl -t
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Syntax OK
+leo_amv@leo:~$ ll /etc/apache2
+итого 96
+drwxr-xr-x   8 root root  4096 фев 21 20:22 ./
+drwxr-xr-x 135 root root 12288 фев 20 19:56 ../
+-rw-r--r--   1 root root  7224 янв 23 23:34 apache2.conf
+drwxr-xr-x   2 root root  4096 фев 21 20:22 conf-available/
+drwxr-xr-x   2 root root  4096 фев 21 20:23 conf-enabled/
+-rw-r--r--   1 root root  1782 сен  8 08:07 envvars
+-rw-r--r--   1 root root 31063 сен  8 08:07 magic
+drwxr-xr-x   2 root root 12288 фев 21 20:22 mods-available/
+drwxr-xr-x   2 root root  4096 фев 21 20:23 mods-enabled/
+-rw-r--r--   1 root root   320 сен  8 08:07 ports.conf
+drwxr-xr-x   2 root root  4096 фев 21 20:22 sites-available/
+drwxr-xr-x   2 root root  4096 фев 21 20:23 sites-enabled/
+leo_amv@leo:~$ sudo nano /etc/apache2/apache2.conf
+leo_amv@leo:~$ sudo nano /etc/apache2/ports.conf
+leo_amv@leo:~$ sudo apachectl -t
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Syntax OK
+leo_amv@leo:~$ sudo systemctl status apache2
+× apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Tue 2023-02-21 20:23:03 +05; 5min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+        CPU: 42ms
+
+фев 21 20:23:03 leo apachectl[3646]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set th>
+фев 21 20:23:03 leo apachectl[3646]: (98)Address already in use: AH00072: make_sock: could not bind to address [::]:80
+фев 21 20:23:03 leo apachectl[3646]: (98)Address already in use: AH00072: make_sock: could not bind to address 0.0.0.0:80
+фев 21 20:23:03 leo apachectl[3646]: no listening sockets available, shutting down
+фев 21 20:23:03 leo apachectl[3646]: AH00015: Unable to open logs
+фев 21 20:23:03 leo apachectl[3632]: Action 'start' failed.
+фев 21 20:23:03 leo apachectl[3632]: The Apache error log may have more information.
+фев 21 20:23:03 leo systemd[1]: apache2.service: Control process exited, code=exited, status=1/FAILURE
+фев 21 20:23:03 leo systemd[1]: apache2.service: Failed with result 'exit-code'.
+фев 21 20:23:03 leo systemd[1]: Failed to start The Apache HTTP Server.
+leo_amv@leo:~$ sudo systemctl start apache2
+leo_amv@leo:~$ sudo systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-02-21 20:28:43 +05; 2s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 3944 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 3948 (apache2)
+      Tasks: 55 (limit: 4396)
+     Memory: 4.8M
+        CPU: 46ms
+     CGroup: /system.slice/apache2.service
+             ├─3948 /usr/sbin/apache2 -k start
+             ├─3949 /usr/sbin/apache2 -k start
+             └─3950 /usr/sbin/apache2 -k start
+
+фев 21 20:28:43 leo systemd[1]: Starting The Apache HTTP Server...
+фев 21 20:28:43 leo systemd[1]: Started The Apache HTTP Server.
+фев 21 20:28:43 leo apachectl[3947]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set th>
+leo_amv@leo:~$ sudo nano /etc/apache2/sites-enabled/000-default.conf
+leo_amv@leo:~$ sudo systemctl restart apache2
+leo_amv@leo:~$ sudo systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-02-21 20:31:21 +05; 2s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 4030 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 4034 (apache2)
+      Tasks: 55 (limit: 4396)
+     Memory: 4.8M
+        CPU: 44ms
+     CGroup: /system.slice/apache2.service
+             ├─4034 /usr/sbin/apache2 -k start
+             ├─4035 /usr/sbin/apache2 -k start
+             └─4036 /usr/sbin/apache2 -k start
+
+фев 21 20:31:21 leo systemd[1]: Starting The Apache HTTP Server...
+фев 21 20:31:21 leo apachectl[4033]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set th>
+фев 21 20:31:21 leo systemd[1]: Started The Apache HTTP Server.
+leo_amv@leo:~$ sudo ss -ntlp
+State    Recv-Q   Send-Q     Local Address:Port     Peer Address:Port  Process                                                                        
+LISTEN   0        50               0.0.0.0:139           0.0.0.0:*      users:(("smbd",pid=1060,fd=47))                                               
+LISTEN   0        128              0.0.0.0:22            0.0.0.0:*      users:(("sshd",pid=846,fd=3))                                                 
+LISTEN   0        128            127.0.0.1:631           0.0.0.0:*      users:(("cupsd",pid=790,fd=7))                                                
+LISTEN   0        511              0.0.0.0:80            0.0.0.0:*      users:(("nginx",pid=901,fd=6),("nginx",pid=900,fd=6),("nginx",pid=899,fd=6))  
+LISTEN   0        50               0.0.0.0:445           0.0.0.0:*      users:(("smbd",pid=1060,fd=46))                                               
+LISTEN   0        4096       127.0.0.53%lo:53            0.0.0.0:*      users:(("systemd-resolve",pid=601,fd=14))                                     
+LISTEN   0        128                [::1]:631              [::]:*      users:(("cupsd",pid=790,fd=6))                                                
+LISTEN   0        50                  [::]:139              [::]:*      users:(("smbd",pid=1060,fd=45))                                               
+LISTEN   0        128                 [::]:22               [::]:*      users:(("sshd",pid=846,fd=4))                                                 
+LISTEN   0        511                 [::]:80               [::]:*      users:(("nginx",pid=901,fd=7),("nginx",pid=900,fd=7),("nginx",pid=899,fd=7))  
+LISTEN   0        50                  [::]:445              [::]:*      users:(("smbd",pid=1060,fd=44))                                               
+LISTEN   0        511                    *:8080                *:*      users:(("apache2",pid=4036,fd=4),("apache2",pid=4035,fd=4),("apache2",pid=4034,fd=4))
+leo_amv@leo:~$ sudo nano /etc/nginx/sites-enabled/default
+leo_amv@leo:~$ nginx -t
+nginx: [alert] could not open error log file: open() "/var/log/nginx/error.log" failed (13: Permission denied)
+2023/02/21 20:40:08 [warn] 4185#4185: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:1
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+2023/02/21 20:40:08 [emerg] 4185#4185: open() "/run/nginx.pid" failed (13: Permission denied)
+nginx: configuration file /etc/nginx/nginx.conf test failed
+leo_amv@leo:~$ sudo !!
+sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+leo_amv@leo:~$ sudo systemctl restart nginx
+leo_amv@leo:~$ sudo systemctl status nginx
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-02-21 20:41:59 +05; 14s ago
+       Docs: man:nginx(8)
+    Process: 4203 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Process: 4204 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 4205 (nginx)
+      Tasks: 3 (limit: 4396)
+     Memory: 3.3M
+        CPU: 44ms
+     CGroup: /system.slice/nginx.service
+             ├─4205 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─4206 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+             └─4207 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+
+фев 21 20:41:59 leo systemd[1]: Starting A high performance web server and a reverse proxy server...
+фев 21 20:41:59 leo systemd[1]: Started A high performance web server and a reverse proxy server.
+leo_amv@leo:~$ ss -ntlp
+State            Recv-Q           Send-Q                       Local Address:Port                       Peer Address:Port           Process           
+LISTEN           0                50                                 0.0.0.0:139                             0.0.0.0:*                                
+LISTEN           0                128                                0.0.0.0:22                              0.0.0.0:*                                
+LISTEN           0                128                              127.0.0.1:631                             0.0.0.0:*                                
+LISTEN           0                511                                0.0.0.0:80                              0.0.0.0:*                                
+LISTEN           0                50                                 0.0.0.0:445                             0.0.0.0:*                                
+LISTEN           0                4096                         127.0.0.53%lo:53                              0.0.0.0:*                                
+LISTEN           0                128                                  [::1]:631                                [::]:*                                
+LISTEN           0                50                                    [::]:139                                [::]:*                                
+LISTEN           0                128                                   [::]:22                                 [::]:*                                
+LISTEN           0                511                                   [::]:80                                 [::]:*                                
+LISTEN           0                50                                    [::]:445                                [::]:*                                
+LISTEN           0                511                                      *:8080                                  *:*                                
+leo_amv@leo:~$ sudo !!
+sudo ss -ntlp
+State   Recv-Q  Send-Q    Local Address:Port     Peer Address:Port  Process                                                                           
+LISTEN  0       50              0.0.0.0:139           0.0.0.0:*      users:(("smbd",pid=1060,fd=47))                                                  
+LISTEN  0       128             0.0.0.0:22            0.0.0.0:*      users:(("sshd",pid=846,fd=3))                                                    
+LISTEN  0       128           127.0.0.1:631           0.0.0.0:*      users:(("cupsd",pid=790,fd=7))                                                   
+LISTEN  0       511             0.0.0.0:80            0.0.0.0:*      users:(("nginx",pid=4207,fd=6),("nginx",pid=4206,fd=6),("nginx",pid=4205,fd=6))  
+LISTEN  0       50              0.0.0.0:445           0.0.0.0:*      users:(("smbd",pid=1060,fd=46))                                                  
+LISTEN  0       4096      127.0.0.53%lo:53            0.0.0.0:*      users:(("systemd-resolve",pid=601,fd=14))                                        
+LISTEN  0       128               [::1]:631              [::]:*      users:(("cupsd",pid=790,fd=6))                                                   
+LISTEN  0       50                 [::]:139              [::]:*      users:(("smbd",pid=1060,fd=45))                                                  
+LISTEN  0       128                [::]:22               [::]:*      users:(("sshd",pid=846,fd=4))                                                    
+LISTEN  0       511                [::]:80               [::]:*      users:(("nginx",pid=4207,fd=7),("nginx",pid=4206,fd=7),("nginx",pid=4205,fd=7))  
+LISTEN  0       50                 [::]:445              [::]:*      users:(("smbd",pid=1060,fd=44))                                                  
+LISTEN  0       511                   *:8080                *:*      users:(("apache2",pid=4036,fd=4),("apache2",pid=4035,fd=4),("apache2",pid=4034,fd=4))
+leo_amv@leo:~$ sudo apt install libapache2-mod-php8.1 php8.1 -y
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Уже установлен пакет libapache2-mod-php8.1 самой новой версии (8.1.2-1ubuntu2.10).
+Уже установлен пакет php8.1 самой новой версии (8.1.2-1ubuntu2.10).
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 8 пакетов не обновлено.
+leo_amv@leo:~$ sudo nano /var/www/html/info.php
+leo_amv@leo:~$ sudo cat /var/www/html/info.php
+<?php
+phpinfo();
+?>
+leo_amv@leo:~$ sudo systemctl restart apache2
+leo_amv@leo:~$ sudo systemctl restart nginx
+leo_amv@leo:~$ sudo apt install php-fpm
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Будут установлены следующие дополнительные пакеты:
+  php8.1-fpm
+Предлагаемые пакеты:
+  php-pear
+Следующие НОВЫЕ пакеты будут установлены:
+  php-fpm php8.1-fpm
+Обновлено 0 пакетов, установлено 2 новых пакетов, для удаления отмечено 0 пакетов, и 8 пакетов не обновлено.
+Необходимо скачать 1 843 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 5 634 kB.
+Хотите продолжить? [Д/н] y
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 php8.1-fpm amd64 8.1.2-1ubuntu2.10 [1 840 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 php-fpm all 2:8.1+92ubuntu1 [2 838 B]
+Получено 1 843 kB за 1с (1 826 kB/s)    
+Выбор ранее не выбранного пакета php8.1-fpm.
+(Чтение базы данных … на данный момент установлено 214443 файла и каталога.)
+Подготовка к распаковке …/php8.1-fpm_8.1.2-1ubuntu2.10_amd64.deb …
+Распаковывается php8.1-fpm (8.1.2-1ubuntu2.10) …
+Выбор ранее не выбранного пакета php-fpm.
+Подготовка к распаковке …/php-fpm_2%3a8.1+92ubuntu1_all.deb …
+Распаковывается php-fpm (2:8.1+92ubuntu1) …
+Настраивается пакет php8.1-fpm (8.1.2-1ubuntu2.10) …
+
+Creating config file /etc/php/8.1/fpm/php.ini with new version
+NOTICE: Not enabling PHP 8.1 FPM by default.
+NOTICE: To enable PHP 8.1 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php8.1-fpm
+NOTICE: You are seeing this message because you have apache2 package installed.
+Created symlink /etc/systemd/system/multi-user.target.wants/php8.1-fpm.service → /lib/systemd/system/php8.1-fpm.service.
+Настраивается пакет php-fpm (2:8.1+92ubuntu1) …
+Обрабатываются триггеры для man-db (2.10.2-1) …
+Обрабатываются триггеры для php8.1-fpm (8.1.2-1ubuntu2.10) …
+NOTICE: Not enabling PHP 8.1 FPM by default.
+NOTICE: To enable PHP 8.1 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php8.1-fpm
+NOTICE: You are seeing this message because you have apache2 package installed.
+leo_amv@leo:~$ sudo ll /etc/php/8.1
+sudo: ll: команда не найдена
+leo_amv@leo:~$ ll /etc/php/8.1
+итого 24
+drwxr-xr-x 6 root root 4096 фев 21 21:01 ./
+drwxr-xr-x 3 root root 4096 фев 19 22:28 ../
+drwxr-xr-x 3 root root 4096 фев 19 22:28 apache2/
+drwxr-xr-x 3 root root 4096 фев 19 22:28 cli/
+drwxr-xr-x 4 root root 4096 фев 21 21:01 fpm/
+drwxr-xr-x 2 root root 4096 фев 19 22:28 mods-available/
+leo_amv@leo:~$ sudo nano /etc/php/8.1/fpm/pool.d/www.conf
+leo_amv@leo:~$ sudo nano /etc/nginx/sites-enabled/default
+leo_amv@leo:~$ sudo nginx -t
+[sudo] пароль для leo_amv: 
+nginx: [emerg] invalid number of arguments in "fastcgi_pass" directive in /etc/nginx/sites-enabled/default:53
+nginx: configuration file /etc/nginx/nginx.conf test failed
+leo_amv@leo:~$ sudo nginx -t
+nginx: [emerg] invalid number of arguments in "fastcgi_pass" directive in /etc/nginx/sites-enabled/default:53
+nginx: configuration file /etc/nginx/nginx.conf test failed
+leo_amv@leo:~$ sudo nano /etc/nginx/sites-enabled/default
+leo_amv@leo:~$ sudo systemctl status nginx
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor p>
+     Active: active (running) since Tue 2023-02-21 21:48:01 +05; 51s ago
+       Docs: man:nginx(8)
+    Process: 8730 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master>
+    Process: 8731 ExecStart=/usr/sbin/nginx -g daemon on; master_process >
+   Main PID: 8732 (nginx)
+      Tasks: 3 (limit: 4396)
+     Memory: 3.3M
+        CPU: 41ms
+     CGroup: /system.slice/nginx.service
+             ├─8732 "nginx: master process /usr/sbin/nginx -g daemon on; >
+             ├─8733 "nginx: worker process" "" "" "" "" "" "" "" "" "" "">
+             └─8734 "nginx: worker process" "" "" "" "" "" "" "" "" "" "">
+
+фев 21 21:48:01 leo systemd[1]: Starting A high performance web server an>
+фев 21 21:48:01 leo systemd[1]: Started A high performance web server and>
+leo_amv@leo:~$ sudo systemctl status php
+Unit php.service could not be found.
+leo_amv@leo:~$ sudo systemctl status php*
+● php8.1-fpm.service - The PHP 8.1 FastCGI Process Manager
+     Loaded: loaded (/lib/systemd/system/php8.1-fpm.service; enabled; ven>
+     Active: active (running) since Tue 2023-02-21 21:02:05 +05; 47min ago
+       Docs: man:php-fpm8.1(8)
+    Process: 5511 ExecStartPost=/usr/lib/php/php-fpm-socket-helper instal>
+   Main PID: 5508 (php-fpm8.1)
+     Status: "Processes active: 0, idle: 2, Requests: 0, slow: 0, Traffic>
+      Tasks: 3 (limit: 4396)
+     Memory: 7.1M
+        CPU: 207ms
+     CGroup: /system.slice/php8.1-fpm.service
+             ├─5508 "php-fpm: master process (/etc/php/8.1/fpm/php-fpm.co>
+             ├─5509 "php-fpm: pool www" "" "" "" "" "" "" "" "" "" "" "" >
+             └─5510 "php-fpm: pool www" "" "" "" "" "" "" "" "" "" "" "" >
+
+фев 21 21:02:05 leo systemd[1]: Starting The PHP 8.1 FastCGI Process Mana>
+фев 21 21:02:05 leo systemd[1]: Started The PHP 8.1 FastCGI Process Manag>
+
+● phpsessionclean.timer - Clean PHP session files every 30 mins
+     Loaded: loaded (/lib/systemd/system/phpsessionclean.timer; enabled; >
+     Active: active (waiting) since Tue 2023-02-21 19:53:38 +05; 1h 55min>
+    Trigger: Tue 2023-02-21 22:09:00 +05; 19min left
+   Triggers: ● phpsessionclean.service
+
+фев 21 19:53:38 leo systemd[1]: Started Clean PHP session files every 30 >
+leo_amv@leo:~$ sudo nano /etc/nginx/sites-enabled/default
+leo_amv@leo:~$ sudo systemctl reload nginx
+leo_amv@leo:~$ sudo systemctl status nginx
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-02-21 21:48:01 +05; 6min ago
+       Docs: man:nginx(8)
+    Process: 8730 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Process: 8731 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Process: 8808 ExecReload=/usr/sbin/nginx -g daemon on; master_process on; -s reload (code=exited, status=0/SUCCESS)
+   Main PID: 8732 (nginx)
+      Tasks: 3 (limit: 4396)
+     Memory: 3.5M
+        CPU: 76ms
+     CGroup: /system.slice/nginx.service
+             ├─8732 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─8809 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+             └─8810 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+
+фев 21 21:48:01 leo systemd[1]: Starting A high performance web server and a reverse proxy server...
+фев 21 21:48:01 leo systemd[1]: Started A high performance web server and a reverse proxy server.
+фев 21 21:54:31 leo systemd[1]: Reloading A high performance web server and a reverse proxy server...
+фев 21 21:54:31 leo systemd[1]: Reloaded A high performance web server and a reverse proxy server.
+

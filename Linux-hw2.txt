@@ -1,0 +1,412 @@
+Windows PowerShell
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Попробуйте новую кроссплатформенную оболочку PowerShell (https://aka.ms/pscore6)
+
+PS C:\Users\USER> ssh leo_amv@192.168.0.104
+leo_amv@192.168.0.104's password:
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+1 device has a firmware upgrade available.
+Run `fwupdmgr get-upgrades` for more information.
+
+
+4 обновления может быть применено немедленно.
+4 из этих обновлений, являются стандартными обновлениями безопасности.
+Чтобы просмотреть дополнительные обновления выполните: apt list --upgradable
+
+
+1 device has a firmware upgrade available.
+Run `fwupdmgr get-upgrades` for more information.
+
+Last login: Wed Jan 25 13:14:34 2023 from 192.168.0.106
+leo_amv@leo:~$ mkdir students
+leo_amv@leo:~$ ll
+итого 112
+drwxr-x--- 22 leo_amv leo_amv 4096 янв 25 20:26  ./
+drwxr-xr-x  3 root    root    4096 янв 18 03:05  ../
+-rw-------  1 leo_amv leo_amv 1121 янв 25 13:14  .bash_history
+-rw-r--r--  1 leo_amv leo_amv  220 янв 18 03:05  .bash_logout
+-rw-r--r--  1 leo_amv leo_amv 3771 янв 18 03:05  .bashrc
+drwx------ 19 leo_amv leo_amv 4096 янв 21 21:29  .cache/
+drwx------ 19 leo_amv leo_amv 4096 янв 25 14:17  .config/
+drwx------  2 leo_amv leo_amv 4096 янв 20 15:48  .gnupg/
+-rw-------  1 leo_amv leo_amv   20 янв 21 18:11  .lesshst
+drwx------  3 leo_amv leo_amv 4096 янв 18 03:25  .local/
+drwx------  3 leo_amv leo_amv 4096 янв 20 15:33  .mozilla/
+drwx------  3 leo_amv leo_amv 4096 янв 18 05:51  .pki/
+-rw-r--r--  1 leo_amv leo_amv  807 янв 18 03:05  .profile
+drwxrwxrwx  2 leo_amv leo_amv 4096 янв 20 15:26  shared/
+drwx------  6 leo_amv leo_amv 4096 янв 18 21:28  snap/
+drwx------  2 leo_amv leo_amv 4096 янв 18 05:36  .ssh/
+drwxrwxr-x  2 leo_amv leo_amv 4096 янв 25 20:26  students/
+-rw-r--r--  1 leo_amv leo_amv    0 янв 18 03:48  .sudo_as_admin_successful
+drwxrwxr-x  3 leo_amv leo_amv 4096 янв 24 21:05  test3/
+drwx------  6 leo_amv leo_amv 4096 янв 20 15:33  .thunderbird/
+-rw-------  1 leo_amv leo_amv 3800 янв 24 21:20  .viminfo
+drwxr-xr-x  2 leo_amv leo_amv 4096 янв 18 03:25  Видео/
+drwxr-xr-x  2 leo_amv leo_amv 4096 янв 18 03:25  Документы/
+drwxr-xr-x  2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки/
+drwxr-xr-x  2 leo_amv leo_amv 4096 янв 18 03:25  Изображения/
+drwxr-xr-x  2 leo_amv leo_amv 4096 янв 18 03:25  Музыка/
+drwxr-xr-x  2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные/
+drwxr-xr-x  2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'/
+drwxr-xr-x  2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны/
+leo_amv@leo:~$ mkdir mentors
+leo_amv@leo:~$ ls -f
+ .profile        Загрузки        .local                      .cache         .lesshst       .bashrc
+'Рабочий стол'   students        .sudo_as_admin_successful   Изображения    mentors        .ssh
+ snap            Видео           .pki                        ..             .bash_logout   Шаблоны
+ .gnupg          .mozilla        Музыка                      .thunderbird   test3          .config
+ .               Общедоступные   shared                      .viminfo       Документы      .bash_history
+leo_amv@leo:~$ cd students
+leo_amv@leo:~/students$ touch students_list.txt
+leo_amv@leo:~/students$ ls
+students_list.txt
+leo_amv@leo:~/students$ cd /home/mentors
+-bash: cd: /home/mentors: Нет такого файла или каталога
+leo_amv@leo:~/students$ cd /home/leo_amv/mentors
+leo_amv@leo:~/mentors$ touch mentors_list.txt
+leo_amv@leo:~/mentors$ ls -f
+.  ..  mentors_list.txt
+leo_amv@leo:~/mentors$ cd ..
+leo_amv@leo:~$ ls -f
+ .profile        Загрузки        .local                      .cache         .lesshst       .bashrc
+'Рабочий стол'   students        .sudo_as_admin_successful   Изображения    mentors        .ssh
+ snap            Видео           .pki                        ..             .bash_logout   Шаблоны
+ .gnupg          .mozilla        Музыка                      .thunderbird   test3          .config
+ .               Общедоступные   shared                      .viminfo       Документы      .bash_history
+leo_amv@leo:~$ vim students_list.txt
+leo_amv@leo:~$ leo_amv@leo:~$ vim mentors_list.txt
+leo_amv@leo:~$ cat students_list.txt
+Sasha Milelovich
+Yana Sarvarova
+Marina Chernih
+Artur Gikramin
+Арсений Клепиков
+Никита Войтицкий
+Елена Слесарева<F8>
+leo_amv@leo:~$ cat mentors_list.txt
+There are no mentors on this course.
+leo_amv@leo:~$ vim students_list.txt
+leo_amv@leo:~$ cat students_list.txt
+Sasha Milelovich
+Yana Sarvarova
+Marina Chernih
+Artur Gikramin
+Арсений Клепиков
+Никита Войтицкий
+Елена Слесарева
+leo_amv@leo:~$ mv mentors_list.txt students
+leo_amv@leo:~$ cd students
+leo_amv@leo:~/students$ ls -l
+итого 4
+-rw-rw-r-- 1 leo_amv leo_amv 37 янв 25 21:16 mentors_list.txt
+-rw-rw-r-- 1 leo_amv leo_amv  0 янв 25 20:29 students_list.txt
+leo_amv@leo:~/students$ cd ..
+leo_amv@leo:~$ ls -l
+итого 56
+drwxrwxr-x 2 leo_amv leo_amv 4096 янв 25 20:31  mentors
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 2 leo_amv leo_amv 4096 янв 25 21:20  students
+-rw-rw-r-- 1 leo_amv leo_amv  156 янв 25 21:18  students_list.txt
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ rm -r /home/leo_amv/mentors
+leo_amv@leo:~$ ls -l
+итого 52
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 2 leo_amv leo_amv 4096 янв 25 21:20  students
+-rw-rw-r-- 1 leo_amv leo_amv  156 янв 25 21:18  students_list.txt
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ mv student_list.txt students/
+mv: не удалось выполнить stat для 'student_list.txt': Нет такого файла или каталога
+leo_amv@leo:~$ mv student_list.txt /home/leo_amv/students
+mv: не удалось выполнить stat для 'student_list.txt': Нет такого файла или каталога
+leo_amv@leo:~$ mv students_list.txt /home/leo_amv/students
+leo_amv@leo:~$ ls -l
+итого 48
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 2 leo_amv leo_amv 4096 янв 25 21:24  students
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ cd students
+leo_amv@leo:~/students$ ls -l
+итого 8
+-rw-rw-r-- 1 leo_amv leo_amv  37 янв 25 21:16 mentors_list.txt
+-rw-rw-r-- 1 leo_amv leo_amv 156 янв 25 21:18 students_list.txt
+leo_amv@leo:~/students$ cd ..
+leo_amv@leo:~$ ls -l
+итого 48
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 2 leo_amv leo_amv 4096 янв 25 21:24  students
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ mv students students_and_mentors
+leo_amv@leo:~$ ls -l
+итого 48
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 2 leo_amv leo_amv 4096 янв 25 21:24  students_and_mentors
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ rm -r students_and_mentors
+leo_amv@leo:~$ ls -l
+итого 44
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ cat > file1
+asdasqwerqwefe
+asdasdfewq
+12341
+
+leo_amv@leo:~$ cp file1 file2
+leo_amv@leo:~$ ls -l
+итого 52
+-rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:31  file1
+-rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ ln file1 file3
+leo_amv@leo:~$ ls -l
+итого 56
+-rw-rw-r-- 2 leo_amv leo_amv   33 янв 25 21:31  file1
+-rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+-rw-rw-r-- 2 leo_amv leo_amv   33 янв 25 21:31  file3
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ ls -il
+итого 56
+8258657 -rw-rw-r-- 2 leo_amv leo_amv   33 янв 25 21:31  file1
+8258705 -rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+8258657 -rw-rw-r-- 2 leo_amv leo_amv   33 янв 25 21:31  file3
+8394898 drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+8257548 drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+8394889 drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+8260304 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+8260300 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+8260163 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+8260303 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+8260301 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+8260166 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+8260162 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+8260165 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ rm file3
+leo_amv@leo:~$ ls -l
+итого 52
+-rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:31  file1
+-rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ ln -s file1 file3
+leo_amv@leo:~$ ls -l
+итого 52
+-rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:31  file1
+-rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+lrwxrwxrwx 1 leo_amv leo_amv    5 янв 25 21:40  file3 -> file1
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ ln file1 file4
+leo_amv@leo:~$ ls -il
+итого 56
+8258657 -rw-rw-r-- 2 leo_amv leo_amv   33 янв 25 21:31  file1
+8258705 -rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+8258714 lrwxrwxrwx 1 leo_amv leo_amv    5 янв 25 21:40  file3 -> file1
+8258657 -rw-rw-r-- 2 leo_amv leo_amv   33 янв 25 21:31  file4
+8394898 drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+8257548 drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+8394889 drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+8260304 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+8260300 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+8260163 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+8260303 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+8260301 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+8260166 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+8260162 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+8260165 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ rm file1
+leo_amv@leo:~$ ls -il
+итого 52
+8258705 -rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+8258714 lrwxrwxrwx 1 leo_amv leo_amv    5 янв 25 21:40  file3 -> file1
+8258657 -rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:31  file4
+8394898 drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+8257548 drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+8394889 drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+8260304 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+8260300 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+8260163 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+8260303 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+8260301 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+8260166 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+8260162 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+8260165 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ cat file3
+cat: file3: Нет такого файла или каталога
+leo_amv@leo:~$ rm file3
+leo_amv@leo:~$ mv file4 hardlink
+leo_amv@leo:~$ ls -il
+итого 52
+8258705 -rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+8258657 -rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:31  hardlink
+8394898 drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+8257548 drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+8394889 drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+8260304 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+8260300 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+8260163 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+8260303 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+8260301 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+8260166 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+8260162 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+8260165 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ ln -s file2 softlink
+leo_amv@leo:~$ ls -il
+итого 52
+8258705 -rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+8258657 -rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:31  hardlink
+8394898 drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+8257548 drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+8258703 lrwxrwxrwx 1 leo_amv leo_amv    5 янв 25 21:46  softlink -> file2
+8394889 drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+8260304 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+8260300 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+8260163 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+8260303 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+8260301 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+8260166 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+8260162 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+8260165 drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ mkdir links
+leo_amv@leo:~$ ls -l
+итого 56
+-rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+-rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:31  hardlink
+drwxrwxr-x 2 leo_amv leo_amv 4096 янв 25 21:47  links
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+lrwxrwxrwx 1 leo_amv leo_amv    5 янв 25 21:46  softlink -> file2
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ mv softlink links
+leo_amv@leo:~$ mv hardlink links
+leo_amv@leo:~$ ls -l
+итого 52
+-rw-rw-r-- 1 leo_amv leo_amv   33 янв 25 21:32  file2
+drwxrwxr-x 2 leo_amv leo_amv 4096 янв 25 21:49  links
+drwxrwxrwx 2 leo_amv leo_amv 4096 янв 20 15:26  shared
+drwx------ 6 leo_amv leo_amv 4096 янв 18 21:28  snap
+drwxrwxr-x 3 leo_amv leo_amv 4096 янв 24 21:05  test3
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Видео
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Документы
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 05:00  Загрузки
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Изображения
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Музыка
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 20 16:05  Общедоступные
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 06:00 'Рабочий стол'
+drwxr-xr-x 2 leo_amv leo_amv 4096 янв 18 03:25  Шаблоны
+leo_amv@leo:~$ cd links
+leo_amv@leo:~/links$ ls -l
+итого 4
+-rw-rw-r-- 1 leo_amv leo_amv 33 янв 25 21:31 hardlink
+lrwxrwxrwx 1 leo_amv leo_amv  5 янв 25 21:46 softlink -> file2
+leo_amv@leo:~/links$ cat softlink
+cat: softlink: Нет такого файла или каталога
+leo_amv@leo:~/links$ cd ..
+leo_amv@leo:~$

@@ -1,0 +1,1317 @@
+leo_amv@leo:~$ docker --help
+Команда «docker» не найдена, но может быть установлена с помощью:
+sudo snap install docker         # version 20.10.17, or
+sudo apt  install docker.io      # version 20.10.12-0ubuntu4
+sudo apt  install podman-docker  # version 3.4.4+ds1-1ubuntu1
+See 'snap info docker' for additional versions.
+leo_amv@leo:~$ sudo apt install docker.io -y
+[sudo] пароль для leo_amv:
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Будут установлены следующие дополнительные пакеты:
+  bridge-utils containerd git git-man liberror-perl pigz runc ubuntu-fan
+Предлагаемые пакеты:
+  ifupdown aufs-tools btrfs-progs cgroupfs-mount | cgroup-lite debootstrap
+  docker-doc rinse zfs-fuse | zfsutils git-daemon-run | git-daemon-sysvinit
+  git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+Следующие НОВЫЕ пакеты будут установлены:
+  bridge-utils containerd docker.io git git-man liberror-perl pigz runc
+  ubuntu-fan
+Обновлено 0 пакетов, установлено 9 новых пакетов, для удаления отмечено 0 пакетов, и 9 пакетов не обновлено.
+Необходимо скачать 70,6 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 307 MB.
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 pigz amd64 2.6-1 [63,6 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 bridge-utils amd64 1.7-1ubuntu3 [34,4 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 runc amd64 1.1.0-0ubuntu1.1 [4 242 kB]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 containerd amd64 1.5.9-0ubuntu3.1 [28,1 MB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 docker.io amd64 20.10.12-0ubuntu4 [34,0 MB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 liberror-perl all 0.17029-1 [26,5 kB]
+Пол:7 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 git-man all 1:2.34.1-1ubuntu1.8 [953 kB]
+Пол:8 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 git amd64 1:2.34.1-1ubuntu1.8 [3 141 kB]
+Пол:9 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 ubuntu-fan all 0.12.16 [35,2 kB]
+Получено 70,6 MB за 37с (1 883 kB/s)
+Предварительная настройка пакетов …
+Выбор ранее не выбранного пакета pigz.
+(Чтение базы данных … на данный момент установлено 214860 файлов и каталогов.)
+Подготовка к распаковке …/0-pigz_2.6-1_amd64.deb …
+Распаковывается pigz (2.6-1) …
+Выбор ранее не выбранного пакета bridge-utils.
+Подготовка к распаковке …/1-bridge-utils_1.7-1ubuntu3_amd64.deb …
+Распаковывается bridge-utils (1.7-1ubuntu3) …
+Выбор ранее не выбранного пакета runc.
+Подготовка к распаковке …/2-runc_1.1.0-0ubuntu1.1_amd64.deb …
+Распаковывается runc (1.1.0-0ubuntu1.1) …
+Выбор ранее не выбранного пакета containerd.
+Подготовка к распаковке …/3-containerd_1.5.9-0ubuntu3.1_amd64.deb …
+Распаковывается containerd (1.5.9-0ubuntu3.1) …
+Выбор ранее не выбранного пакета docker.io.
+Подготовка к распаковке …/4-docker.io_20.10.12-0ubuntu4_amd64.deb …
+Распаковывается docker.io (20.10.12-0ubuntu4) …
+Выбор ранее не выбранного пакета liberror-perl.
+Подготовка к распаковке …/5-liberror-perl_0.17029-1_all.deb …
+Распаковывается liberror-perl (0.17029-1) …
+Выбор ранее не выбранного пакета git-man.
+Подготовка к распаковке …/6-git-man_1%3a2.34.1-1ubuntu1.8_all.deb …
+Распаковывается git-man (1:2.34.1-1ubuntu1.8) …
+Выбор ранее не выбранного пакета git.
+Подготовка к распаковке …/7-git_1%3a2.34.1-1ubuntu1.8_amd64.deb …
+Распаковывается git (1:2.34.1-1ubuntu1.8) …
+Выбор ранее не выбранного пакета ubuntu-fan.
+Подготовка к распаковке …/8-ubuntu-fan_0.12.16_all.deb …
+Распаковывается ubuntu-fan (0.12.16) …
+Настраивается пакет runc (1.1.0-0ubuntu1.1) …
+Настраивается пакет liberror-perl (0.17029-1) …
+Настраивается пакет bridge-utils (1.7-1ubuntu3) …
+Настраивается пакет pigz (2.6-1) …
+Настраивается пакет git-man (1:2.34.1-1ubuntu1.8) …
+Настраивается пакет containerd (1.5.9-0ubuntu3.1) …
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.
+Настраивается пакет ubuntu-fan (0.12.16) …
+Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /lib/systemd/system/ubuntu-fan.service.
+Настраивается пакет docker.io (20.10.12-0ubuntu4) …
+Добавляется группа «docker» (GID 139) ...
+Готово.
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+Настраивается пакет git (1:2.34.1-1ubuntu1.8) …
+Обрабатываются триггеры для man-db (2.10.2-1) …
+leo_amv@leo:~$ docker --help
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default "/home/leo_amv/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with
+                           "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/home/leo_amv/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/home/leo_amv/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/home/leo_amv/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+
+To get more help with docker, check out our guides at https://docs.docker.com/go/guides/
+leo_amv@leo:~$ sudo docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+leo_amv@leo:~$ sudo docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+leo_amv@leo:~$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+2db29710123e: Pull complete
+Digest: sha256:6e8b6f026e0b9c419ea0fd02d3905dd0952ad1feea67543f525c73a0a790fefb
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+leo_amv@leo:~$ sudo docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED              STATUS                          PORTS     NAMES
+87c8d0586377   hello-world   "/hello"   About a minute ago   Exited (0) About a minute ago             brave_diffie
+leo_amv@leo:~$ sudo docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+hello-world   latest    feb5d9fea6a5   17 months ago   13.3kB
+leo_amv@leo:~$ sudo usermod -aG docker leo_amv
+leo_amv@leo:~$ tail /etc/group
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:leo_amv
+leo_amv:x:1000:
+sambashare:x:135:leo_amv
+fwupd-refresh:x:136:
+nginx:x:137:
+mysql:x:138:
+docker:x:139:leo_amv
+leo_amv@leo:~$ sudo service docker restart
+leo_amv@leo:~$ newgrp docker
+leo_amv@leo:~$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
+87c8d0586377   hello-world   "/hello"   7 minutes ago   Exited (0) 7 minutes ago             brave_diffie
+leo_amv@leo:~$ docker rmi hello-world
+Error response from daemon: conflict: unable to remove repository reference "hello-world" (must force) - container 87c8d0586377 is using its referenced image feb5d9fea6a5
+leo_amv@leo:~$ docker rm 87c8d0586377
+87c8d0586377
+leo_amv@leo:~$ docker rmi hello-world
+Untagged: hello-world:latest
+Untagged: hello-world@sha256:6e8b6f026e0b9c419ea0fd02d3905dd0952ad1feea67543f525c73a0a790fefb
+Deleted: sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Deleted: sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
+leo_amv@leo:~$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+leo_amv@leo:~$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+leo_amv@leo:~$ ss -ntlp
+State            Recv-Q           Send-Q                      Local Address:Port                        Peer Address:Port           Process
+LISTEN           0                4096                            127.0.0.1:32953                            0.0.0.0:*
+LISTEN           0                70                              127.0.0.1:33060                            0.0.0.0:*
+LISTEN           0                128                             127.0.0.1:631                              0.0.0.0:*
+LISTEN           0                50                                0.0.0.0:139                              0.0.0.0:*
+LISTEN           0                128                               0.0.0.0:22                               0.0.0.0:*
+LISTEN           0                151                             127.0.0.1:3306                             0.0.0.0:*
+LISTEN           0                511                               0.0.0.0:80                               0.0.0.0:*
+LISTEN           0                50                                0.0.0.0:445                              0.0.0.0:*
+LISTEN           0                4096                        127.0.0.53%lo:53                               0.0.0.0:*
+LISTEN           0                511                                     *:8080                                   *:*
+LISTEN           0                50                                   [::]:139                                 [::]:*
+LISTEN           0                128                                  [::]:22                                  [::]:*
+LISTEN           0                511                                  [::]:80                                  [::]:*
+LISTEN           0                50                                   [::]:445                                 [::]:*
+LISTEN           0                128                                 [::1]:631                                 [::]:*
+leo_amv@leo:~$ docker run -d -p 9080:80 docker/getting-started
+Unable to find image 'docker/getting-started:latest' locally
+latest: Pulling from docker/getting-started
+c158987b0551: Pull complete
+1e35f6679fab: Pull complete
+cb9626c74200: Pull complete
+b6334b6ace34: Pull complete
+f1d1c9928c82: Pull complete
+9b6f639ec6ea: Pull complete
+ee68d3549ec8: Pull complete
+33e0cbbb4673: Pull complete
+4f7e34c2de10: Pull complete
+Digest: sha256:d79336f4812b6547a53e735480dde67f8f8f7071b414fbd9297609ffb989abc1
+Status: Downloaded newer image for docker/getting-started:latest
+9f80f203ccadfd77fe578a16cd4cffb8d0d63856c738f78c27ac745f436129d7
+leo_amv@leo:~$ docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+9f80f203ccad   docker/getting-started   "/docker-entrypoint.…"   17 minutes ago   Up 17 minutes   0.0.0.0:9080->80/tcp, :::9080->80/tcp   charming_wilson
+leo_amv@leo:~$ docker stop 9f80f203ccad
+9f80f203ccad
+leo_amv@leo:~$ docker rmi docker/getting-started
+Error response from daemon: conflict: unable to remove repository reference "docker/getting-started" (must force) - container 9f80f203ccad is using its referenced image 3e4394f6b72f
+leo_amv@leo:~$ docker rm 9f80f203ccad
+9f80f203ccad
+leo_amv@leo:~$ docker rmi docker/getting-started
+Untagged: docker/getting-started:latest
+Untagged: docker/getting-started@sha256:d79336f4812b6547a53e735480dde67f8f8f7071b414fbd9297609ffb989abc1
+Deleted: sha256:3e4394f6b72fccefa2217067a7f7ff84d5d828afa9623867d68fce4f9d862b6c
+Deleted: sha256:cdc6440a971be2985ce94c7e2e0c2df763b58a2ced4ecdb944fcd9b13e7a2aa4
+Deleted: sha256:041ac26cd02fa81c8fd73cc616bdeee180de3fd68a649ed1c0339a84cdf7a7c3
+Deleted: sha256:376baf7ada4b52ef4c110a023fe7185c4c2c090fa24a5cbd746066333ce3bc46
+Deleted: sha256:d254c9b1e23bad05f5cde233b5e91153a0540fa9a797a580d8a360ad12bf63a9
+Deleted: sha256:dd5c79fa9b6829fd08ff9943fc1d66bebba3e04246ba394d57c28827fed95af0
+Deleted: sha256:8d812a075abf60a83013c37f49058c220c9cdf390266952126e7e60041b305dc
+Deleted: sha256:ff1787ee3dcae843dc7dd1933c49350fc84451cf19ed74f4ea72426e17ee7cd1
+Deleted: sha256:85ebd294be1553b207ba9120676f4fd140842348ddf1bb5f7602c7a8401f0a13
+Deleted: sha256:ded7a220bb058e28ee3254fbba04ca90b679070424424761a53a043b93b612bf
+leo_amv@leo:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+leo_amv@leo:~$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+leo_amv@leo:~$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+leo_amv@leo:~$ docker search nginx
+NAME                                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+nginx                                             Official build of Nginx.                        18137     [OK]
+linuxserver/nginx                                 An Nginx container, brought to you by LinuxS…   186
+bitnami/nginx                                     Bitnami nginx Docker Image                      152                  [OK]
+ubuntu/nginx                                      Nginx, a high-performance reverse proxy & we…   79
+privatebin/nginx-fpm-alpine                       PrivateBin running on an Nginx, php-fpm & Al…   72                   [OK]
+bitnami/nginx-ingress-controller                  Bitnami Docker Image for NGINX Ingress Contr…   23                   [OK]
+rancher/nginx-ingress-controller                                                                  11
+kasmweb/nginx                                     An Nginx image based off nginx:alpine and in…   4
+ibmcom/nginx-ingress-controller                   Docker Image for IBM Cloud Private-CE (Commu…   4
+bitnami/nginx-exporter                                                                            3
+bitnami/nginx-ldap-auth-daemon                                                                    3
+circleci/nginx                                    This image is for internal use                  2
+rapidfort/nginx                                   RapidFort optimized, hardened image for NGINX   2
+vmware/nginx                                                                                      2
+rancher/nginx                                                                                     2
+rancher/nginx-ingress-controller-defaultbackend                                                   2
+bitnami/nginx-intel                                                                               1
+rapidfort/nginx-official                          RapidFort optimized, hardened image for NGIN…   1
+vmware/nginx-photon                                                                               1
+rancher/nginx-conf                                                                                0
+ibmcom/nginx-ppc64le                              Docker image for nginx-ppc64le                  0
+ibmcom/nginx-ingress-controller-ppc64le           Docker Image for IBM Cloud Private-CE (Commu…   0
+rancher/nginx-ssl                                                                                 0
+rapidfort/nginx-ib                                RapidFort optimized, hardened image for NGIN…   0
+continuumio/nginx-ingress-ws                                                                      0
+leo_amv@leo:~$ docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+bb263680fed1: Pull complete
+258f176fd226: Pull complete
+a0bc35e70773: Pull complete
+077b9569ff86: Pull complete
+3082a16f3b61: Pull complete
+7e9b29976cce: Pull complete
+Digest: sha256:6650513efd1d27c1f8a5351cbd33edf85cc7e0d9d0fcb4ffb23d8fa89b601ba8
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+leo_amv@leo:~$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+nginx        latest    3f8a00f137a0   2 weeks ago   142MB
+leo_amv@leo:~$ cd hw/
+leo_amv@leo:~/hw$ ll
+итого 12
+drwxrwxr-x  2 leo_amv leo_amv 4096 фев 23 21:56 ./
+drwxr-x--- 22 leo_amv leo_amv 4096 фев 23 21:56 ../
+-rw-rw-r--  1 leo_amv docker   186 фев 23 21:25 Dockerfile
+leo_amv@leo:~/hw$ cat Dockerfile
+FROM ubuntu:latest
+MAINTAINER LEO
+RUN apt-get update
+RUN apt-get install nginx -y
+RUN apt-get install php-fpm -y
+VOLUME "/var/www/html"
+EXPOSE 9080
+CMD /usr/sbin/nginx -g "daemon off;"
+
+leo_amv@leo:~/hw$ nano Dockerfile
+leo_amv@leo:~/hw$ ll
+итого 12
+drwxrwxr-x  2 leo_amv leo_amv 4096 фев 23 22:00 ./
+drwxr-x--- 22 leo_amv leo_amv 4096 фев 23 21:56 ../
+-rw-rw-r--  1 leo_amv docker   219 фев 23 22:00 Dockerfile
+leo_amv@leo:~/hw$ cat Dockerfile
+FROM ubuntu:20.04
+MAINTAINER LEO
+RUN apt-get update
+RUN apt-get install nginx -y
+RUN apt-get install php-fpm -y
+RUN mkdir /run/php-fpm
+VOLUME "/var/www/html"
+EXPOSE 80
+CMD /usr/sbin/nginx -g "daemon off;" ; php-fpm -D
+
+leo_amv@leo:~/hw$ docker build -t myimage .
+Sending build context to Docker daemon  2.048kB
+Step 1/9 : FROM ubuntu:20.04
+20.04: Pulling from library/ubuntu
+b549f31133a9: Pull complete
+Digest: sha256:4a45212e9518f35983a976eead0de5eecc555a2f047134e9dd2cfc589076a00d
+Status: Downloaded newer image for ubuntu:20.04
+ ---> e40cf56b4be3
+Step 2/9 : MAINTAINER LEO
+ ---> Running in be8901f8a69a
+Removing intermediate container be8901f8a69a
+ ---> b9c7c477eded
+Step 3/9 : RUN apt-get update
+ ---> Running in 56c36b8b787e
+Get:1 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [998 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:8 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [28.5 kB]
+Get:9 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [1937 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [2496 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [31.2 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [2066 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1299 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [2970 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [55.2 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [28.6 kB]
+Fetched 25.3 MB in 19s (1334 kB/s)
+Reading package lists...
+Removing intermediate container 56c36b8b787e
+ ---> b4cadca214bd
+Step 4/9 : RUN apt-get install nginx -y
+ ---> Running in 44067ebb10a7
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  fontconfig-config fonts-dejavu-core iproute2 libatm1 libbsd0 libcap2
+  libcap2-bin libelf1 libexpat1 libfontconfig1 libfreetype6 libgd3 libicu66
+  libjbig0 libjpeg-turbo8 libjpeg8 libmnl0 libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libpam-cap libpng16-16 libssl1.1 libtiff5 libwebp6 libx11-6 libx11-data
+  libxau6 libxcb1 libxdmcp6 libxml2 libxpm4 libxslt1.1 libxtables12
+  nginx-common nginx-core tzdata ucf
+Suggested packages:
+  iproute2-doc libgd-tools fcgiwrap nginx-doc ssl-cert
+The following NEW packages will be installed:
+  fontconfig-config fonts-dejavu-core iproute2 libatm1 libbsd0 libcap2
+  libcap2-bin libelf1 libexpat1 libfontconfig1 libfreetype6 libgd3 libicu66
+  libjbig0 libjpeg-turbo8 libjpeg8 libmnl0 libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libpam-cap libpng16-16 libssl1.1 libtiff5 libwebp6 libx11-6 libx11-data
+  libxau6 libxcb1 libxdmcp6 libxml2 libxpm4 libxslt1.1 libxtables12 nginx
+  nginx-common nginx-core tzdata ucf
+0 upgraded, 40 newly installed, 0 to remove and 4 not upgraded.
+Need to get 15.8 MB of archives.
+After this operation, 60.8 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 libbsd0 amd64 0.10.0-1 [45.4 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 libcap2 amd64 1:2.32-1 [15.9 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/main amd64 libelf1 amd64 0.176-1.1build1 [44.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 libmnl0 amd64 1.0.4-2 [12.3 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 libxtables12 amd64 1.8.4-3ubuntu2 [28.4 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/main amd64 libcap2-bin amd64 1:2.32-1 [26.2 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/main amd64 iproute2 amd64 5.5.0-1ubuntu1 [858 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/main amd64 libatm1 amd64 1:2.5.1-4 [21.8 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libexpat1 amd64 2.2.9-1ubuntu0.6 [74.6 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 tzdata all 2022g-0ubuntu0.20.04.1 [286 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libicu66 amd64 66.1-2ubuntu2.1 [8515 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/main amd64 libpam-cap amd64 1:2.32-1 [8352 B]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libssl1.1 amd64 1.1.1f-1ubuntu2.17 [1322 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libxml2 amd64 2.9.10+dfsg-5ubuntu0.20.04.5 [640 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal/main amd64 ucf all 3.0038+nmu1 [51.6 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal/main amd64 libpng16-16 amd64 1.6.37-2 [179 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal/main amd64 libxau6 amd64 1:1.0.9-0ubuntu1 [7488 B]
+Get:18 http://archive.ubuntu.com/ubuntu focal/main amd64 libxdmcp6 amd64 1:1.1.3-0ubuntu1 [10.6 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal/main amd64 libxcb1 amd64 1.14-2 [44.7 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libx11-data all 2:1.6.9-2ubuntu1.2 [113 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libx11-6 amd64 2:1.6.9-2ubuntu1.2 [575 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal/main amd64 fonts-dejavu-core all 2.37-1 [1041 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal/main amd64 fontconfig-config all 2.13.1-2ubuntu3 [28.8 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libfreetype6 amd64 2.10.1-2ubuntu0.2 [341 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal/main amd64 libfontconfig1 amd64 2.13.1-2ubuntu3 [114 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libjpeg-turbo8 amd64 2.0.3-0ubuntu1.20.04.3 [118 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal/main amd64 libjpeg8 amd64 8c-2ubuntu8 [2194 B]
+Get:28 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libjbig0 amd64 2.1-3.1ubuntu0.20.04.1 [27.3 kB]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libwebp6 amd64 0.6.1-2ubuntu0.20.04.1 [185 kB]
+Get:30 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libtiff5 amd64 4.1.0+git191117-2ubuntu0.20.04.7 [163 kB]
+Get:31 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libxpm4 amd64 1:3.5.12-1ubuntu0.20.04.1 [34.6 kB]
+Get:32 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgd3 amd64 2.2.5-5.2ubuntu2.1 [118 kB]
+Get:33 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 nginx-common all 1.18.0-0ubuntu1.4 [37.7 kB]
+Get:34 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnginx-mod-http-image-filter amd64 1.18.0-0ubuntu1.4 [14.8 kB]
+Get:35 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libxslt1.1 amd64 1.1.34-4ubuntu0.20.04.1 [151 kB]
+Get:36 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnginx-mod-http-xslt-filter amd64 1.18.0-0ubuntu1.4 [13.0 kB]
+Get:37 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnginx-mod-mail amd64 1.18.0-0ubuntu1.4 [42.9 kB]
+Get:38 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnginx-mod-stream amd64 1.18.0-0ubuntu1.4 [67.4 kB]
+Get:39 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 nginx-core amd64 1.18.0-0ubuntu1.4 [425 kB]
+Get:40 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 nginx all 1.18.0-0ubuntu1.4 [3620 B]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 15.8 MB in 14s (1099 kB/s)
+Selecting previously unselected package libbsd0:amd64.
+(Reading database ... 4126 files and directories currently installed.)
+Preparing to unpack .../00-libbsd0_0.10.0-1_amd64.deb ...
+Unpacking libbsd0:amd64 (0.10.0-1) ...
+Selecting previously unselected package libcap2:amd64.
+Preparing to unpack .../01-libcap2_1%3a2.32-1_amd64.deb ...
+Unpacking libcap2:amd64 (1:2.32-1) ...
+Selecting previously unselected package libelf1:amd64.
+Preparing to unpack .../02-libelf1_0.176-1.1build1_amd64.deb ...
+Unpacking libelf1:amd64 (0.176-1.1build1) ...
+Selecting previously unselected package libmnl0:amd64.
+Preparing to unpack .../03-libmnl0_1.0.4-2_amd64.deb ...
+Unpacking libmnl0:amd64 (1.0.4-2) ...
+Selecting previously unselected package libxtables12:amd64.
+Preparing to unpack .../04-libxtables12_1.8.4-3ubuntu2_amd64.deb ...
+Unpacking libxtables12:amd64 (1.8.4-3ubuntu2) ...
+Selecting previously unselected package libcap2-bin.
+Preparing to unpack .../05-libcap2-bin_1%3a2.32-1_amd64.deb ...
+Unpacking libcap2-bin (1:2.32-1) ...
+Selecting previously unselected package iproute2.
+Preparing to unpack .../06-iproute2_5.5.0-1ubuntu1_amd64.deb ...
+Unpacking iproute2 (5.5.0-1ubuntu1) ...
+Selecting previously unselected package libatm1:amd64.
+Preparing to unpack .../07-libatm1_1%3a2.5.1-4_amd64.deb ...
+Unpacking libatm1:amd64 (1:2.5.1-4) ...
+Selecting previously unselected package libexpat1:amd64.
+Preparing to unpack .../08-libexpat1_2.2.9-1ubuntu0.6_amd64.deb ...
+Unpacking libexpat1:amd64 (2.2.9-1ubuntu0.6) ...
+Selecting previously unselected package tzdata.
+Preparing to unpack .../09-tzdata_2022g-0ubuntu0.20.04.1_all.deb ...
+Unpacking tzdata (2022g-0ubuntu0.20.04.1) ...
+Selecting previously unselected package libicu66:amd64.
+Preparing to unpack .../10-libicu66_66.1-2ubuntu2.1_amd64.deb ...
+Unpacking libicu66:amd64 (66.1-2ubuntu2.1) ...
+Selecting previously unselected package libpam-cap:amd64.
+Preparing to unpack .../11-libpam-cap_1%3a2.32-1_amd64.deb ...
+Unpacking libpam-cap:amd64 (1:2.32-1) ...
+Selecting previously unselected package libssl1.1:amd64.
+Preparing to unpack .../12-libssl1.1_1.1.1f-1ubuntu2.17_amd64.deb ...
+Unpacking libssl1.1:amd64 (1.1.1f-1ubuntu2.17) ...
+Selecting previously unselected package libxml2:amd64.
+Preparing to unpack .../13-libxml2_2.9.10+dfsg-5ubuntu0.20.04.5_amd64.deb ...
+Unpacking libxml2:amd64 (2.9.10+dfsg-5ubuntu0.20.04.5) ...
+Selecting previously unselected package ucf.
+Preparing to unpack .../14-ucf_3.0038+nmu1_all.deb ...
+Moving old data out of the way
+Unpacking ucf (3.0038+nmu1) ...
+Selecting previously unselected package libpng16-16:amd64.
+Preparing to unpack .../15-libpng16-16_1.6.37-2_amd64.deb ...
+Unpacking libpng16-16:amd64 (1.6.37-2) ...
+Selecting previously unselected package libxau6:amd64.
+Preparing to unpack .../16-libxau6_1%3a1.0.9-0ubuntu1_amd64.deb ...
+Unpacking libxau6:amd64 (1:1.0.9-0ubuntu1) ...
+Selecting previously unselected package libxdmcp6:amd64.
+Preparing to unpack .../17-libxdmcp6_1%3a1.1.3-0ubuntu1_amd64.deb ...
+Unpacking libxdmcp6:amd64 (1:1.1.3-0ubuntu1) ...
+Selecting previously unselected package libxcb1:amd64.
+Preparing to unpack .../18-libxcb1_1.14-2_amd64.deb ...
+Unpacking libxcb1:amd64 (1.14-2) ...
+Selecting previously unselected package libx11-data.
+Preparing to unpack .../19-libx11-data_2%3a1.6.9-2ubuntu1.2_all.deb ...
+Unpacking libx11-data (2:1.6.9-2ubuntu1.2) ...
+Selecting previously unselected package libx11-6:amd64.
+Preparing to unpack .../20-libx11-6_2%3a1.6.9-2ubuntu1.2_amd64.deb ...
+Unpacking libx11-6:amd64 (2:1.6.9-2ubuntu1.2) ...
+Selecting previously unselected package fonts-dejavu-core.
+Preparing to unpack .../21-fonts-dejavu-core_2.37-1_all.deb ...
+Unpacking fonts-dejavu-core (2.37-1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../22-fontconfig-config_2.13.1-2ubuntu3_all.deb ...
+Unpacking fontconfig-config (2.13.1-2ubuntu3) ...
+Selecting previously unselected package libfreetype6:amd64.
+Preparing to unpack .../23-libfreetype6_2.10.1-2ubuntu0.2_amd64.deb ...
+Unpacking libfreetype6:amd64 (2.10.1-2ubuntu0.2) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../24-libfontconfig1_2.13.1-2ubuntu3_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.13.1-2ubuntu3) ...
+Selecting previously unselected package libjpeg-turbo8:amd64.
+Preparing to unpack .../25-libjpeg-turbo8_2.0.3-0ubuntu1.20.04.3_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (2.0.3-0ubuntu1.20.04.3) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../26-libjpeg8_8c-2ubuntu8_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../27-libjbig0_2.1-3.1ubuntu0.20.04.1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.1-3.1ubuntu0.20.04.1) ...
+Selecting previously unselected package libwebp6:amd64.
+Preparing to unpack .../28-libwebp6_0.6.1-2ubuntu0.20.04.1_amd64.deb ...
+Unpacking libwebp6:amd64 (0.6.1-2ubuntu0.20.04.1) ...
+Selecting previously unselected package libtiff5:amd64.
+Preparing to unpack .../29-libtiff5_4.1.0+git191117-2ubuntu0.20.04.7_amd64.deb ...
+Unpacking libtiff5:amd64 (4.1.0+git191117-2ubuntu0.20.04.7) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../30-libxpm4_1%3a3.5.12-1ubuntu0.20.04.1_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.12-1ubuntu0.20.04.1) ...
+Selecting previously unselected package libgd3:amd64.
+Preparing to unpack .../31-libgd3_2.2.5-5.2ubuntu2.1_amd64.deb ...
+Unpacking libgd3:amd64 (2.2.5-5.2ubuntu2.1) ...
+Selecting previously unselected package nginx-common.
+Preparing to unpack .../32-nginx-common_1.18.0-0ubuntu1.4_all.deb ...
+Unpacking nginx-common (1.18.0-0ubuntu1.4) ...
+Selecting previously unselected package libnginx-mod-http-image-filter.
+Preparing to unpack .../33-libnginx-mod-http-image-filter_1.18.0-0ubuntu1.4_amd64.deb ...
+Unpacking libnginx-mod-http-image-filter (1.18.0-0ubuntu1.4) ...
+Selecting previously unselected package libxslt1.1:amd64.
+Preparing to unpack .../34-libxslt1.1_1.1.34-4ubuntu0.20.04.1_amd64.deb ...
+Unpacking libxslt1.1:amd64 (1.1.34-4ubuntu0.20.04.1) ...
+Selecting previously unselected package libnginx-mod-http-xslt-filter.
+Preparing to unpack .../35-libnginx-mod-http-xslt-filter_1.18.0-0ubuntu1.4_amd64.deb ...
+Unpacking libnginx-mod-http-xslt-filter (1.18.0-0ubuntu1.4) ...
+Selecting previously unselected package libnginx-mod-mail.
+Preparing to unpack .../36-libnginx-mod-mail_1.18.0-0ubuntu1.4_amd64.deb ...
+Unpacking libnginx-mod-mail (1.18.0-0ubuntu1.4) ...
+Selecting previously unselected package libnginx-mod-stream.
+Preparing to unpack .../37-libnginx-mod-stream_1.18.0-0ubuntu1.4_amd64.deb ...
+Unpacking libnginx-mod-stream (1.18.0-0ubuntu1.4) ...
+Selecting previously unselected package nginx-core.
+Preparing to unpack .../38-nginx-core_1.18.0-0ubuntu1.4_amd64.deb ...
+Unpacking nginx-core (1.18.0-0ubuntu1.4) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../39-nginx_1.18.0-0ubuntu1.4_all.deb ...
+Unpacking nginx (1.18.0-0ubuntu1.4) ...
+Setting up libexpat1:amd64 (2.2.9-1ubuntu0.6) ...
+Setting up libxau6:amd64 (1:1.0.9-0ubuntu1) ...
+Setting up libssl1.1:amd64 (1.1.1f-1ubuntu2.17) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up nginx-common (1.18.0-0ubuntu1.4) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libatm1:amd64 (1:2.5.1-4) ...
+Setting up libjbig0:amd64 (2.1-3.1ubuntu0.20.04.1) ...
+Setting up libcap2:amd64 (1:2.32-1) ...
+Setting up tzdata (2022g-0ubuntu0.20.04.1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Configuring tzdata
+------------------
+
+Please select the geographic area in which you live. Subsequent configuration
+questions will narrow this down by presenting a list of cities, representing
+the time zones in which they are located.
+
+  1. Africa      4. Australia  7. Atlantic  10. Pacific  13. Etc
+  2. America     5. Arctic     8. Europe    11. SystemV
+  3. Antarctica  6. Asia       9. Indian    12. US
+Geographic area:
+Use of uninitialized value $_[1] in join or string at /usr/share/perl5/Debconf/DbDriver/Stack.pm line 111.
+
+Current default time zone: '/UTC'
+Local time is now:      Thu Feb 23 17:03:37 UTC 2023.
+Universal Time is now:  Thu Feb 23 17:03:37 UTC 2023.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Use of uninitialized value $val in substitution (s///) at /usr/share/perl5/Debconf/Format/822.pm line 83, <GEN6> line 4.
+Use of uninitialized value $val in concatenation (.) or string at /usr/share/perl5/Debconf/Format/822.pm line 84, <GEN6> line 4.
+Setting up libcap2-bin (1:2.32-1) ...
+Setting up libx11-data (2:1.6.9-2ubuntu1.2) ...
+Setting up libpng16-16:amd64 (1.6.37-2) ...
+Setting up libmnl0:amd64 (1.0.4-2) ...
+Setting up libwebp6:amd64 (0.6.1-2ubuntu0.20.04.1) ...
+Setting up fonts-dejavu-core (2.37-1) ...
+Setting up ucf (3.0038+nmu1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libjpeg-turbo8:amd64 (2.0.3-0ubuntu1.20.04.3) ...
+Setting up libxtables12:amd64 (1.8.4-3ubuntu2) ...
+Setting up libbsd0:amd64 (0.10.0-1) ...
+Setting up libelf1:amd64 (0.176-1.1build1) ...
+Setting up libpam-cap:amd64 (1:2.32-1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+Setting up libnginx-mod-mail (1.18.0-0ubuntu1.4) ...
+Setting up libxdmcp6:amd64 (1:1.1.3-0ubuntu1) ...
+Setting up libxcb1:amd64 (1.14-2) ...
+Setting up fontconfig-config (2.13.1-2ubuntu3) ...
+Setting up iproute2 (5.5.0-1ubuntu1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libicu66:amd64 (66.1-2ubuntu2.1) ...
+Setting up libnginx-mod-stream (1.18.0-0ubuntu1.4) ...
+Setting up libfreetype6:amd64 (2.10.1-2ubuntu0.2) ...
+Setting up libx11-6:amd64 (2:1.6.9-2ubuntu1.2) ...
+Setting up libtiff5:amd64 (4.1.0+git191117-2ubuntu0.20.04.7) ...
+Setting up libfontconfig1:amd64 (2.13.1-2ubuntu3) ...
+Setting up libxml2:amd64 (2.9.10+dfsg-5ubuntu0.20.04.5) ...
+Setting up libxpm4:amd64 (1:3.5.12-1ubuntu0.20.04.1) ...
+Setting up libgd3:amd64 (2.2.5-5.2ubuntu2.1) ...
+Setting up libxslt1.1:amd64 (1.1.34-4ubuntu0.20.04.1) ...
+Setting up libnginx-mod-http-image-filter (1.18.0-0ubuntu1.4) ...
+Setting up libnginx-mod-http-xslt-filter (1.18.0-0ubuntu1.4) ...
+Setting up nginx-core (1.18.0-0ubuntu1.4) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up nginx (1.18.0-0ubuntu1.4) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+Removing intermediate container 44067ebb10a7
+ ---> a3b81c5881d4
+Step 5/9 : RUN apt-get install php-fpm -y
+ ---> Running in 0f63f1d966ee
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  dbus dmsetup file gir1.2-glib-2.0 libapparmor1 libargon2-1 libcryptsetup12
+  libdbus-1-3 libdevmapper1.02.1 libedit2 libgirepository-1.0-1 libglib2.0-0
+  libglib2.0-data libip4tc2 libjson-c4 libkmod2 libmagic-mgc libmagic1
+  libmpdec2 libpython3-stdlib libpython3.8-minimal libpython3.8-stdlib
+  libreadline8 libsodium23 libsqlite3-0 mime-support networkd-dispatcher
+  php-common php7.4-cli php7.4-common php7.4-fpm php7.4-json php7.4-opcache
+  php7.4-readline psmisc python3 python3-dbus python3-gi python3-minimal
+  python3.8 python3.8-minimal readline-common shared-mime-info systemd
+  systemd-timesyncd xdg-user-dirs xz-utils
+Suggested packages:
+  default-dbus-session-bus | dbus-session-bus iw | wireless-tools php-pear
+  python3-doc python3-tk python3-venv python-dbus-doc python3-dbus-dbg
+  python3.8-venv python3.8-doc binutils binfmt-support readline-doc
+  systemd-container policykit-1
+The following NEW packages will be installed:
+  dbus dmsetup file gir1.2-glib-2.0 libapparmor1 libargon2-1 libcryptsetup12
+  libdbus-1-3 libdevmapper1.02.1 libedit2 libgirepository-1.0-1 libglib2.0-0
+  libglib2.0-data libip4tc2 libjson-c4 libkmod2 libmagic-mgc libmagic1
+  libmpdec2 libpython3-stdlib libpython3.8-minimal libpython3.8-stdlib
+  libreadline8 libsodium23 libsqlite3-0 mime-support networkd-dispatcher
+  php-common php-fpm php7.4-cli php7.4-common php7.4-fpm php7.4-json
+  php7.4-opcache php7.4-readline psmisc python3 python3-dbus python3-gi
+  python3-minimal python3.8 python3.8-minimal readline-common shared-mime-info
+  systemd systemd-timesyncd xdg-user-dirs xz-utils
+0 upgraded, 48 newly installed, 0 to remove and 4 not upgraded.
+Need to get 17.3 MB of archives.
+After this operation, 75.8 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-minimal amd64 3.8.10-0ubuntu1~20.04.6 [717 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3.8-minimal amd64 3.8.10-0ubuntu1~20.04.6 [1901 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/main amd64 python3-minimal amd64 3.8.2-0ubuntu2 [23.6 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 mime-support all 3.64ubuntu1 [30.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 libmpdec2 amd64 2.4.2-3 [81.1 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/main amd64 readline-common all 8.0-4 [53.5 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/main amd64 libreadline8 amd64 8.0-4 [131 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsqlite3-0 amd64 3.31.1-4ubuntu0.5 [549 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-stdlib amd64 3.8.10-0ubuntu1~20.04.6 [1675 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3.8 amd64 3.8.10-0ubuntu1~20.04.6 [387 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/main amd64 libpython3-stdlib amd64 3.8.2-0ubuntu2 [7068 B]
+Get:12 http://archive.ubuntu.com/ubuntu focal/main amd64 python3 amd64 3.8.2-0ubuntu2 [47.6 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libapparmor1 amd64 2.13.3-7ubuntu5.1 [34.1 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal/main amd64 libargon2-1 amd64 0~20171227-0.2 [19.2 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal/main amd64 libdevmapper1.02.1 amd64 2:1.02.167-1ubuntu1 [127 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libjson-c4 amd64 0.13.1+dfsg-7ubuntu0.3 [29.3 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcryptsetup12 amd64 2:2.2.2-3ubuntu2.4 [166 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal/main amd64 libip4tc2 amd64 1.8.4-3ubuntu2 [18.8 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libkmod2 amd64 27-1ubuntu2.1 [45.3 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd-timesyncd amd64 245.4-4ubuntu3.19 [28.1 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd amd64 245.4-4ubuntu3.19 [3812 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libdbus-1-3 amd64 1.12.16-2ubuntu2.3 [179 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 dbus amd64 1.12.16-2ubuntu2.3 [151 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal/main amd64 dmsetup amd64 2:1.02.167-1ubuntu1 [75.6 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal/main amd64 libmagic-mgc amd64 1:5.38-4 [218 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal/main amd64 libmagic1 amd64 1:5.38-4 [75.9 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal/main amd64 file amd64 1:5.38-4 [23.3 kB]
+Get:28 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libglib2.0-0 amd64 2.64.6-1~ubuntu20.04.4 [1287 kB]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgirepository-1.0-1 amd64 1.64.1-1~ubuntu20.04.1 [85.7 kB]
+Get:30 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gir1.2-glib-2.0 amd64 1.64.1-1~ubuntu20.04.1 [134 kB]
+Get:31 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libglib2.0-data all 2.64.6-1~ubuntu20.04.4 [6052 B]
+Get:32 http://archive.ubuntu.com/ubuntu focal/main amd64 libsodium23 amd64 1.0.18-1 [150 kB]
+Get:33 http://archive.ubuntu.com/ubuntu focal/main amd64 python3-dbus amd64 1.2.16-1build1 [94.0 kB]
+Get:34 http://archive.ubuntu.com/ubuntu focal/main amd64 python3-gi amd64 3.36.0-1 [165 kB]
+Get:35 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 networkd-dispatcher all 2.1-2~ubuntu20.04.3 [15.5 kB]
+Get:36 http://archive.ubuntu.com/ubuntu focal/main amd64 shared-mime-info amd64 1.15-1 [430 kB]
+Get:37 http://archive.ubuntu.com/ubuntu focal/main amd64 xdg-user-dirs amd64 0.17-2ubuntu1 [48.3 kB]
+Get:38 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 xz-utils amd64 5.2.4-1ubuntu1.1 [82.6 kB]
+Get:39 http://archive.ubuntu.com/ubuntu focal/main amd64 libedit2 amd64 3.1-20191231-1 [87.0 kB]
+Get:40 http://archive.ubuntu.com/ubuntu focal/main amd64 psmisc amd64 23.3-1 [53.3 kB]
+Get:41 http://archive.ubuntu.com/ubuntu focal/main amd64 php-common all 2:75 [11.9 kB]
+Get:42 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-common amd64 7.4.3-4ubuntu2.17 [982 kB]
+Get:43 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-json amd64 7.4.3-4ubuntu2.17 [19.2 kB]
+Get:44 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-opcache amd64 7.4.3-4ubuntu2.17 [198 kB]
+Get:45 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-readline amd64 7.4.3-4ubuntu2.17 [12.6 kB]
+Get:46 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 php7.4-cli amd64 7.4.3-4ubuntu2.17 [1426 kB]
+Get:47 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 php7.4-fpm amd64 7.4.3-4ubuntu2.17 [1441 kB]
+Get:48 http://archive.ubuntu.com/ubuntu focal/universe amd64 php-fpm all 2:7.4+75 [2792 B]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 17.3 MB in 29s (604 kB/s)
+Selecting previously unselected package libpython3.8-minimal:amd64.
+(Reading database ... 6875 files and directories currently installed.)
+Preparing to unpack .../libpython3.8-minimal_3.8.10-0ubuntu1~20.04.6_amd64.deb ...
+Unpacking libpython3.8-minimal:amd64 (3.8.10-0ubuntu1~20.04.6) ...
+Selecting previously unselected package python3.8-minimal.
+Preparing to unpack .../python3.8-minimal_3.8.10-0ubuntu1~20.04.6_amd64.deb ...
+Unpacking python3.8-minimal (3.8.10-0ubuntu1~20.04.6) ...
+Setting up libpython3.8-minimal:amd64 (3.8.10-0ubuntu1~20.04.6) ...
+Setting up python3.8-minimal (3.8.10-0ubuntu1~20.04.6) ...
+Selecting previously unselected package python3-minimal.
+(Reading database ... 7158 files and directories currently installed.)
+Preparing to unpack .../0-python3-minimal_3.8.2-0ubuntu2_amd64.deb ...
+Unpacking python3-minimal (3.8.2-0ubuntu2) ...
+Selecting previously unselected package mime-support.
+Preparing to unpack .../1-mime-support_3.64ubuntu1_all.deb ...
+Unpacking mime-support (3.64ubuntu1) ...
+Selecting previously unselected package libmpdec2:amd64.
+Preparing to unpack .../2-libmpdec2_2.4.2-3_amd64.deb ...
+Unpacking libmpdec2:amd64 (2.4.2-3) ...
+Selecting previously unselected package readline-common.
+Preparing to unpack .../3-readline-common_8.0-4_all.deb ...
+Unpacking readline-common (8.0-4) ...
+Selecting previously unselected package libreadline8:amd64.
+Preparing to unpack .../4-libreadline8_8.0-4_amd64.deb ...
+Unpacking libreadline8:amd64 (8.0-4) ...
+Selecting previously unselected package libsqlite3-0:amd64.
+Preparing to unpack .../5-libsqlite3-0_3.31.1-4ubuntu0.5_amd64.deb ...
+Unpacking libsqlite3-0:amd64 (3.31.1-4ubuntu0.5) ...
+Selecting previously unselected package libpython3.8-stdlib:amd64.
+Preparing to unpack .../6-libpython3.8-stdlib_3.8.10-0ubuntu1~20.04.6_amd64.deb ...
+Unpacking libpython3.8-stdlib:amd64 (3.8.10-0ubuntu1~20.04.6) ...
+Selecting previously unselected package python3.8.
+Preparing to unpack .../7-python3.8_3.8.10-0ubuntu1~20.04.6_amd64.deb ...
+Unpacking python3.8 (3.8.10-0ubuntu1~20.04.6) ...
+Selecting previously unselected package libpython3-stdlib:amd64.
+Preparing to unpack .../8-libpython3-stdlib_3.8.2-0ubuntu2_amd64.deb ...
+Unpacking libpython3-stdlib:amd64 (3.8.2-0ubuntu2) ...
+Setting up python3-minimal (3.8.2-0ubuntu2) ...
+Selecting previously unselected package python3.
+(Reading database ... 7588 files and directories currently installed.)
+Preparing to unpack .../00-python3_3.8.2-0ubuntu2_amd64.deb ...
+Unpacking python3 (3.8.2-0ubuntu2) ...
+Selecting previously unselected package libapparmor1:amd64.
+Preparing to unpack .../01-libapparmor1_2.13.3-7ubuntu5.1_amd64.deb ...
+Unpacking libapparmor1:amd64 (2.13.3-7ubuntu5.1) ...
+Selecting previously unselected package libargon2-1:amd64.
+Preparing to unpack .../02-libargon2-1_0~20171227-0.2_amd64.deb ...
+Unpacking libargon2-1:amd64 (0~20171227-0.2) ...
+Selecting previously unselected package libdevmapper1.02.1:amd64.
+Preparing to unpack .../03-libdevmapper1.02.1_2%3a1.02.167-1ubuntu1_amd64.deb ...
+Unpacking libdevmapper1.02.1:amd64 (2:1.02.167-1ubuntu1) ...
+Selecting previously unselected package libjson-c4:amd64.
+Preparing to unpack .../04-libjson-c4_0.13.1+dfsg-7ubuntu0.3_amd64.deb ...
+Unpacking libjson-c4:amd64 (0.13.1+dfsg-7ubuntu0.3) ...
+Selecting previously unselected package libcryptsetup12:amd64.
+Preparing to unpack .../05-libcryptsetup12_2%3a2.2.2-3ubuntu2.4_amd64.deb ...
+Unpacking libcryptsetup12:amd64 (2:2.2.2-3ubuntu2.4) ...
+Selecting previously unselected package libip4tc2:amd64.
+Preparing to unpack .../06-libip4tc2_1.8.4-3ubuntu2_amd64.deb ...
+Unpacking libip4tc2:amd64 (1.8.4-3ubuntu2) ...
+Selecting previously unselected package libkmod2:amd64.
+Preparing to unpack .../07-libkmod2_27-1ubuntu2.1_amd64.deb ...
+Unpacking libkmod2:amd64 (27-1ubuntu2.1) ...
+Selecting previously unselected package systemd-timesyncd.
+Preparing to unpack .../08-systemd-timesyncd_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking systemd-timesyncd (245.4-4ubuntu3.19) ...
+Selecting previously unselected package systemd.
+Preparing to unpack .../09-systemd_245.4-4ubuntu3.19_amd64.deb ...
+Unpacking systemd (245.4-4ubuntu3.19) ...
+Selecting previously unselected package libdbus-1-3:amd64.
+Preparing to unpack .../10-libdbus-1-3_1.12.16-2ubuntu2.3_amd64.deb ...
+Unpacking libdbus-1-3:amd64 (1.12.16-2ubuntu2.3) ...
+Selecting previously unselected package dbus.
+Preparing to unpack .../11-dbus_1.12.16-2ubuntu2.3_amd64.deb ...
+Unpacking dbus (1.12.16-2ubuntu2.3) ...
+Selecting previously unselected package dmsetup.
+Preparing to unpack .../12-dmsetup_2%3a1.02.167-1ubuntu1_amd64.deb ...
+Unpacking dmsetup (2:1.02.167-1ubuntu1) ...
+Selecting previously unselected package libmagic-mgc.
+Preparing to unpack .../13-libmagic-mgc_1%3a5.38-4_amd64.deb ...
+Unpacking libmagic-mgc (1:5.38-4) ...
+Selecting previously unselected package libmagic1:amd64.
+Preparing to unpack .../14-libmagic1_1%3a5.38-4_amd64.deb ...
+Unpacking libmagic1:amd64 (1:5.38-4) ...
+Selecting previously unselected package file.
+Preparing to unpack .../15-file_1%3a5.38-4_amd64.deb ...
+Unpacking file (1:5.38-4) ...
+Selecting previously unselected package libglib2.0-0:amd64.
+Preparing to unpack .../16-libglib2.0-0_2.64.6-1~ubuntu20.04.4_amd64.deb ...
+Unpacking libglib2.0-0:amd64 (2.64.6-1~ubuntu20.04.4) ...
+Selecting previously unselected package libgirepository-1.0-1:amd64.
+Preparing to unpack .../17-libgirepository-1.0-1_1.64.1-1~ubuntu20.04.1_amd64.deb ...
+Unpacking libgirepository-1.0-1:amd64 (1.64.1-1~ubuntu20.04.1) ...
+Selecting previously unselected package gir1.2-glib-2.0:amd64.
+Preparing to unpack .../18-gir1.2-glib-2.0_1.64.1-1~ubuntu20.04.1_amd64.deb ...
+Unpacking gir1.2-glib-2.0:amd64 (1.64.1-1~ubuntu20.04.1) ...
+Selecting previously unselected package libglib2.0-data.
+Preparing to unpack .../19-libglib2.0-data_2.64.6-1~ubuntu20.04.4_all.deb ...
+Unpacking libglib2.0-data (2.64.6-1~ubuntu20.04.4) ...
+Selecting previously unselected package libsodium23:amd64.
+Preparing to unpack .../20-libsodium23_1.0.18-1_amd64.deb ...
+Unpacking libsodium23:amd64 (1.0.18-1) ...
+Selecting previously unselected package python3-dbus.
+Preparing to unpack .../21-python3-dbus_1.2.16-1build1_amd64.deb ...
+Unpacking python3-dbus (1.2.16-1build1) ...
+Selecting previously unselected package python3-gi.
+Preparing to unpack .../22-python3-gi_3.36.0-1_amd64.deb ...
+Unpacking python3-gi (3.36.0-1) ...
+Selecting previously unselected package networkd-dispatcher.
+Preparing to unpack .../23-networkd-dispatcher_2.1-2~ubuntu20.04.3_all.deb ...
+Unpacking networkd-dispatcher (2.1-2~ubuntu20.04.3) ...
+Selecting previously unselected package shared-mime-info.
+Preparing to unpack .../24-shared-mime-info_1.15-1_amd64.deb ...
+Unpacking shared-mime-info (1.15-1) ...
+Selecting previously unselected package xdg-user-dirs.
+Preparing to unpack .../25-xdg-user-dirs_0.17-2ubuntu1_amd64.deb ...
+Unpacking xdg-user-dirs (0.17-2ubuntu1) ...
+Selecting previously unselected package xz-utils.
+Preparing to unpack .../26-xz-utils_5.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking xz-utils (5.2.4-1ubuntu1.1) ...
+Selecting previously unselected package libedit2:amd64.
+Preparing to unpack .../27-libedit2_3.1-20191231-1_amd64.deb ...
+Unpacking libedit2:amd64 (3.1-20191231-1) ...
+Selecting previously unselected package psmisc.
+Preparing to unpack .../28-psmisc_23.3-1_amd64.deb ...
+Unpacking psmisc (23.3-1) ...
+Selecting previously unselected package php-common.
+Preparing to unpack .../29-php-common_2%3a75_all.deb ...
+Unpacking php-common (2:75) ...
+Selecting previously unselected package php7.4-common.
+Preparing to unpack .../30-php7.4-common_7.4.3-4ubuntu2.17_amd64.deb ...
+Unpacking php7.4-common (7.4.3-4ubuntu2.17) ...
+Selecting previously unselected package php7.4-json.
+Preparing to unpack .../31-php7.4-json_7.4.3-4ubuntu2.17_amd64.deb ...
+Unpacking php7.4-json (7.4.3-4ubuntu2.17) ...
+Selecting previously unselected package php7.4-opcache.
+Preparing to unpack .../32-php7.4-opcache_7.4.3-4ubuntu2.17_amd64.deb ...
+Unpacking php7.4-opcache (7.4.3-4ubuntu2.17) ...
+Selecting previously unselected package php7.4-readline.
+Preparing to unpack .../33-php7.4-readline_7.4.3-4ubuntu2.17_amd64.deb ...
+Unpacking php7.4-readline (7.4.3-4ubuntu2.17) ...
+Selecting previously unselected package php7.4-cli.
+Preparing to unpack .../34-php7.4-cli_7.4.3-4ubuntu2.17_amd64.deb ...
+Unpacking php7.4-cli (7.4.3-4ubuntu2.17) ...
+Selecting previously unselected package php7.4-fpm.
+Preparing to unpack .../35-php7.4-fpm_7.4.3-4ubuntu2.17_amd64.deb ...
+Unpacking php7.4-fpm (7.4.3-4ubuntu2.17) ...
+Selecting previously unselected package php-fpm.
+Preparing to unpack .../36-php-fpm_2%3a7.4+75_all.deb ...
+Unpacking php-fpm (2:7.4+75) ...
+Setting up libip4tc2:amd64 (1.8.4-3ubuntu2) ...
+Setting up libapparmor1:amd64 (2.13.3-7ubuntu5.1) ...
+Setting up libsodium23:amd64 (1.0.18-1) ...
+Setting up mime-support (3.64ubuntu1) ...
+Setting up xdg-user-dirs (0.17-2ubuntu1) ...
+Setting up libmagic-mgc (1:5.38-4) ...
+Setting up psmisc (23.3-1) ...
+Setting up libglib2.0-0:amd64 (2.64.6-1~ubuntu20.04.4) ...
+No schema files found: doing nothing.
+Setting up libargon2-1:amd64 (0~20171227-0.2) ...
+Setting up libedit2:amd64 (3.1-20191231-1) ...
+Setting up libsqlite3-0:amd64 (3.31.1-4ubuntu0.5) ...
+Setting up libmagic1:amd64 (1:5.38-4) ...
+Setting up file (1:5.38-4) ...
+Setting up libglib2.0-data (2.64.6-1~ubuntu20.04.4) ...
+Setting up libdbus-1-3:amd64 (1.12.16-2ubuntu2.3) ...
+Setting up dbus (1.12.16-2ubuntu2.3) ...
+Setting up xz-utils (5.2.4-1ubuntu1.1) ...
+update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
+Setting up shared-mime-info (1.15-1) ...
+Setting up libdevmapper1.02.1:amd64 (2:1.02.167-1ubuntu1) ...
+Setting up dmsetup (2:1.02.167-1ubuntu1) ...
+Setting up libgirepository-1.0-1:amd64 (1.64.1-1~ubuntu20.04.1) ...
+Setting up libmpdec2:amd64 (2.4.2-3) ...
+Setting up libjson-c4:amd64 (0.13.1+dfsg-7ubuntu0.3) ...
+Setting up readline-common (8.0-4) ...
+Setting up libkmod2:amd64 (27-1ubuntu2.1) ...
+Setting up php-common (2:75) ...
+Created symlink /etc/systemd/system/timers.target.wants/phpsessionclean.timer → /lib/systemd/system/phpsessionclean.timer.
+Setting up php7.4-common (7.4.3-4ubuntu2.17) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/calendar.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/ctype.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/exif.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/fileinfo.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/ffi.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/ftp.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/gettext.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/iconv.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/pdo.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/phar.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/posix.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/shmop.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/sockets.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/sysvmsg.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/sysvsem.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/sysvshm.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/tokenizer.ini with new version
+Setting up libreadline8:amd64 (8.0-4) ...
+Setting up php7.4-readline (7.4.3-4ubuntu2.17) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/readline.ini with new version
+Setting up gir1.2-glib-2.0:amd64 (1.64.1-1~ubuntu20.04.1) ...
+Setting up libcryptsetup12:amd64 (2:2.2.2-3ubuntu2.4) ...
+Setting up php7.4-opcache (7.4.3-4ubuntu2.17) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/opcache.ini with new version
+Setting up libpython3.8-stdlib:amd64 (3.8.10-0ubuntu1~20.04.6) ...
+Setting up python3.8 (3.8.10-0ubuntu1~20.04.6) ...
+Setting up libpython3-stdlib:amd64 (3.8.2-0ubuntu2) ...
+Setting up php7.4-json (7.4.3-4ubuntu2.17) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/json.ini with new version
+Setting up python3 (3.8.2-0ubuntu2) ...
+running python rtupdate hooks for python3.8...
+running python post-rtupdate hooks for python3.8...
+Setting up php7.4-cli (7.4.3-4ubuntu2.17) ...
+update-alternatives: using /usr/bin/php7.4 to provide /usr/bin/php (php) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/php.1.gz because associated file /usr/share/man/man1/php7.4.1.gz (of link group php) doesn't exist
+update-alternatives: using /usr/bin/phar7.4 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/phar.1.gz because associated file /usr/share/man/man1/phar7.4.1.gz (of link group phar) doesn't exist
+update-alternatives: using /usr/bin/phar.phar7.4 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/phar.phar.1.gz because associated file /usr/share/man/man1/phar.phar7.4.1.gz (of link group phar.phar) doesn't exist
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/cli/php.ini with new version
+Setting up python3-gi (3.36.0-1) ...
+Setting up python3-dbus (1.2.16-1build1) ...
+Setting up networkd-dispatcher (2.1-2~ubuntu20.04.3) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/networkd-dispatcher.service → /lib/systemd/system/networkd-dispatcher.service.
+Setting up systemd-timesyncd (245.4-4ubuntu3.19) ...
+Created symlink /etc/systemd/system/dbus-org.freedesktop.timesync1.service → /lib/systemd/system/systemd-timesyncd.service.
+Created symlink /etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service → /lib/systemd/system/systemd-timesyncd.service.
+Setting up systemd (245.4-4ubuntu3.19) ...
+Created symlink /etc/systemd/system/getty.target.wants/getty@tty1.service → /lib/systemd/system/getty@.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/remote-fs.target → /lib/systemd/system/remote-fs.target.
+Created symlink /etc/systemd/system/dbus-org.freedesktop.resolve1.service → /lib/systemd/system/systemd-resolved.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/systemd-resolved.service → /lib/systemd/system/systemd-resolved.service.
+ln: failed to create symbolic link '/etc/resolv.conf': Device or resource busy
+Created symlink /etc/systemd/system/multi-user.target.wants/ondemand.service → /lib/systemd/system/ondemand.service.
+Created symlink /etc/systemd/system/sysinit.target.wants/systemd-pstore.service → /lib/systemd/system/systemd-pstore.service.
+Initializing machine ID from D-Bus machine ID.
+Setting up php7.4-fpm (7.4.3-4ubuntu2.17) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/fpm/php.ini with new version
+Created symlink /etc/systemd/system/multi-user.target.wants/php7.4-fpm.service → /lib/systemd/system/php7.4-fpm.service.
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up php-fpm (2:7.4+75) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+Processing triggers for php7.4-cli (7.4.3-4ubuntu2.17) ...
+Processing triggers for systemd (245.4-4ubuntu3.19) ...
+Processing triggers for php7.4-fpm (7.4.3-4ubuntu2.17) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of restart.
+Removing intermediate container 0f63f1d966ee
+ ---> 3ae405eb104f
+Step 6/9 : RUN mkdir /run/php-fpm
+ ---> Running in d35c87af2a2b
+Removing intermediate container d35c87af2a2b
+ ---> 3557eb26e975
+Step 7/9 : VOLUME "/var/www/html"
+ ---> Running in 10d8d29b8e6a
+Removing intermediate container 10d8d29b8e6a
+ ---> cefac963405f
+Step 8/9 : EXPOSE 80
+ ---> Running in a198864de7d2
+Removing intermediate container a198864de7d2
+ ---> 3bb4b4174b71
+Step 9/9 : CMD /usr/sbin/nginx -g "daemon off;" ; php-fpm -D
+ ---> Running in 3356ae54f704
+Removing intermediate container 3356ae54f704
+ ---> dd77324bf145
+Successfully built dd77324bf145
+Successfully tagged myimage:latest
+leo_amv@leo:~/hw$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+myimage      latest    dd77324bf145   7 minutes ago   253MB
+nginx        latest    3f8a00f137a0   2 weeks ago     142MB
+ubuntu       20.04     e40cf56b4be3   3 weeks ago     72.8MB
+leo_amv@leo:~/hw$ docker run -d -p 9080:80 myimage
+dfeaff9f6cf84585f72452060b2b818f1bd234601e4555ec9be345c9c7a03bf0
+leo_amv@leo:~/hw$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+dfeaff9f6cf8   myimage   "/bin/sh -c '/usr/sb…"   13 seconds ago   Up 10 seconds   0.0.0.0:9080->80/tcp, :::9080->80/tcp   nice_mestorf
+leo_amv@leo:~/hw$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS                                   NAMES
+dfeaff9f6cf8   myimage   "/bin/sh -c '/usr/sb…"   About a minute ago   Up About a minute   0.0.0.0:9080->80/tcp, :::9080->80/tcp   nice_mestorf
+leo_amv@leo:~/hw$ sudo ss -ntlp
+[sudo] пароль для leo_amv:
+State               Recv-Q              Send-Q                           Local Address:Port                            Peer Address:Port              Process                  
+LISTEN              0                   4096                                 127.0.0.1:32953                                0.0.0.0:*                  users:(("containerd",pid=4607,fd=11))
+LISTEN              0                   70                                   127.0.0.1:33060                                0.0.0.0:*                  users:(("mysqld",pid=1039,fd=31))
+LISTEN              0                   128                                  127.0.0.1:631                                  0.0.0.0:*                  users:(("cupsd",pid=793,fd=7))
+LISTEN              0                   50                                     0.0.0.0:139                                  0.0.0.0:*                  users:(("smbd",pid=1071,fd=47))
+LISTEN              0                   128                                    0.0.0.0:22                                   0.0.0.0:*                  users:(("sshd",pid=907,fd=3))
+LISTEN              0                   151                                  127.0.0.1:3306                                 0.0.0.0:*                  users:(("mysqld",pid=1039,fd=33))
+LISTEN              0                   511                                    0.0.0.0:80                                   0.0.0.0:*                  users:(("nginx",pid=931,fd=6),("nginx",pid=930,fd=6),("nginx",pid=929,fd=6))
+LISTEN              0                   50                                     0.0.0.0:445                                  0.0.0.0:*                  users:(("smbd",pid=1071,fd=46))
+LISTEN              0                   4096                             127.0.0.53%lo:53                                   0.0.0.0:*                  users:(("systemd-resolve",pid=605,fd=14))
+LISTEN              0                   4096                                   0.0.0.0:9080                                 0.0.0.0:*                  users:(("docker-proxy",pid=15920,fd=4))
+LISTEN              0                   511                                          *:8080                                       *:*                  users:(("apache2",pid=16068,fd=4),("apache2",pid=1013,fd=4),("apache2",pid=1012,fd=4),("apache2",pid=1011,fd=4),("apache2",pid=1010,fd=4),("apache2",pid=1009,fd=4),("apache2",pid=970,fd=4))
+LISTEN              0                   50                                        [::]:139                                     [::]:*                  users:(("smbd",pid=1071,fd=45))
+LISTEN              0                   128                                       [::]:22                                      [::]:*                  users:(("sshd",pid=907,fd=4))
+LISTEN              0                   511                                       [::]:80                                      [::]:*                  users:(("nginx",pid=931,fd=7),("nginx",pid=930,fd=7),("nginx",pid=929,fd=7))
+LISTEN              0                   50                                        [::]:445                                     [::]:*                  users:(("smbd",pid=1071,fd=44))
+LISTEN              0                   128                                      [::1]:631                                     [::]:*                  users:(("cupsd",pid=793,fd=6))
+LISTEN              0                   4096                                      [::]:9080                                    [::]:*                  users:(("docker-proxy",pid=15927,fd=4))
+leo_amv@leo:~/hw$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+myimage      latest    dd77324bf145   11 minutes ago   253MB
+nginx        latest    3f8a00f137a0   2 weeks ago      142MB
+ubuntu       20.04     e40cf56b4be3   3 weeks ago      72.8MB
+leo_amv@leo:~/hw$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+dfeaff9f6cf8   myimage   "/bin/sh -c '/usr/sb…"   2 minutes ago   Up 2 minutes   0.0.0.0:9080->80/tcp, :::9080->80/tcp   nice_mestorf
+leo_amv@leo:~/hw$ docker stop dfeaff9f6cf8
+dfeaff9f6cf8
+leo_amv@leo:~/hw$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+leo_amv@leo:~/hw$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                        PORTS     NAMES
+dfeaff9f6cf8   myimage   "/bin/sh -c '/usr/sb…"   3 minutes ago   Exited (137) 11 seconds ago             nice_mestorf
+leo_amv@leo:~/hw$ docker run -d -p 9081:80 myimage
+8915bf606d561cd5707617273c8dde4dcea1cf167f5966ab3490313b960337f7
+leo_amv@leo:~/hw$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+8915bf606d56   myimage   "/bin/sh -c '/usr/sb…"   33 seconds ago   Up 31 seconds   0.0.0.0:9081->80/tcp, :::9081->80/tcp   condescending_agnesi
+leo_amv@leo:~/hw$ docker stop 8915bf606d56
+8915bf606d56
+leo_amv@leo:~/hw$ docker rm 8915bf606d56
+8915bf606d56
+leo_amv@leo:~/hw$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+myimage      latest    dd77324bf145   14 minutes ago   253MB
+nginx        latest    3f8a00f137a0   2 weeks ago      142MB
+ubuntu       20.04     e40cf56b4be3   3 weeks ago      72.8MB
+leo_amv@leo:~/hw$ docker rmi ubuntu
+Error: No such image: ubuntu
+leo_amv@leo:~/hw$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                       PORTS     NAMES
+dfeaff9f6cf8   myimage   "/bin/sh -c '/usr/sb…"   7 minutes ago   Exited (137) 4 minutes ago             nice_mestorf
+leo_amv@leo:~/hw$ docker rm dfeaff9f6cf8
+dfeaff9f6cf8
+leo_amv@leo:~/hw$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+leo_amv@leo:~/hw$ docker rmi e40cf56b4be3
+Error response from daemon: conflict: unable to delete e40cf56b4be3 (cannot be forced) - image has dependent child images
+leo_amv@leo:~/hw$ docker rmi dd77324bf145
+Untagged: myimage:latest
+Deleted: sha256:dd77324bf145b6b6cad2bceca3e3a35be6c67618005a2189e0eb2387a8949c58
+Deleted: sha256:3bb4b4174b71e50c5a5faec76751180a2533feb180bbdcd12eaf0684c9be4690
+Deleted: sha256:cefac963405fb58485ce188c6780fe2e4ccfbe4bb18b14c445050be34fd28469
+Deleted: sha256:3557eb26e975464c0efe4b0ec186202e5e803611620302afc5dded0071ab398e
+Deleted: sha256:5bdaf0d15354ff8ae39de8901c38c832f8c2393c224f16d92dd1d8376e532416
+Deleted: sha256:3ae405eb104fe809ce9b8750d82c2671e3e76f89af02ebf787131bf13d6ff9d4
+Deleted: sha256:298b68dfbc218ef67670acade81ea9c612a30f50473bb0467b6135c9f19c4fb4
+Deleted: sha256:a3b81c5881d4bc628b8e1a0826b89f39cac630a840197668567af4d0e3cfb82d
+Deleted: sha256:1c1ec4c08367d6c9cdbd56398ab75a32e152eb93bb7a1aaacb2e9fa03ae87ae6
+Deleted: sha256:b4cadca214bd98c2ad68ebce3cafca6a41d200a6369fa9a59e53258eee6d8a74
+Deleted: sha256:29de440401ba67ad36d26e62725485afb8aa4b15d6654ae84efc10de9375e4e8
+Deleted: sha256:b9c7c477ededf9f5222b8663411ee4512df40a8a19615670c2c235effbca43ef
+leo_amv@leo:~/hw$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+nginx        latest    3f8a00f137a0   2 weeks ago   142MB
+ubuntu       20.04     e40cf56b4be3   3 weeks ago   72.8MB
+leo_amv@leo:~/hw$ docker rmi e40cf56b4be3
+Untagged: ubuntu:20.04
+Untagged: ubuntu@sha256:4a45212e9518f35983a976eead0de5eecc555a2f047134e9dd2cfc589076a00d
+Deleted: sha256:e40cf56b4be35b04f620bc9cfbef80038fd7370d4ed36d90676223174ecbf0b0
+Deleted: sha256:d543b8cad89e3428ac8852a13cb2dbfaf55b1e10fd95a9753e51faf393d60e81
+leo_amv@leo:~/hw$ docker rmi 3f8a00f137a0
+Untagged: nginx:latest
+Untagged: nginx@sha256:6650513efd1d27c1f8a5351cbd33edf85cc7e0d9d0fcb4ffb23d8fa89b601ba8
+Deleted: sha256:3f8a00f137a0d2c8a2163a09901e28e2471999fde4efc2f9570b91f1c30acf94
+Deleted: sha256:ccfe545858415bccd69b8edff4da7344d782985f22ad4398bdaa7358d3388d15
+Deleted: sha256:e34f63c02e162795cc8a2b43d1a3ff0ccd6d3456ce12aebb74452e252d1ecb8a
+Deleted: sha256:cf7515030d4de4fb66994e0d9fccbaf19fcfbf46f7dad8cf895051750b840128
+Deleted: sha256:1486739bc51436dd10d2bc1d45e130771c73d3aee35e49971905aa767d195342
+Deleted: sha256:452008e5f3c114989bfc978a2829cf061f0868463f3553b4e20c964a41eda749
+Deleted: sha256:4695cdfb426a05673a100e69d2fe9810d9ab2b3dd88ead97c6a3627246d83815
+leo_amv@leo:~/hw$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+leo_amv@leo:~/hw$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+leo_amv@leo:~/hw$
