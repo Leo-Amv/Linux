@@ -1,7 +1,7 @@
 leo_amv@leo:~$ sudo su
 [sudo] пароль для leo_amv: 
 root@leo:/home/leo_amv# mkdir gb
-root@leo:/home/leo_amv# mkdir gb/bin
+root@leo:/home/leo_amv# mkdir gb/bin                                          --> создаем папки для смены корня
 root@leo:/home/leo_amv# cp /bin/bash ./gb/bin
 root@leo:/home/leo_amv# ls gb/bi/bash
 ls: невозможно получить доступ к 'gb/bi/bash': Нет такого файла или каталога
@@ -16,8 +16,8 @@ root@leo:/home/leo_amv# mkdir gb/lib
 root@leo:/home/leo_amv# mkdir gb/lib64
 root@leo:/home/leo_amv# cp /lib/x86_64-linux-gnu/libc.so.6 gb/lib/
 root@leo:/home/leo_amv# cp /lib/x86_64-linux-gnu/libtinfo.so.6 gb/lib/
-root@leo:/home/leo_amv# cp /lib64/ld-linux-x86-64.so.2 gb/lib64/
-root@leo:/home/leo_amv# chroot gb /bin/bash
+root@leo:/home/leo_amv# cp /lib64/ld-linux-x86-64.so.2 gb/lib64/              --> копируем библиотеки
+root@leo:/home/leo_amv# chroot gb /bin/bash                                   --> смена корня
 bash-5.1# pwd
 /
 bash-5.1# exit
@@ -38,7 +38,7 @@ root@leo:/home/leo_amv# ldd gb/usr/bin/ls
 root@leo:/home/leo_amv# cp /lib/x86_64-linux-gnu/libselinux.so.1 gb/lib/
 root@leo:/home/leo_amv# cp /lib/x86_64-linux-gnu/libc.so.6 gb/lib/
 root@leo:/home/leo_amv# cp /lib/x86_64-linux-gnu/libpcre2-8.so.0 gb/lib/
-root@leo:/home/leo_amv# cp /lib64/ld-linux-x86-64.so.2 gb/lib64/
+root@leo:/home/leo_amv# cp /lib64/ld-linux-x86-64.so.2 gb/lib64/              --> добавляем библиотеки для команды 'ls'
 root@leo:/home/leo_amv# chroot gb /bin/bash
 bash-5.1# ls
 bin  lib  lib64  usr
@@ -47,7 +47,7 @@ exit
 root@leo:/home/leo_amv# ip netns add testns1
 root@leo:/home/leo_amv# ip netns list
 testns1
-root@leo:/home/leo_amv# ip netns exec testns1 bash
+root@leo:/home/leo_amv# ip netns exec testns1 bash                            --> изолириуем сеть
 root@leo:/home/leo_amv# ip a
 1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -70,7 +70,7 @@ root@leo:/home/leo_amv# ip a
     link/ether 02:42:d9:1f:06:8d brd ff:ff:ff:ff:ff:ff
     inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
        valid_lft forever preferred_lft forever
-root@leo:/home/leo_amv# ip link add veth0 type veth peer name veth1
+root@leo:/home/leo_amv# ip link add veth0 type veth peer name veth1                       --> создаем виртуальную сетевую карту
 root@leo:/home/leo_amv# ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -92,7 +92,7 @@ root@leo:/home/leo_amv# ip a
     link/ether ea:76:66:63:73:7c brd ff:ff:ff:ff:ff:ff
 5: veth0@veth1: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN group default qlen 1000
     link/ether ca:18:7f:35:16:be brd ff:ff:ff:ff:ff:ff
-root@leo:/home/leo_amv# ip link set veth1 netns testns1
+root@leo:/home/leo_amv# ip link set veth1 netns testns1                                   --> установим сетевую карту в ранее созданную изоляцию
 root@leo:/home/leo_amv# ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -120,12 +120,12 @@ root@leo:/home/leo_amv# ip a
     link/ether ea:76:66:63:73:7c brd ff:ff:ff:ff:ff:ff link-netnsid 0
 root@leo:/home/leo_amv# exit
 exit
-root@leo:/home/leo_amv# ip addr add 10.0.0.1/24 veth0
+root@leo:/home/leo_amv# ip addr add 10.0.0.1/24 veth0                                  --> добавим адрес
 Error: either "local" is duplicate, or "veth0" is a garbage.
 root@leo:/home/leo_amv# ip addr add 10.0.0.2/24 veth0
 Error: either "local" is duplicate, or "veth0" is a garbage.
 root@leo:/home/leo_amv# ip addr add 10.0.0.1/24 dev veth0
-root@leo:/home/leo_amv# ip link set dev veth0 up
+root@leo:/home/leo_amv# ip link set dev veth0 up                                       --> включим сетевую карту
 root@leo:/home/leo_amv# ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -159,7 +159,7 @@ root@leo:/home/leo_amv# ip a
        valid_lft forever preferred_lft forever
     inet6 fe80::e876:66ff:fe63:737c/64 scope link 
        valid_lft forever preferred_lft forever
-root@leo:/home/leo_amv# ping 10.0.0.1
+root@leo:/home/leo_amv# ping 10.0.0.1                                                        --> пингуем (проверяем связь между изоляцией и основной ос)
 PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
 64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=0.125 ms
 64 bytes from 10.0.0.1: icmp_seq=2 ttl=64 time=0.076 ms
@@ -168,6 +168,24 @@ PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
 --- 10.0.0.1 ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2048ms
 rtt min/avg/max/mdev = 0.068/0.089/0.125/0.025 ms
+root@leo:/home/leo_amv# unshare --pid --net --fork --mount-proc /bin/bash                    --> изоляция через 'unshare' 
+root@leo:/home/leo_amv# top                                                                  --> смотрим процессы в изоляции
+
+
+
+top - 21:48:11 up  1:34,  2 users,  load average: 0,08, 0,14, 0,21
+Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  3,2 us,  3,2 sy,  0,0 ni, 93,5 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
+МиБ Mem :   3739,3 total,    121,0 free,   1724,4 used,   1893,9 buff/cache
+МиБ Swap:   4090,0 total,   4060,4 free,     29,6 used.   1599,3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                        
+      1 root      20   0   18888   4304   3732 S   0,0   0,1   0:00.00 bash                                                                           
+      8 root      20   0   21688   3668   3300 R   0,0   0,1   0:00.00 top                                                                            
+
+
+root@leo:/home/leo_amv# exit
+exit
 root@leo:/home/leo_amv# 
 
 
