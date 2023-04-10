@@ -1,0 +1,505 @@
+leo_amv@leo:~$ sudo su
+[sudo] пароль для leo_amv: 
+root@leo:/home/leo_amv# apt install lxd-installer                                             --> установка 'lxd'
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Следующие НОВЫЕ пакеты будут установлены:
+  lxd-installer
+Обновлено 0 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 173 пакетов не обновлено.
+Необходимо скачать 3 108 B архивов.
+После данной операции объём занятого дискового пространства возрастёт на 22,5 kB.
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 lxd-installer all 1 [3 108 B]
+Получено 3 108 B за 0с (21,7 kB/s)           
+Выбор ранее не выбранного пакета lxd-installer.
+(Чтение базы данных … на данный момент установлено 216170 файлов и каталогов.)
+Подготовка к распаковке …/lxd-installer_1_all.deb …
+Распаковывается lxd-installer (1) …
+Настраивается пакет lxd-installer (1) …
+Created symlink /etc/systemd/system/multi-user.target.wants/lxd-installer.socket → /lib/systemd/system/lxd-installer.socket.
+root@leo:/home/leo_amv# lxd init
+Would you like to use LXD clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (dir, lvm, zfs, btrfs, ceph) [default=zfs]: 
+Create a new ZFS pool? (yes/no) [default=yes]: 
+Would you like to use an existing empty block device (e.g. a disk or partition)? (yes/no) [default=no]: 
+Size in GiB of the new loop device (1GiB minimum) [default=30GiB]: 
+Would you like to connect to a MAAS server? (yes/no) [default=no]: 
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=lxdbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+Would you like the LXD server to be available over the network? (yes/no) [default=no]: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes]: 
+Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]: 
+
+root@leo:/home/leo_amv# 
+root@leo:/home/leo_amv# lxc-create -n test1 -t download                                     
+Команда «lxc-create» не найдена, но может быть установлена с помощью:
+apt install lxc-utils
+root@leo:/home/leo_amv# apt install lxc-utils                                             --> установка 'lxc'
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Будут установлены следующие дополнительные пакеты:
+  libfuse2 liblxc-common liblxc1 libpam-cgfs lxcfs uidmap
+Предлагаемые пакеты:
+  btrfs-tools lvm2 lxc-templates lxctl
+Следующие НОВЫЕ пакеты будут установлены:
+  libfuse2 liblxc-common liblxc1 libpam-cgfs lxc-utils lxcfs uidmap
+Обновлено 0 пакетов, установлено 7 новых пакетов, для удаления отмечено 0 пакетов, и 173 пакетов не обновлено.
+Необходимо скачать 1 420 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 4 984 kB.
+Хотите продолжить? [Д/н] y
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 libfuse2 amd64 2.9.9-5ubuntu3 [90,3 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 liblxc1 amd64 1:5.0.0~git2209-g5a7b9ce67-0ubuntu1 [356 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 liblxc-common amd64 1:5.0.0~git2209-g5a7b9ce67-0ubuntu1 [460 kB]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 libpam-cgfs amd64 1:5.0.0~git2209-g5a7b9ce67-0ubuntu1 [25,5 kB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 lxc-utils amd64 1:5.0.0~git2209-g5a7b9ce67-0ubuntu1 [385 kB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 lxcfs amd64 5.0.0-0ubuntu2 [81,1 kB]
+Пол:7 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 uidmap amd64 1:4.8.1-2ubuntu2.1 [22,4 kB]
+Получено 1 420 kB за 1с (959 kB/s)         
+Выбор ранее не выбранного пакета libfuse2:amd64.
+(Чтение базы данных … на данный момент установлено 216179 файлов и каталогов.)
+Подготовка к распаковке …/0-libfuse2_2.9.9-5ubuntu3_amd64.deb …
+Распаковывается libfuse2:amd64 (2.9.9-5ubuntu3) …
+Выбор ранее не выбранного пакета liblxc1.
+Подготовка к распаковке …/1-liblxc1_1%3a5.0.0~git2209-g5a7b9ce67-0ubuntu1_amd64.deb …
+Распаковывается liblxc1 (1:5.0.0~git2209-g5a7b9ce67-0ubuntu1) …
+Выбор ранее не выбранного пакета liblxc-common.
+Подготовка к распаковке …/2-liblxc-common_1%3a5.0.0~git2209-g5a7b9ce67-0ubuntu1_amd64.deb …
+Распаковывается liblxc-common (1:5.0.0~git2209-g5a7b9ce67-0ubuntu1) …
+Выбор ранее не выбранного пакета libpam-cgfs.
+Подготовка к распаковке …/3-libpam-cgfs_1%3a5.0.0~git2209-g5a7b9ce67-0ubuntu1_amd64.deb …
+Распаковывается libpam-cgfs (1:5.0.0~git2209-g5a7b9ce67-0ubuntu1) …
+Выбор ранее не выбранного пакета lxc-utils.
+Подготовка к распаковке …/4-lxc-utils_1%3a5.0.0~git2209-g5a7b9ce67-0ubuntu1_amd64.deb …
+Распаковывается lxc-utils (1:5.0.0~git2209-g5a7b9ce67-0ubuntu1) …
+Выбор ранее не выбранного пакета lxcfs.
+Подготовка к распаковке …/5-lxcfs_5.0.0-0ubuntu2_amd64.deb …
+Распаковывается lxcfs (5.0.0-0ubuntu2) …
+Выбор ранее не выбранного пакета uidmap.
+Подготовка к распаковке …/6-uidmap_1%3a4.8.1-2ubuntu2.1_amd64.deb …
+Распаковывается uidmap (1:4.8.1-2ubuntu2.1) …
+Настраивается пакет libpam-cgfs (1:5.0.0~git2209-g5a7b9ce67-0ubuntu1) …
+Настраивается пакет uidmap (1:4.8.1-2ubuntu2.1) …
+Настраивается пакет libfuse2:amd64 (2.9.9-5ubuntu3) …
+Настраивается пакет lxcfs (5.0.0-0ubuntu2) …
+Created symlink /etc/systemd/system/multi-user.target.wants/lxcfs.service → /lib/systemd/system/lxcfs.service.
+Настраивается пакет liblxc1 (1:5.0.0~git2209-g5a7b9ce67-0ubuntu1) …
+Настраивается пакет lxc-utils (1:5.0.0~git2209-g5a7b9ce67-0ubuntu1) …
+Created symlink /etc/systemd/system/multi-user.target.wants/lxc-monitord.service → /lib/systemd/system/lxc-monitord.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/lxc-net.service → /lib/systemd/system/lxc-net.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/lxc.service → /lib/systemd/system/lxc.service.
+Setting up lxc dnsmasq configuration.
+Настраивается пакет liblxc-common (1:5.0.0~git2209-g5a7b9ce67-0ubuntu1) …
+Обрабатываются триггеры для man-db (2.10.2-1) …
+Обрабатываются триггеры для libc-bin (2.35-0ubuntu3.1) …
+root@leo:/home/leo_amv# lxc-create -n test1 -t download                                     --> создаем контейнер на базе ubuntu
+Downloading the image index
+
+---
+DIST	RELEASE	ARCH	VARIANT	BUILD
+---
+almalinux	8	amd64	default	20230409_02:48
+almalinux	8	arm64	default	20230409_02:48
+almalinux	8	ppc64el	default	20230409_02:50
+almalinux	9	amd64	default	20230409_02:47
+almalinux	9	arm64	default	20230409_02:49
+almalinux	9	ppc64el	default	20230409_02:47
+alpine	3.14	amd64	default	20230410_13:01
+alpine	3.14	arm64	default	20230410_13:00
+alpine	3.14	armhf	default	20230410_13:01
+alpine	3.14	i386	default	20230410_13:01
+alpine	3.14	ppc64el	default	20230409_13:00
+alpine	3.14	s390x	default	20230409_13:00
+alpine	3.15	amd64	default	20230410_13:01
+alpine	3.15	arm64	default	20230410_13:01
+alpine	3.15	armhf	default	20230410_13:01
+alpine	3.15	i386	default	20230409_13:00
+alpine	3.15	ppc64el	default	20230409_13:00
+alpine	3.15	s390x	default	20230409_13:00
+alpine	3.16	amd64	default	20230410_13:00
+alpine	3.16	arm64	default	20230410_13:01
+alpine	3.16	armhf	default	20230410_13:01
+alpine	3.16	i386	default	20230409_13:00
+alpine	3.16	ppc64el	default	20230409_13:00
+alpine	3.16	s390x	default	20230409_13:00
+alpine	3.17	amd64	default	20230410_13:00
+alpine	3.17	arm64	default	20230410_13:01
+alpine	3.17	armhf	default	20230410_13:01
+alpine	3.17	i386	default	20230409_13:01
+alpine	3.17	ppc64el	default	20230409_13:01
+alpine	3.17	s390x	default	20230409_13:00
+alpine	edge	amd64	default	20230410_13:00
+alpine	edge	arm64	default	20230410_13:00
+alpine	edge	armhf	default	20230410_13:00
+alpine	edge	i386	default	20230409_13:02
+alpine	edge	ppc64el	default	20230409_13:01
+alpine	edge	s390x	default	20230409_13:00
+alt	Sisyphus	amd64	default	20230410_01:17
+alt	Sisyphus	arm64	default	20230410_01:17
+alt	Sisyphus	armhf	default	20230410_01:17
+alt	Sisyphus	ppc64el	default	20230410_01:17
+alt	p10	amd64	default	20230410_01:20
+alt	p10	arm64	default	20230410_01:17
+alt	p10	armhf	default	20230410_01:17
+alt	p10	ppc64el	default	20230410_01:17
+alt	p9	amd64	default	20230410_01:17
+alt	p9	arm64	default	20230410_01:17
+alt	p9	armhf	default	20230410_01:17
+alt	p9	ppc64el	default	20230410_01:17
+amazonlinux	current	amd64	default	20230410_05:09
+amazonlinux	current	arm64	default	20230410_05:09
+apertis	v2020	amd64	default	20230410_10:53
+apertis	v2020	arm64	default	20230410_10:53
+apertis	v2020	armhf	default	20230410_10:53
+apertis	v2021	amd64	default	20230410_10:53
+apertis	v2021	arm64	default	20230410_11:04
+apertis	v2021	armhf	default	20230410_10:53
+archlinux	current	amd64	default	20230410_04:18
+archlinux	current	arm64	default	20230410_04:18
+archlinux	current	armhf	default	20230410_04:18
+busybox	1.34.1	amd64	default	20230410_06:00
+busybox	1.34.1	arm64	default	20230410_06:00
+centos	7	amd64	default	20230410_07:08
+centos	7	arm64	default	20230410_07:08
+centos	7	armhf	default	20230410_07:08
+centos	7	i386	default	20230410_07:08
+centos	7	ppc64el	default	20230410_07:08
+centos	8-Stream	amd64	default	20230410_07:08
+centos	8-Stream	arm64	default	20230410_07:08
+centos	8-Stream	ppc64el	default	20230410_07:08
+centos	9-Stream	amd64	default	20230410_07:08
+centos	9-Stream	arm64	default	20230410_07:08
+centos	9-Stream	ppc64el	default	20230410_07:08
+debian	bookworm	amd64	default	20230410_05:24
+debian	bookworm	arm64	default	20230410_05:24
+debian	bookworm	armel	default	20230410_05:24
+debian	bookworm	armhf	default	20230410_05:24
+debian	bookworm	i386	default	20230410_05:24
+debian	bookworm	ppc64el	default	20230410_05:24
+debian	bookworm	s390x	default	20230410_05:24
+debian	bullseye	amd64	default	20230410_05:24
+debian	bullseye	arm64	default	20230410_05:24
+debian	bullseye	armel	default	20230410_05:24
+debian	bullseye	armhf	default	20230410_05:24
+debian	bullseye	i386	default	20230410_05:25
+debian	bullseye	ppc64el	default	20230410_05:24
+debian	bullseye	s390x	default	20230410_05:24
+debian	sid	amd64	default	20230410_05:24
+debian	sid	arm64	default	20230410_05:24
+debian	sid	armel	default	20230410_05:24
+debian	sid	armhf	default	20230410_05:24
+debian	sid	i386	default	20230410_05:24
+debian	sid	ppc64el	default	20230410_05:24
+debian	sid	s390x	default	20230410_05:24
+devuan	ascii	amd64	default	20230410_11:50
+devuan	ascii	arm64	default	20230410_11:50
+devuan	ascii	armel	default	20230410_12:23
+devuan	ascii	armhf	default	20230410_11:50
+devuan	ascii	i386	default	20230410_11:50
+devuan	beowulf	amd64	default	20230410_11:50
+devuan	beowulf	arm64	default	20230410_12:23
+devuan	beowulf	armel	default	20230410_11:50
+devuan	beowulf	armhf	default	20230410_11:50
+devuan	beowulf	i386	default	20230410_11:50
+devuan	beowulf	ppc64el	default	20230410_11:50
+devuan	chimaera	amd64	default	20230410_11:52
+devuan	chimaera	arm64	default	20230410_11:50
+devuan	chimaera	armel	default	20230410_11:50
+devuan	chimaera	armhf	default	20230410_11:50
+devuan	chimaera	i386	default	20230410_11:51
+devuan	chimaera	ppc64el	default	20230410_11:50
+fedora	36	amd64	default	20230409_20:33
+fedora	36	arm64	default	20230409_20:33
+fedora	36	ppc64el	default	20230409_20:33
+fedora	36	s390x	default	20230409_20:33
+fedora	37	amd64	default	20230409_20:33
+fedora	37	arm64	default	20230409_20:33
+fedora	37	ppc64el	default	20230409_20:33
+fedora	37	s390x	default	20230409_20:33
+fedora	Rawhide	amd64	default	20230409_20:33
+fedora	Rawhide	arm64	default	20230410_00:12
+fedora	Rawhide	ppc64el	default	20230409_20:33
+fedora	Rawhide	s390x	default	20230409_20:33
+funtoo	1.4	amd64	default	20230409_16:45
+funtoo	1.4	armhf	default	20230409_16:45
+funtoo	next	amd64	default	20230409_16:45
+kali	current	amd64	default	20230409_17:14
+kali	current	arm64	default	20230409_17:14
+kali	current	armel	default	20230409_17:14
+kali	current	armhf	default	20230409_17:14
+mint	tara	amd64	default	20230410_08:51
+mint	tessa	amd64	default	20230410_08:51
+mint	tina	amd64	default	20230410_08:51
+mint	tricia	amd64	default	20230410_09:12
+mint	ulyana	amd64	default	20230410_08:51
+mint	ulyssa	amd64	default	20230410_08:51
+mint	uma	amd64	default	20230410_08:52
+mint	una	amd64	default	20230410_08:53
+mint	vanessa	amd64	default	20230410_08:51
+mint	vera	amd64	default	20230410_08:51
+openeuler	20.03	amd64	default	20230409_17:33
+openeuler	22.03	amd64	default	20230409_17:33
+openeuler	22.09	amd64	default	20230409_15:49
+opensuse	15.4	amd64	default	20230410_05:41
+opensuse	15.4	arm64	default	20230410_04:44
+opensuse	15.4	ppc64el	default	20230409_04:20
+opensuse	15.4	s390x	default	20230409_04:20
+opensuse	tumbleweed	amd64	default	20230409_04:20
+opensuse	tumbleweed	arm64	default	20230409_04:21
+opensuse	tumbleweed	ppc64el	default	20230409_04:20
+opensuse	tumbleweed	s390x	default	20230409_04:20
+openwrt	21.02	amd64	default	20230410_11:57
+openwrt	21.02	arm64	default	20230410_11:58
+openwrt	21.02	armhf	default	20230410_11:59
+openwrt	22.03	amd64	default	20230410_11:57
+openwrt	22.03	arm64	default	20230409_11:57
+openwrt	22.03	armhf	default	20230409_11:58
+openwrt	snapshot	amd64	default	20230410_11:57
+openwrt	snapshot	arm64	default	20230410_12:08
+openwrt	snapshot	armhf	default	20230410_11:58
+oracle	7	amd64	default	20230410_07:47
+oracle	7	arm64	default	20230410_08:39
+oracle	8	amd64	default	20230410_07:47
+oracle	8	arm64	default	20230410_07:47
+oracle	9	amd64	default	20230410_07:46
+oracle	9	arm64	default	20230410_08:39
+plamo	6.x	amd64	default	20230410_01:33
+plamo	7.x	amd64	default	20230410_01:33
+pld	current	amd64	default	20230409_20:46
+rockylinux	8	amd64	default	20230410_02:06
+rockylinux	8	arm64	default	20230410_02:06
+rockylinux	9	amd64	default	20230410_02:06
+rockylinux	9	arm64	default	20230410_02:06
+rockylinux	9	ppc64el	default	20230410_02:06
+springdalelinux	7	amd64	default	20230410_06:40
+springdalelinux	7	i386	default	20230410_06:38
+springdalelinux	8	amd64	default	20230410_06:38
+springdalelinux	9	amd64	default	20230410_06:39
+ubuntu	bionic	amd64	default	20230410_07:43
+ubuntu	bionic	arm64	default	20230410_07:42
+ubuntu	bionic	armhf	default	20230410_07:43
+ubuntu	bionic	i386	default	20230410_07:43
+ubuntu	bionic	ppc64el	default	20230410_07:43
+ubuntu	bionic	s390x	default	20230410_07:53
+ubuntu	focal	amd64	default	20230410_07:43
+ubuntu	focal	arm64	default	20230410_07:43
+ubuntu	focal	armhf	default	20230410_07:43
+ubuntu	focal	ppc64el	default	20230410_07:43
+ubuntu	focal	s390x	default	20230410_07:52
+ubuntu	jammy	amd64	default	20230410_07:43
+ubuntu	jammy	arm64	default	20230410_07:43
+ubuntu	jammy	armhf	default	20230410_07:43
+ubuntu	jammy	ppc64el	default	20230410_07:43
+ubuntu	jammy	s390x	default	20230410_07:42
+ubuntu	kinetic	amd64	default	20230410_07:42
+ubuntu	kinetic	arm64	default	20230410_07:43
+ubuntu	kinetic	armhf	default	20230410_07:43
+ubuntu	kinetic	ppc64el	default	20230410_07:58
+ubuntu	kinetic	s390x	default	20230410_07:42
+ubuntu	lunar	amd64	default	20230410_07:43
+ubuntu	lunar	arm64	default	20230410_08:49
+ubuntu	lunar	armhf	default	20230410_07:42
+ubuntu	lunar	ppc64el	default	20230410_07:56
+ubuntu	lunar	s390x	default	20230410_07:42
+ubuntu	xenial	amd64	default	20230410_07:42
+ubuntu	xenial	arm64	default	20230410_07:43
+ubuntu	xenial	armhf	default	20230410_07:43
+ubuntu	xenial	i386	default	20230410_07:42
+ubuntu	xenial	ppc64el	default	20230410_07:57
+ubuntu	xenial	s390x	default	20230410_07:52
+voidlinux	current	amd64	default	20230409_17:10
+voidlinux	current	arm64	default	20230409_17:10
+voidlinux	current	armhf	default	20230409_17:10
+---
+
+Distribution: 
+ubuntu
+Release: 
+jammy
+Architecture: 
+amd64                                                                 --> выбираем версию и архитектуру
+
+Downloading the image index
+Downloading the rootfs
+Downloading the metadata
+The image cache is now ready
+Unpacking the rootfs
+
+---
+You just created an Ubuntu jammy amd64 (20230410_07:43) container.
+
+To enable SSH, run: apt install openssh-server
+No default root or user password are set by LXC.
+root@leo:/home/leo_amv# lxc-ls
+test1 
+root@leo:/home/leo_amv# lxc-ls -f                                     --> проверяем статус созданного контейнера
+NAME  STATE   AUTOSTART GROUPS IPV4 IPV6 UNPRIVILEGED 
+test1 STOPPED 0         -      -    -    false        
+root@leo:/home/leo_amv# lxc-start -n test1                            --> запускаем его
+root@leo:/home/leo_amv# lxc-ls -f
+NAME  STATE   AUTOSTART GROUPS IPV4     IPV6 UNPRIVILEGED 
+test1 RUNNING 0         -      10.0.3.2 -    false        
+root@leo:/home/leo_amv# lxc-stop -n test1                             --> останавливаем
+root@leo:/home/leo_amv# lxc-ls -f
+NAME  STATE   AUTOSTART GROUPS IPV4 IPV6 UNPRIVILEGED 
+test1 STOPPED 0         -      -    -    false        
+root@leo:/home/leo_amv# cd /var/lib/lxc/
+root@leo:/var/lib/lxc# ll
+итого 12
+drwx------  3 root root 4096 апр 10 20:19 ./
+drwxr-xr-x 84 root root 4096 апр 10 20:18 ../
+drwxrwx---  3 root root 4096 апр 10 20:26 test1/
+root@leo:/var/lib/lxc# cd test1
+root@leo:/var/lib/lxc/test1# 
+root@leo:/var/lib/lxc/test1# ll
+итого 16
+drwxrwx---  3 root root 4096 апр 10 20:26 ./
+drwx------  3 root root 4096 апр 10 20:19 ../
+-rw-r-----  1 root root  676 апр 10 20:26 config
+drwxr-xr-x 17 root root 4096 апр 10 20:28 rootfs/
+root@leo:/var/lib/lxc/test1# cat config
+# Template used to create this container: /usr/share/lxc/templates/lxc-download
+# Parameters passed to the template:
+# For additional config options, please look at lxc.container.conf(5)
+
+# Uncomment the following line to support nesting containers:
+#lxc.include = /usr/share/lxc/config/nesting.conf
+# (Be aware this has security implications)
+
+
+# Distribution configuration
+lxc.include = /usr/share/lxc/config/common.conf
+lxc.arch = linux64
+
+# Container specific configuration
+lxc.rootfs.path = dir:/var/lib/lxc/test1/rootfs
+lxc.uts.name = test1
+
+# Network configuration
+lxc.net.0.type = veth
+lxc.net.0.link = lxcbr0
+lxc.net.0.flags = up
+lxc.net.0.hwaddr = 00:16:3e:4f:1b:d3
+root@leo:/var/lib/lxc/test1# vi config                                             --> редактируем конфиг
+root@leo:/var/lib/lxc/test1# cat config
+# Template used to create this container: /usr/share/lxc/templates/lxc-download
+# Parameters passed to the template:
+# For additional config options, please look at lxc.container.conf(5)
+
+# Uncomment the following line to support nesting containers:
+#lxc.include = /usr/share/lxc/config/nesting.conf
+# (Be aware this has security implications)
+
+
+# Distribution configuration
+lxc.include = /usr/share/lxc/config/common.conf
+lxc.arch = linux64
+
+# Container specific configuration
+lxc.rootfs.path = dir:/var/lib/lxc/test1/rootfs
+lxc.uts.name = test1
+
+# Network configuration
+lxc.net.0.type = veth
+lxc.net.0.link = lxcbr0
+lxc.net.0.flags = up
+lxc.net.0.hwaddr = 00:16:3e:4f:1b:d3
+
+lxc.cgroup.memory.max = 256M                                                 --> добавил ограничение использования памяти 
+lxc.start.auto = 1                                                           --> добавил автозапуск
+root@leo:/var/lib/lxc/test1# lxc-start -n test1
+root@leo:/var/lib/lxc/test1# lxc-ls -f
+NAME  STATE   AUTOSTART GROUPS IPV4     IPV6 UNPRIVILEGED 
+test1 RUNNING 1         -      10.0.3.2 -    false        
+root@leo:/var/lib/lxc/test1# lxc-attach -n test1
+root@test1:/# free -m
+               total        used        free      shared  buff/cache   available
+Mem:            3739          25        3712           0           1        3714
+Swap:              0           0           0
+root@test1:/# exit
+exit
+root@leo:/var/lib/lxc/test1# vi config
+root@leo:/var/lib/lxc/test1# cat config
+# Template used to create this container: /usr/share/lxc/templates/lxc-download
+# Parameters passed to the template:
+# For additional config options, please look at lxc.container.conf(5)
+
+# Uncomment the following line to support nesting containers:
+#lxc.include = /usr/share/lxc/config/nesting.conf
+# (Be aware this has security implications)
+
+
+# Distribution configuration
+lxc.include = /usr/share/lxc/config/common.conf
+lxc.arch = linux64
+
+# Container specific configuration
+lxc.rootfs.path = dir:/var/lib/lxc/test1/rootfs
+lxc.uts.name = test1
+
+# Network configuration
+lxc.net.0.type = veth
+lxc.net.0.link = lxcbr0
+lxc.net.0.flags = up
+lxc.net.0.hwaddr = 00:16:3e:4f:1b:d3
+
+lxc.cgroup2.memory.max = 256M                                         --> исправил ошибку (забыл цифру"2")            
+lxc.start.auto = 1
+root@leo:/var/lib/lxc/test1# lxc-stop -n test1
+root@leo:/var/lib/lxc/test1# lxc-start -n test1
+root@leo:/var/lib/lxc/test1# lxc-attach -n test1
+root@test1:/# free -m
+               total        used        free      shared  buff/cache   available
+Mem:             256          26         229           0           0         229
+Swap:              0           0           0
+root@test1:/# exit
+exit
+root@leo:/var/lib/lxc/test1# lxc-stop -n test1
+root@leo:/var/lib/lxc/test1# vi config
+root@leo:/var/lib/lxc/test1# cat config
+# Template used to create this container: /usr/share/lxc/templates/lxc-download
+# Parameters passed to the template:
+# For additional config options, please look at lxc.container.conf(5)
+
+# Uncomment the following line to support nesting containers:
+#lxc.include = /usr/share/lxc/config/nesting.conf
+# (Be aware this has security implications)
+
+
+# Distribution configuration
+lxc.include = /usr/share/lxc/config/common.conf
+lxc.arch = linux64
+
+# Container specific configuration
+lxc.rootfs.path = dir:/var/lib/lxc/test1/rootfs
+lxc.uts.name = test1
+
+# Network configuration
+lxc.net.0.type = veth
+lxc.net.0.link = lxcbr0
+lxc.net.0.flags = up
+lxc.net.0.hwaddr = 00:16:3e:4f:1b:d3
+lxc.net.0.ipv4.address = 10.0.12.0/24                             --> добавил "ip"
+
+lxc.cgroup2.memory.max = 256M
+lxc.start.auto = 1
+root@leo:/var/lib/lxc/test1# lxc-start -n test1
+root@leo:/var/lib/lxc/test1# lxc-ls -f
+NAME  STATE   AUTOSTART GROUPS IPV4                IPV6 UNPRIVILEGED 
+test1 RUNNING 1         -      10.0.12.0, 10.0.3.2 -    false        
+root@leo:/var/lib/lxc/test1# lxc-stop -n test1
+root@leo:/var/lib/lxc/test1# lxc-start -n test1 --logfile /log.log                    --> добавил логирование
+root@leo:/var/lib/lxc/test1# lxc-start -n test1 --logfile /log.log                    --> запустил еще раз чтобы создать ошибку для проверки логирования
+lxc-start: test1: tools/lxc_start.c: main: 256 Container is already running
+root@leo:/var/lib/lxc/test1# cat /log.log                                                                         --> проверяем логи 
+lxc-start test1 20230410161312.667 ERROR    lxc_start - tools/lxc_start.c:main:256 - Container is already running
+root@leo:/var/lib/lxc/test1# lxc-stop -n test1
+root@leo:/var/lib/lxc/test1# lxc-ls -f
+NAME  STATE   AUTOSTART GROUPS IPV4 IPV6 UNPRIVILEGED 
+test1 STOPPED 1         -      -    -    false        
+root@leo:/var/lib/lxc/test1# 
+
