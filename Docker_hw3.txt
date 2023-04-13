@@ -1,0 +1,215 @@
+leo_amv@leo:~$ docker run --detach --name mariadb --env MARIADB_PASSWORD=123 --env MARIADB_ROOT_PASSWORD=123 mariadb:latest		--> запускаем контейнер с "mariadb"
+Unable to find image 'mariadb:latest' locally                                                                                   --> скачивает образ
+latest: Pulling from library/mariadb
+74ac377868f8: Already exists
+9f8acee20aa1: Pull complete
+11b336495e01: Pull complete
+20ab1641dd41: Pull complete
+eaf0c5c99086: Pull complete
+239335430207: Pull complete
+931baaab2c80: Pull complete
+f2e86cc8f052: Pull complete
+Digest: sha256:9ff479f244cc596aed9794d035a9f352662f2caed933238c533024df64569853
+Status: Downloaded newer image for mariadb:latest
+8532e66104c55d36f0c8b497a3535c0631a59f1a2db707115f1569e1f6cbd7a6
+leo_amv@leo:~$ docker stop mariadb                                                                                              --> останавливаем контейнер
+mariadb
+leo_amv@leo:~$ cd somefolder/
+leo_amv@leo:~/somefolder$ pwd                                                                                                   --> создали папку и смотрим путь для связи с контейнером
+/home/leo_amv/somefolder
+leo_amv@leo:~$ docker run -it -h leo --name mariadb --env MARIADB_PASSWORD=123 --env MARIADB_ROOT_PASSWORD=123 -v /home/leo_amv/somefolder:/var/lib/mysql mariadb:latestdocker: Error response from daemon: Conflict. The container name "/mariadb" is already in use by container "8532e66104c55d36f0c8b497a3535c0631a59f1a2db707115f1569e1f6cbd7a6". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+leo_amv@leo:~$ docker rm mariadb
+mariadb
+leo_amv@leo:~$ docker run -it -h leo --name mariadb --env MARIADB_PASSWORD=123 --env MARIADB_ROOT_PASSWORD=123 -v /home/leo_amv/somefolder:/var/lib/mysql mariadb:latest
+2023-04-13 15:49:02+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.2+maria~ubu2204 started.
+2023-04-13 15:49:02+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2023-04-13 15:49:02+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.2+maria~ubu2204 started.
+2023-04-13 15:49:02+00:00 [Note] [Entrypoint]: Initializing database files
+
+                                                                                                                        --> линкуем папку с "mariadb" (путь нашел в инструкции к образу на докерхабе)
+                                                                                                                        --> так же задаем hostname и пароль для бд 
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+To do so, start the server, then issue the following command:
+
+'/usr/bin/mariadb-secure-installation'
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+
+See the MariaDB Knowledgebase at https://mariadb.com/kb
+
+Please report any problems at https://mariadb.org/jira
+
+The latest information about MariaDB is available at https://mariadb.org/.
+
+Consider joining MariaDB's strong and vibrant community:
+https://mariadb.org/get-involved/
+
+2023-04-13 15:49:26+00:00 [Note] [Entrypoint]: Database files initialized
+2023-04-13 15:49:26+00:00 [Note] [Entrypoint]: Starting temporary server
+2023-04-13 15:49:26+00:00 [Note] [Entrypoint]: Waiting for server startup
+2023-04-13 15:49:26 0 [Note] Starting MariaDB 10.11.2-MariaDB-1:10.11.2+maria~ubu2204 source revision cafba8761af55ae16cc69c9b53a341340a845b36 as process 92
+2023-04-13 15:49:27 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2023-04-13 15:49:27 0 [Note] InnoDB: Number of transaction pools: 1
+2023-04-13 15:49:27 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2023-04-13 15:49:27 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+2023-04-13 15:49:27 0 [Note] InnoDB: Using liburing
+2023-04-13 15:49:27 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2023-04-13 15:49:27 0 [Note] InnoDB: Completed initialization of buffer pool
+2023-04-13 15:49:27 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+2023-04-13 15:49:27 0 [Note] InnoDB: 128 rollback segments are active.
+2023-04-13 15:49:27 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2023-04-13 15:49:27 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2023-04-13 15:49:27 0 [Note] InnoDB: log sequence number 46456; transaction id 14
+2023-04-13 15:49:27 0 [Note] Plugin 'FEEDBACK' is disabled.
+2023-04-13 15:49:27 0 [Warning] 'user' entry 'root@leo' ignored in --skip-name-resolve mode.
+2023-04-13 15:49:27 0 [Warning] 'proxies_priv' entry '@% root@leo' ignored in --skip-name-resolve mode.
+2023-04-13 15:49:27 0 [Note] mariadbd: ready for connections.
+Version: '10.11.2-MariaDB-1:10.11.2+maria~ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 0  mariadb.org binary distribution
+2023-04-13 15:49:27+00:00 [Note] [Entrypoint]: Temporary server started.
+2023-04-13 15:49:33+00:00 [Note] [Entrypoint]: Securing system users (equivalent to running mysql_secure_installation)
+
+2023-04-13 15:49:33+00:00 [Note] [Entrypoint]: Stopping temporary server
+2023-04-13 15:49:33 0 [Note] mariadbd (initiated by: unknown): Normal shutdown
+2023-04-13 15:49:33 0 [Note] InnoDB: FTS optimize thread exiting.
+2023-04-13 15:49:33 0 [Note] InnoDB: Starting shutdown...
+2023-04-13 15:49:33 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+2023-04-13 15:49:33 0 [Note] InnoDB: Buffer pool(s) dump completed at 230413 15:49:33
+2023-04-13 15:49:33 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+2023-04-13 15:49:33 0 [Note] InnoDB: Shutdown completed; log sequence number 46456; transaction id 15
+2023-04-13 15:49:34 0 [Note] mariadbd: Shutdown complete
+
+2023-04-13 15:49:34+00:00 [Note] [Entrypoint]: Temporary server stopped
+
+2023-04-13 15:49:34+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
+
+2023-04-13 15:49:34 0 [Note] Starting MariaDB 10.11.2-MariaDB-1:10.11.2+maria~ubu2204 source revision cafba8761af55ae16cc69c9b53a341340a845b36 as process 1
+2023-04-13 15:49:34 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2023-04-13 15:49:34 0 [Note] InnoDB: Number of transaction pools: 1
+2023-04-13 15:49:34 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2023-04-13 15:49:34 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+2023-04-13 15:49:34 0 [Note] InnoDB: Using liburing
+2023-04-13 15:49:34 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2023-04-13 15:49:34 0 [Note] InnoDB: Completed initialization of buffer pool
+2023-04-13 15:49:34 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+2023-04-13 15:49:34 0 [Note] InnoDB: 128 rollback segments are active.
+2023-04-13 15:49:34 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2023-04-13 15:49:34 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2023-04-13 15:49:34 0 [Note] InnoDB: log sequence number 46456; transaction id 14
+2023-04-13 15:49:34 0 [Note] Plugin 'FEEDBACK' is disabled.
+2023-04-13 15:49:34 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+2023-04-13 15:49:34 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2023-04-13 15:49:34 0 [Note] Server socket created on IP: '0.0.0.0'.
+2023-04-13 15:49:34 0 [Note] Server socket created on IP: '::'.
+2023-04-13 15:49:34 0 [Note] InnoDB: Buffer pool(s) load completed at 230413 15:49:34
+2023-04-13 15:49:34 0 [Note] mariadbd: ready for connections.
+Version: '10.11.2-MariaDB-1:10.11.2+maria~ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+leo_amv@leo:~$ docker ps -a                                                                                             --> проверяем контейнер
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS      NAMES
+42e7de2f2ebc   mariadb:latest   "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes   3306/tcp   mariadb
+leo_amv@leo:~$ docker exec -it mariadb bash                                                                             --> заходим в контейнер
+root@leo:/# mariadb -u root -p                                                                                          --> заходим в бд
+Enter password:
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+root@leo:/# mariadb -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 4
+Server version: 10.11.2-MariaDB-1:10.11.2+maria~ubu2204 mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database test;                                                                                 --> создаем бд "test"
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> use test;
+Database changed
+MariaDB [test]> create table first (i INT);                                                                             --> создаем таблицу "first"
+Query OK, 0 rows affected (0.444 sec)
+
+MariaDB [test]> INSERT INTO first (i) VALUES (1),(2),(3),(4);                                                           --> заполняем значениями
+Query OK, 4 rows affected (0.066 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+MariaDB [test]> select * from first;                                                                                   --> смотрим все значения таблицы
++------+
+| i    |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
++------+
+4 rows in set (0.000 sec)
+
+MariaDB [test]> exit
+Bye
+root@leo:/# exit
+exit
+leo_amv@leo:~$ cd somefolder/
+leo_amv@leo:~/somefolder$ ll                                                                                            --> проверяем сохранилось ли все в нашей слинкованной папке
+итого 139388
+drwxrwxr-x  6 lxd         999      4096 апр 13 20:56 ./
+drwxr-x--- 26 leo_amv leo_amv      4096 апр 13 20:09 ../
+-rw-rw----  1 lxd         999  16842752 апр 13 20:49 aria_log.00000001
+-rw-rw----  1 lxd         999        52 апр 13 20:49 aria_log_control
+-rw-rw----  1 lxd         999     12288 апр 13 20:57 ddl_recovery.log
+-rw-rw----  1 lxd         999       868 апр 13 20:49 ib_buffer_pool
+-rw-rw----  1 lxd         999  12582912 апр 13 20:49 ibdata1
+-rw-rw----  1 lxd         999 100663296 апр 13 20:57 ib_logfile0
+-rw-rw----  1 lxd         999  12582912 апр 13 20:49 ibtmp1
+-rw-rw----  1 lxd         999         0 апр 13 20:49 multi-master.info
+drwx------  2 lxd         999      4096 апр 13 20:49 mysql/
+-rw-r--r--  1 lxd         999        15 апр 13 20:49 mysql_upgrade_info
+drwx------  2 lxd         999      4096 апр 13 20:49 performance_schema/
+drwx------  2 lxd         999     12288 апр 13 20:49 sys/
+drwx------  2 lxd         999      4096 апр 13 20:57 test/
+leo_amv@leo:~/somefolder$ cd ..
+leo_amv@leo:~$ docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS      NAMES
+42e7de2f2ebc   mariadb:latest   "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes   3306/tcp   mariadb
+leo_amv@leo:~$ docker run --name phpmyadmin -d --link mariadb:db -p 8080:80 phpmyadmin                              --> запускаем контейнер с "phpmyadmin" (инструкции к образу нашел так же на докерхабе, )
+                                                                                                                    --> должен быть запущен контейнер с бд, указываем имя контейнера с бд и указываем порт
+Unable to find image 'phpmyadmin:latest' locally                                                                    --> скачивает...
+latest: Pulling from library/phpmyadmin
+26c5c85e47da: Pull complete
+39c8021d1258: Pull complete
+dff43c2de684: Pull complete
+383987c505e8: Pull complete
+3fd742e8a904: Pull complete
+ccf9807e8362: Pull complete
+11cc7ce10028: Pull complete
+c00138369ba7: Pull complete
+c0f1704f771e: Pull complete
+7568ffe2e189: Pull complete
+1d87e08dde63: Pull complete
+cf538d6ed05e: Pull complete
+8bb017d9c96e: Pull complete
+ec632307e1d1: Pull complete
+602e88d47bc1: Pull complete
+595f26054080: Pull complete
+f5c47ee504d4: Pull complete
+7b0574cab0c2: Pull complete
+Digest: sha256:d75050ed9f1039bcd27bc18c3d450cf9f4db9e54787be99985146afefb0eb9b3
+Status: Downloaded newer image for phpmyadmin:latest
+5994d727e25205bbec65e9b462b4f2cb3768f2ad970bc4535cf0601e11b32c39
+docker: Error response from daemon: driver failed programming external connectivity on endpoint phpmyadmin (c78106febc313278b22d36e525b60949fba8f5a6b2180e3c126a9ed6e36e1aed): Error starting userland proxy: listen tcp4 0.0.0.0:8080: bind: address already in use.
+leo_amv@leo:~$ docker ps -a                                                                                                                                                     --> порт уже используется
+CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS          PORTS      NAMES
+5994d727e252   phpmyadmin       "/docker-entrypoint.…"   About a minute ago   Created                    phpmyadmin
+42e7de2f2ebc   mariadb:latest   "docker-entrypoint.s…"   18 minutes ago       Up 18 minutes   3306/tcp   mariadb
+leo_amv@leo:~$ docker stop phpmyadmin
+phpmyadmin
+leo_amv@leo:~$ docker rm phpmyadmin
+phpmyadmin
+leo_amv@leo:~$ docker run --name phpmyadmin -d --link mariadb:db -p 8085:80 phpmyadmin                          --> исправил ошибку поставил другой порт
+e38de318d5100ecfa9a3b3b48cac48d9fee4cb93685b24b4006e55d8451bd0ed
+leo_amv@leo:~$ docker ps -a                                                                                     --> проверяем работу контейнеров
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+e38de318d510   phpmyadmin       "/docker-entrypoint.…"   26 seconds ago   Up 23 seconds   0.0.0.0:8085->80/tcp, :::8085->80/tcp   phpmyadmin
+42e7de2f2ebc   mariadb:latest   "docker-entrypoint.s…"   20 minutes ago   Up 20 minutes   3306/tcp                                mariadb
+leo_amv@leo:~$
