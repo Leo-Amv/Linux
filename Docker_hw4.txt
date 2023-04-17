@@ -1,0 +1,134 @@
+leo_amv@leo:~$ vi Dockerfile
+leo_amv@leo:~$ cat Dockerfile
+FROM ubuntu:22.10
+RUN apt update && \
+    apt install -y mariadb-server
+EXPOSE 3306
+CMD ["mysqld"]
+leo_amv@leo:~$ vi Dockerfile
+leo_amv@leo:~$ leo_amv@leo:~$ cat Dockerfile
+FROM ubuntu:22.10
+RUN apt update && \
+    apt install -y mariadb-server
+    rm -rf /var/lip/apt/lists/*
+EXPOSE 3306
+CMD ["mysqld"]
+leo_amv@leo:~$ vi Dockerfile
+leo_amv@leo:~$ vi Dockerfile
+leo_amv@leo:~$ cat Dockerfile
+FROM ubuntu:22.10
+RUN apt update && \
+    apt install -y mariadb-server && \
+    rm -rf /var/lip/apt/lists/*
+VOLUME /var/lib/mysql
+EXPOSE 3306
+CMD ["mysqld"]
+leo_amv@leo:~$ docker build -t mdb .
+[+] Building 140.4s (4/5)
+ => [internal] load build definition from Dockerfile                                                               0.3s
+ => => transferring dockerfile: 197B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.5s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.10                                                    5.8s
+ => [1/2] FROM docker.io/library/ubuntu:22.10@sha256:a82eebb42083a134e009a6b81a7e5d2eecc37112fa8ae40642bd3c5153b  14.6s
+ => => resolve docker.io/library/ubuntu:22.10@sha256:a82eebb42083a134e009a6b81a7e5d2eecc37112fa8ae40642bd3c5153b7  0.3s
+ => => sha256:a82eebb42083a134e009a6b81a7e5d2eecc37112fa8ae40642bd3c5153b7e4f0 1.13kB / 1.13kB                     0.0s
+ => => sha256:8c8f22bacbfba9678edddcc3b6d1e56cce02eff9cbf27ab46116de30cb79a3d6 424B / 424B                         0.0s
+[+] Building 167.5s (6/6) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.3s
+ => => transferring dockerfile: 197B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.5s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.10                                                    5.8s
+ => [1/2] FROM docker.io/library/ubuntu:22.10@sha256:a82eebb42083a134e009a6b81a7e5d2eecc37112fa8ae40642bd3c5153b  14.6s
+ => => resolve docker.io/library/ubuntu:22.10@sha256:a82eebb42083a134e009a6b81a7e5d2eecc37112fa8ae40642bd3c5153b7  0.3s
+ => => sha256:a82eebb42083a134e009a6b81a7e5d2eecc37112fa8ae40642bd3c5153b7e4f0 1.13kB / 1.13kB                     0.0s
+ => => sha256:8c8f22bacbfba9678edddcc3b6d1e56cce02eff9cbf27ab46116de30cb79a3d6 424B / 424B                         0.0s
+ => => sha256:558d44db75c8f69c29f427cf88e6a71c39320f7607584baa6860f6e4f6121892 2.30kB / 2.30kB                     0.0s
+ => => sha256:5c19388d38e1ea904672812dd0aac505220c9254e2621a1684e0fe29e2dba80e 26.70MB / 26.70MB                  11.3s
+ => => extracting sha256:5c19388d38e1ea904672812dd0aac505220c9254e2621a1684e0fe29e2dba80e                          1.6s
+ => [2/2] RUN apt update &&     apt install -y mariadb-server &&     rm -rf /var/lip/apt/lists/*                 139.7s
+ => exporting to image                                                                                             6.6s
+ => => exporting layers                                                                                            6.5s
+ => => writing image sha256:47fd588069459b51400a9e40bc2474322dc2a50370c42c4f5d4ae673f44e201a                       0.0s
+ => => naming to docker.io/library/mdb                                                                             0.0s
+leo_amv@leo:~$ docker run -it mdb
+mysqld: Please consult the Knowledge Base to find out how to run mysqld as root!
+2023-04-17 16:45:27 0 [ERROR] Aborting
+leo_amv@leo:~$ vi Dockerfile
+leo_amv@leo:~$ cat Dockerfile
+FROM mariadb
+RUN rm -rf /var/lip/apt/lists/*
+EXPOSE 3306
+leo_amv@leo:~$ docker run -it -h leo --name mdb --env MARIADB_PASSWORD=123 --env MARIADB_ROOT_PASSWORD=123 -v /home/leo_amv/somefolder:/var/lib/mysql mdb
+2023-04-17 17:21:29+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.2+maria~ubu2204 started.
+2023-04-17 17:21:30+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2023-04-17 17:21:30+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.2+maria~ubu2204 started.
+2023-04-17 17:21:30+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
+2023-04-17 17:21:30 0 [Note] Starting MariaDB 10.11.2-MariaDB-1:10.11.2+maria~ubu2204 source revision cafba8761af55ae16cc69c9b53a341340a845b36 as process 1
+2023-04-17 17:21:30 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2023-04-17 17:21:30 0 [Note] InnoDB: Number of transaction pools: 1
+2023-04-17 17:21:30 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2023-04-17 17:21:30 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+2023-04-17 17:21:30 0 [Note] InnoDB: Using liburing
+2023-04-17 17:21:30 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2023-04-17 17:21:30 0 [Note] InnoDB: Completed initialization of buffer pool
+2023-04-17 17:21:30 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+2023-04-17 17:21:30 0 [Note] InnoDB: 128 rollback segments are active.
+2023-04-17 17:21:30 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2023-04-17 17:21:30 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2023-04-17 17:21:30 0 [Note] InnoDB: log sequence number 50017; transaction id 24
+2023-04-17 17:21:30 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+2023-04-17 17:21:30 0 [Note] Plugin 'FEEDBACK' is disabled.
+2023-04-17 17:21:30 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+2023-04-17 17:21:30 0 [Note] Server socket created on IP: '0.0.0.0'.
+2023-04-17 17:21:30 0 [Note] Server socket created on IP: '::'.
+2023-04-17 17:21:30 0 [Note] InnoDB: Buffer pool(s) load completed at 230417 17:21:30
+2023-04-17 17:21:30 0 [Note] mariadbd: ready for connections.
+Version: '10.11.2-MariaDB-1:10.11.2+maria~ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+leo_amv@leo:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS      NAMES
+31e88be35423   mdb       "docker-entrypoint.s…"   About a minute ago   Up About a minute   3306/tcp   mdb
+leo_amv@leo:~$ docker exec -it mdb bash
+root@leo:/# mariadb -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 4
+Server version: 10.11.2-MariaDB-1:10.11.2+maria~ubu2204 mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database testbase;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> use testbase;
+Database changed
+MariaDB [testbase]> create table table1;
+ERROR 1113 (42000): A table must have at least 1 column
+MariaDB [testbase]> create table table1 (i INT);
+Query OK, 0 rows affected (0.218 sec)
+
+MariaDB [testbase]> INSERT INTO table1 (i) VALUES (1),(2),(3),(4);
+Query OK, 4 rows affected (0.066 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+MariaDB [testbase]> select * from table1;
++------+
+| i    |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
++------+
+4 rows in set (0.000 sec)
+
+MariaDB [testbase]> exit
+Bye
+root@leo:/# exit
+exit
+leo_amv@leo:~$ docker run --name phpmyadmin -d --link mdb:db -p 8086:80 phpmyadmin
+65ed09ffbd1e583849d4347496726692715b1462d7cdae0b616a54c1fbb95879
+leo_amv@leo:~$
