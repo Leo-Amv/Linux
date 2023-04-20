@@ -1,0 +1,123 @@
+leo_amv@leo:~$ cat > docker-compose.yml
+version: '3.9'
+
+services:
+
+ db:
+   image: mariadb:10.10.2
+   restart: always
+   environment:
+     MYSQL_ROOT_PASSWORD: 123
+   deploy:
+     mode: replicated
+     replicas: 2
+
+ adminer:
+   image: adminer:4.8.1
+   restart: always
+   ports:
+     - 6081:8080
+   volumes:
+       - /home/leo_amv/dumps:/dumps
+   deploy:
+     mode: replicated
+     replicas: 2
+leo_amv@leo:~$ vi docker-compose.yml
+
+leo_amv@leo:~$ docker compose up
+services Additional property вdb is not allowed
+leo_amv@leo:~$ vi docker-compose.yml
+ 23L, 351B з                    аписано
+leo_amv@leo:~$ docker compose up
+yaml: line 13: did not find expected key
+leo_amv@leo:~$ vi docker-compose.yml
+
+leo_amv@leo:~$ docker compose up
+[+] Running 17/17
+ ✔ db 8 layers [⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                                                                 100.3s
+   ✔ 10ac4908093d Pull complete                                                                                   60.3s
+   ✔ 44779101e748 Pull complete                                                                                   62.8s
+   ✔ a721db3e3f3d Pull complete                                                                                   66.7s
+   ✔ 1850a929b84a Pull complete                                                                                   72.2s
+   ✔ 397a918c7da3 Pull complete                                                                                   75.8s
+   ✔ 806be17e856d Pull complete                                                                                   91.9s
+   ✔ 634de6c90876 Pull complete                                                                                   92.3s
+   ✔ cd00854cfb1a Pull complete                                                                                   92.7s
+ ✔ adminer 7 layers [⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                                                              90.6s
+   ✔ b0248cf3e63c Pull complete                                                                                   61.8s
+   ✔ 879178bf91e5 Pull complete                                                                                   74.7s
+   ✔ e6fdf216e01a Pull complete                                                                                   78.1s
+   ✔ ddb61091e569 Pull complete                                                                                   80.1s
+   ✔ 9980a061c8ab Pull complete                                                                                   81.4s
+   ✔ fc5edff67483 Pull complete                                                                                   81.9s
+   ✔ f4912d736721 Pull complete                                                                                   82.8s
+[+] Running 5/5
+ ✔ Network leo_amv_default      Created                                                                            1.4s
+ ✔ Container leo_amv-db-2       Created                                                                            8.6s
+ ✔ Container leo_amv-adminer-1  Created                                                                            8.5s
+ ✔ Container leo_amv-adminer-2  Created                                                                            8.4s
+ ✔ Container leo_amv-db-1       Created                                                                            8.6s
+Attaching to leo_amv-adminer-1, leo_amv-adminer-2, leo_amv-db-1, leo_amv-db-2
+leo_amv-db-2       | 2023-04-20 16:20:26+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.10.2+maria~ubu2204 started.
+leo_amv-db-1       | 2023-04-20 16:20:28+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.10.2+maria~ubu2204 started.
+Error response from daemon: driver failed programming external connectivity on endpoint leo_amv-adminer-1 (c3d8353863c0d87da46dbd5b851ef0bae206a4d4a70ffe16977cf4303932a09b): Bind for 0.0.0.0:6081 failed: port is already allocated
+leo_amv@leo:~$ vi docker-compose.yml
+
+leo_amv@leo:~$ docker compose up
+[+] Running 4/4
+ ✔ Container leo_amv-db-2       Running                                                                            0.0s
+ ✔ Container leo_amv-adminer-1  Recreated                                                                          1.7s
+ ✔ Container leo_amv-db-1       Running                                                                            0.0s
+ ✔ Container leo_amv-adminer-2  Recreated                                                                          3.8s
+Attaching to leo_amv-adminer-1, leo_amv-adminer-2, leo_amv-db-1, leo_amv-db-2
+Error response from daemon: driver failed programming external connectivity on endpoint leo_amv-adminer-2 (5190baeee8e88106789e32d1eeb9c0c93d0c67240b686d4f3a5ec0bb911b1f51): Bind for 0.0.0.0:6086 failed: port is already allocated
+leo_amv@leo:~$ vi docker-compose.yml
+
+leo_amv@leo:~$ docker compose up
+[+] Running 4/4
+ ✔ Container leo_amv-db-2       Running                                                                            0.0s
+ ✔ Container leo_amv-adminer-2  Recreated                                                                          1.5s
+ ✔ Container leo_amv-db-1       Running                                                                            0.0s
+ ✔ Container leo_amv-adminer-1  Recreated                                                                          2.6s
+Attaching to leo_amv-adminer-1, leo_amv-adminer-2, leo_amv-db-1, leo_amv-db-2
+leo_amv-adminer-2  | [Thu Apr 20 16:22:13 2023] PHP 7.4.33 Development Server (http://[::]:8080) started
+Error response from daemon: driver failed programming external connectivity on endpoint leo_amv-adminer-1 (20d9bdab25586930443ef6f60526ce0f4e7ff690533fa14c88d47f113cc9c8f4): Bind for 0.0.0.0:6080 failed: port is already allocated
+leo_amv@leo:~$ vi docker-compose.yml
+leo_amv@leo:~$ docker compose up
+[+] Running 4/4
+ ✔ Container leo_amv-db-2       Running                                                                            0.0s
+ ✔ Container leo_amv-adminer-1  Recreated                                                                          1.4s
+ ✔ Container leo_amv-db-1       Running                                                                            0.0s
+ ✔ Container leo_amv-adminer-2  Recreated                                                                          2.6s
+Attaching to leo_amv-adminer-1, leo_amv-adminer-2, leo_amv-db-1, leo_amv-db-2
+leo_amv-adminer-1  | [Thu Apr 20 16:22:53 2023] PHP 7.4.33 Development Server (http://[::]:8080) started
+Error response from daemon: driver failed programming external connectivity on endpoint leo_amv-adminer-2 (ebaf16055a9419ccf57a3db1db610e538aa85f047237e20d6e2f6ef1d8a64cbd): Bind for 0.0.0.0:6087 failed: port is already allocated
+leo_amv@leo:~$ vi docker-compose.yml
+leo_amv@leo:~$ docker compose up
+[+] Running 4/4
+ ✔ Container leo_amv-adminer-2  Recreated                                                                          1.4s
+ ✔ Container leo_amv-db-2       Running                                                                            0.0s
+ ✔ Container leo_amv-db-1       Running                                                                            0.0s
+ ✔ Container leo_amv-adminer-1  Recreated                                                                          2.4s
+Attaching to leo_amv-adminer-1, leo_amv-adminer-2, leo_amv-db-1, leo_amv-db-2
+leo_amv-adminer-2  | [Thu Apr 20 16:24:49 2023] PHP 7.4.33 Development Server (http://[::]:8080) started
+Error response from daemon: driver failed programming external connectivity on endpoint leo_amv-adminer-1 (079cd8c05c09e189ee6d6229e52cd12bf769f1b0019eb3a6553138d9a276c422): Bind for 0.0.0.0:6080 failed: port is already allocated
+leo_amv@leo:~$ vi docker-compose.yml
+leo_amv@leo:~$ docker compose up
+[+] Running 4/4
+ ✔ Container leo_amv-adminer-1  Recreated                                                                          1.4s
+ ✔ Container leo_amv-db-2       Running                                                                            0.0s
+ ✔ Container leo_amv-db-1       Running                                                                            0.0s
+ ✔ Container leo_amv-adminer-2  Recreated                                                                          2.6s
+Attaching to leo_amv-adminer-1, leo_amv-adminer-2, leo_amv-db-1, leo_amv-db-2
+leo_amv-adminer-2  | [Thu Apr 20 16:26:03 2023] PHP 7.4.33 Development Server (http://[::]:8080) started
+Error response from daemon: driver failed programming external connectivity on endpoint leo_amv-adminer-1 (58155d3f1f5d0ee890b56ea2095cf734ca9372e5d1170cb6d9b7c2299a544e06): Bind for 0.0.0.0:6089 failed: port is already allocated
+leo_amv@leo:~$ docker ps
+CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS         PORTS
+             NAMES
+029b49f1360b   adminer:4.8.1     "entrypoint.sh php -…"   2 minutes ago   Up 2 minutes   0.0.0.0:6089->8080/tcp, :::6089->8080/tcp   leo_amv-adminer-2
+4bde01e572b8   mariadb:10.10.2   "docker-entrypoint.s…"   7 minutes ago   Up 7 minutes   3306/tcp
+             leo_amv-db-2
+f14b5799d86e   mariadb:10.10.2   "docker-entrypoint.s…"   7 minutes ago   Up 7 minutes   3306/tcp
+             leo_amv-db-1
+leo_amv@leo:~$
